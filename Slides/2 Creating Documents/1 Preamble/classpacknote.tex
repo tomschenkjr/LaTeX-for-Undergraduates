@@ -1,0 +1,105 @@
+\documentclass{article}
+%================================Packages
+\usepackage{makeidx}						%For making the index
+%================================Document Info.
+\makeindex											%For making the index
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			Preamble} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+Every \LaTeX\ document is divided into two parts: the preamble and body. This lecture covers the preamble. The preamble contains all of the ``meta'' information for the rest of the document (i.e. font size, layout style, margins). The information typed in the preamble is not seen by the reader, instead, it sets up how the document looks. The body, on the other hand, is what appears in the document---this concept is covered in the next lecture.
+
+\section{Preamble and Body}
+
+The border between the preamble and body is the \texttt{$\backslash$begin\{document\}} command. As it implies, this command tells \LaTeX\ when to start the actual document. The information that appears after this command is considered the body. Information that appears before this command is the preamble.
+
+\subsection{\texttt{documentclass} Command}
+
+The first command for every document should be the \texttt{$\backslash$documentclass} command. The syntax of the command is as follows:
+\begin{center}
+	\texttt{$\backslash$documentclass[\textit{option}]\{\textit{class}\}}
+\end{center}
+\textit{class} tells the \LaTeX\ what type of document you want. Typically, we will use the \texttt{article} class. Other classes include \texttt{book}, \texttt{report}, \texttt{slides}, and \texttt{letter}. Each one of these classes have a unique feature. For instance, when you use the \texttt{book} class, \LaTeX\ will generate a title page. Likewise, both \texttt{book} and \texttt{report} allow the author to use chapters, whereas \texttt{article} (the most common class) does not. Generally speaking, there are many classes available for \LaTeX\. Anyone can create ``.sty'' files, which are class files. Many graduate schools have created their own .sty files to meet their requirements for Ph.D. thesis formats. Although too advanced for this tutorial, as you become more advanced, you may want to look into writing your own .sty files that comply with common class requirements. In the meantime, we will learn other methods of changing a document layout.
+
+An author also has a handful of options for each class. These options allow the author to manipulate the layout of the document. A common option is changing the font size. Assume that we want to type a common document (\texttt{article} class) with a font size of 12 points. The \texttt{documentclass} command would be the following:
+\begin{center}
+	\texttt{$\backslash$documentclass[12pt]\{article\}}
+\end{center}
+
+Options are, well, optional. \LaTeX\ uses its defaults when the author does not define options. The appendix contains a table listing common options and their actions. Likewise, since options are not required, the author does not have to include the option argument. However, she \emph{must} include the class argument. Below is an example of acceptable and unacceptable arguments.
+\begin{center}
+	\begin{tabular}{l l}
+		\textit{Acceptable} & \texttt{$\backslash$documentclass[legalpaper]\{book\}} \\
+		\textit{Acceptable} & \texttt{$\backslash$documentclass\{book\}} \\
+		\textit{Not Acceptable} & \texttt{$\backslash$documentclass[12pt]} \\
+	\end{tabular}
+\end{center}
+Additionally, the author may list several options within a single line using the following:
+\begin{center}
+	\texttt{$\backslash$documentclass[12pt,legalpaper]\{article\}}
+\end{center}
+In the above example, \LaTeX\ will use a 12 point font and a legal paper layout.
+
+As I noted earlier, the author \emph{always} needs to include the \texttt{documentclass} command. It does not need to be the first command, but it's practical convention to do so.
+
+\subsection{Packages}
+
+Packages are a powerful way of including more features into a document. Packages are not a unique concept, the same concept is used by Mathematica, GNU R, SAS, and other mathematical/statistical programs. You typically have to download packages and install them on your computer. I will point to some useful resources for packages later in these notes.
+
+Typically, package commands are included right after \texttt{documentclass}. Below is an example of a basic package command:
+\begin{center}
+\texttt{$\backslash$usepackage[\textit{options}]\{\textit{package}\}}
+\end{center}
+
+Assume that we want to enable ourselves to make an index table at the end of our document. To do this, we must load a package with the following command:
+\begin{center}
+\texttt{$\backslash$usepackage\{makeidx\}}
+\end{center}
+Where \texttt{makeidx} is the package name, this will \emph{enable} us to make an index. It actually takes a few other commands to actually generate the index (Lecture 3.2.3). That is, if you're unsure if you'll actually use the package, it doesn't hurt to include it anyways.
+
+You may have noticed that packages also have \textit{options}. \LaTeX\ will use defaults if the author does not invoke any options, but sometimes they are useful. Perhaps the easiest example is using another powerful feature of \LaTeX\ --- multilingual capabilities. To let \LaTeX\ operate in another language, the author can use the \textit{Babel} package.\footnote{I have given no attention to the \texttt{babel} package in this tutorial. Those interested in typesetting in other languages should read chapter 10 (pp. 301--374) in \textit{Digital Typography Using \LaTeX\ } available on Drake's ebrary.} The author then defines which language she would like to use with an option operator. Let's assume that we would like to use German or French in our document (both philosophy and mathematics majors may encounter this in graduate study), below is an example of the \texttt{usepackage} command:
+\begin{center}
+\texttt{$\backslash$usepackage[german,french]\{\texttt{babel}\}}
+\end{center}
+\texttt{german} and \texttt{french} are defined in the options field.
+
+You may have noticed that we can separate multiple options with a comma. \LaTeX\ allows the author to list multiple options for a single package with commas. We my list multiple packages with a comma, as long as no options are used. Below are some acceptable uses of listing multiple packages:
+\begin{center}
+	\begin{tabular}{l l}
+		\textit{Acceptable} & \texttt{$\backslash$usepackage\{makeidx\}} \\
+												& \texttt{$\backslash$usepackage\{pstricks\}} \\
+												& \texttt{$\backslash$usepackage[spanish]\{babel\}} \\
+		\textit{Acceptable} & \texttt{$\backslash$usepackage\{makeidx,pstricks\}} \\
+												& \texttt{$\backslash$usepackage[spanish]\{babel\}} \\
+		\textit{Not Acceptable} & \texttt{$\backslash$usepackage[spanish]\{makeidx,pstricks,babel\}} \\
+	\end{tabular}
+\end{center}
+
+There are a copious amount of packages available. If you are using MiKTeX, you can obtain packages using the Package Manger which was installed on your computer. Since version 2.4, MiKTeX will automatically download packages from the web. If MiKTeX cannot find the package, or if you are not using MiKTeX, you may obtain packages from a variety of locations. ctan.org provides many packages as well as documentation.
+
+Unlike \texttt{documentclass}, packages are not mandatory. They are required to do some functions, but the basic functions do not require packages. For instance, students should not need to use packages to typeset mathematical formulas.
+
+\section{Conclusion}
+
+We now know that \LaTeX\ is broken down into two parts: preamble and body. The preamble contains all of the information needed before we can type our document (e.g. document style, options, etc.).
+
+We've started to explore the two most important elements in the preamble: \texttt{documentclass} and \texttt{usepackage}. \texttt{documentclass} is absolutely necessary for our document. It lets \LaTeX\ know what type of document we are writing. Packages are not required, but enable us to use more advanced features. After awhile, you will realize that some of the most powerful applications of \LaTeX\ are enabled by packages. Although packages are not ``standard'' features, they are often written by the same programmers that developed \LaTeX\ .
+
+So far, we can construct the two first steps for a document. Below is an example of the first two lines of a \LaTeX\ document:
+\begin{center}
+	\begin{tabular}{l}
+		\texttt{$\backslash$documentclass[\textit{options}]\{\textit{class}\}} \\
+		\texttt{$\backslash$usepackage[\textit{options}]\{\textit{package}\}}
+	\end{tabular}
+\end{center}	
+
+
+\end{document}

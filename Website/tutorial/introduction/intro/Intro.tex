@@ -1,0 +1,201 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 10/24/2005
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+%================================Document Info./Slide 1
+\title{Introduction}
+\subtitle{Introduction to \LaTeX}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2)
+\institution{Drake University}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item Look at the conceptual purpose of \LaTeX.
+		\item Etymology of \LaTeX.
+		\item Formatting versus Logical Design.
+		\item History of \LaTeX.
+	\end{itemize}
+\end{slide}
+%================================Slide 3
+\begin{slide}{What is \LaTeX\?}
+	\begin{itemize}
+		\item An open-source typesetting program designed for preparing documents on PC or Mac.
+		\item Free to use and easy to modify the source code for desired output.
+		\item We will just focus on preparing documents for research papers and short assignments.
+		\item Can also prepare books, slides, letters, and resume's.
+		\item A sample document is on the webpage, snippets of code are later in the slide.
+	\end{itemize}
+\end{slide}
+%================================Slide 4
+\begin{slide}{What's in the Name?}
+	\begin{itemize}
+		\item \LaTeX\mbox{} is pronounced ``Lay-tech.''
+		\item The name is actually a combination of two names:
+			\begin{itemize}
+				\item \TeX\mbox{} is the legacy typesetting program developed by Donald Knuth.
+				\item ``La'' is derived from Leslie Lamport, the creator of \LaTeX.
+			\end{itemize}
+		\item \TeX\ stands for Tau-Epsilon-Chi.
+		\item More on the etymology and history of \LaTeX\ and their creators later in this presentation.
+	\end{itemize}
+\end{slide}
+%================================Slide 5
+\begin{slide}{Why \LaTeX?}
+	\begin{itemize}
+		\item Microsoft Word, Corel Wordperfect, and OpenOffice are already word processing programs, why use \LaTeX?
+		\item \LaTeX\ is a typesetting program.
+			\begin{itemize}
+				\item Logical Design versus Word Processing
+			\end{itemize}
+		\item Much better at quickly typing mathematical equations.			
+			\begin{itemize}
+				\item Math environment versus Equation Editor
+			\end{itemize}
+		\item Powerful enumerating, bibliography, indexing, table of contents tool
+			\begin{itemize}
+				\item Automatically generates and lists a bibliography at the end of the document.
+			\end{itemize}
+		\item Easily outputs to PostScript and PDF, which are both standards.
+	\end {itemize}
+\end{slide}
+%================================Slide 6
+\begin{slide}{The Downside}
+	\begin{itemize}
+		\item Word, Wordperfect, OpenOffice are WYSIWYG (What you see is what you get) programs.
+			\begin{itemize}
+				\item The layout of the screen roughly matches what is printed out.
+			\end{itemize}
+		\item \LaTeX\ resembles HTML or linear programming---which means there is a learning curve to use it.
+		\item \LaTeX\ must be installed on the computer to \textit{prepare} documents.
+		\item We will begin to focus on the design of documents.
+	\end{itemize}
+\end{slide}
+%================================Slide 7
+\begin{slide}{Logical Design vs Formatting}
+	\begin{itemize}
+		\item Word, Wordperfect, OpenOffice are WYSIWYG (What you see is what you get) programs.
+			\begin{itemize}
+				\item What appears on the screen is what appears on the printout.
+			\end{itemize}
+		\item To create titles, sections, or table of contents we must bold, italicize, or underline text.
+			\begin{itemize}
+				\item This process is known as \textit{formatting}.
+			\end{itemize}
+		\item Traditionally, we are use to these programs; however, formatting can be lengthy individual steps.
+	\end{itemize}
+\end{slide}
+%================================Slide 8
+\begin{slide}{Formatting}
+	\begin{itemize}
+		\item	Let's look at the process of formatting:
+	\begin{center}
+		\textbf{Walraisian Auctioneer in Asymmetric Markets}\\
+		\textit{David E. Smith}\\
+		February 19, 2004\\
+	\end{center}
+		\item In the prior paragraph those lines would require the author to \textbf{bold} the title, \textit{italicize} the name, and change it back to normal for the date.
+		\item This may seem trite for a few lines, but can be time consuming for larger documents.
+	\end{itemize}
+\end{slide}
+%================================Slide 9
+\begin{slide}{Logical Design}
+	\begin{itemize}
+		\item The following is the header written in \LaTeX\ \\
+		\texttt{$\backslash$documentclass\{article\}}\\
+		\texttt{$\backslash$begin\{document\}}\\
+		\texttt{$\backslash$textbf\{Walraisian Auctioneer in Asymmetric Markets\}}\\
+		\texttt{$\backslash$textit\{David E. Smith\}}\\
+		\texttt{February 19, 2004}
+	\end{itemize}
+\end{slide}
+%================================Slide 10
+\begin{slide}{Math Equations}
+	\begin{itemize}
+		\item Using mathematical notation in a WYSIWYG system is very time-consuming.
+		\item Typesetting math equations are easy since \LaTeX\ uses commands.
+		\item For instance, below is an example of the proper notation for the derivative of a logarithm.\\
+		\texttt{$\backslash$frac\{dy\}\{dx\}=$\backslash$frac\{1\}\{x\}}\\
+		\item The output is shown on the next slide.		
+	\end{itemize}
+\end{slide}
+%================================Slide 11
+\begin{slide}{Math Equations and Enumerating}
+	\begin{itemize}
+		\item Many papers also require that math equations are numbered.
+\begin{center}
+ex. The derivative of a log is\\
+\begin{equation}
+	\frac{dy}{dx}=\frac{1}{x}
+\end{equation}
+\end{center}
+		\item It's easy to imagine where we need to insert another equation before (1).
+		\item \LaTeX automatically enumerates equations so we don't have to manually change the sequence.
+		\item If we have referenced equation (1) in the text, it will also renumber the references too.
+	\end{itemize}
+\end{slide}
+%================================Slide 12
+\begin{slide}{History of \LaTeX}
+	\begin{itemize}
+		\item Donald Knuth was researching for the fourth volume of the \textit{The Art of Computer Programming}.
+		\item Upon reviewing the pre-prints for his manuscripts, he was disappointed in the typesetting.
+		\item His initial reaction was ``bleech!'', which is phonically similar to \TeX.
+		\item He stopped submitting papers to the American Mathematical Society (AMS).
+	\end{itemize}
+\end{slide}
+%================================Slide 13
+\begin{slide}{History of \LaTeX(con't)}
+	\begin{itemize}
+		\item In 1977 instead of researching in South America, he spend his time creating a new typesetting program at Stanford.
+		\item The result was two programs: \TeX\ and \MF.
+		\item The current version of \TeX\ is commonly known as \TeX 82.
+		\item Official development of \TeX\ was frozen by Mr. Knuth (Addison-Wesley also owns \TeX).
+		\item The version number is 3.14159 and converges to $\pi$.
+		\item \MF\ is at 2.718 and converges to \textit{e}.
+	\end{itemize}
+\end{slide}
+%================================Slide 14
+\begin{slide}{History of \LaTeX\ (con't)}
+	\begin{itemize}
+		\item Donald Knuth encourages development of extensions to the \TeX\mbox{} program.
+		\item Although he is widely known for \TeX\mbox{} and his book, \textit{The Art of Computer Programming}, he is also widely known for giving money who find errors in the \TeX\mbox{} source code or his books.
+		\item \$2.56 per previously unknown mistake, although many people just save the checks.
+			\begin{itemize}
+				\item His website \href{http://www-cs-faculty.stanford.edu/\~knuth} lists the current errata list.
+			\end{itemize}
+	\end{itemize}
+\end{slide}
+%================================Slide 15
+\begin{slide}{Creation of \LaTeX}
+	\begin{itemize}
+		\item Leslie Lamport developed a \TeX\mbox{} macro designed for easier document creation---she named it \LaTeX.
+		\item During the 80's several version of \LaTeX\mbox{} were released. Many were incompatible with each other.
+			\begin{itemize}
+				\item Each version had its own specialty (e.g. math, slides, PDF generation)
+			\end{itemize}
+		\item In June 1994 \LaTeXe\mbox{} was released with the purpose of unifying the multitude of \LaTeX\mbox{} programs.
+		\item Next version of \LaTeX\mbox{} is \LaTeX3.
+	\end{itemize}
+\end{slide}
+%================================Slide 16
+\begin{slide}{Conclusions}
+	\begin{itemize}
+		\item \LaTeX\mbox{} is a typesetting program designed to create documents using logical design.
+		\item It can output to PostScript and PDF, even on Windows.
+		\item It can automatically enumerate equations and section headers.
+		\item NEXT: We will look at the broad process of how \LaTeX\mbox{} documents are created.
+		\item LATER: We will show what is needed to install \LaTeX\mbox{} and create a simple document.
+	\end{itemize}
+\end{slide}
+
+\end{document}
+

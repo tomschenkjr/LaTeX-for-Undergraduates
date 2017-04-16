@@ -1,0 +1,256 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 1/10/2006
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Document Info./Slide 1
+\title{Body}
+\subtitle{Formatting}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2)
+\institution{Drake University}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item Special characters
+		\item Bolding, Italics, and Emphasizing
+		\item Font sizes
+		\item Justification
+		\item Bulleted lists
+		\item Enumerated lists
+	\end{itemize}
+\end{slide}
+%================================Slide 3
+\begin{slide}{Special Characters}
+	\begin{itemize}
+		\item As we've seen so far, several characters are used in commands
+		\item To produce these characters in the body, we need to use a modified version. \\
+			\begin{tabular}{l l l l l l l l l}
+				\texttt{$\backslash$\$} & \texttt{$\backslash$\%} & \texttt{$\backslash$\&} & \texttt{$\backslash$\#} & \texttt{$\backslash$\{} & \texttt{$\backslash$\}} & \texttt{$\backslash$\_} & \texttt{$\backslash$\^{}\{\}} & \texttt{$\backslash$\~{}\{\}} \\
+				\$ & \% & \& & \# & \{ & \} & \_ & \^{} & \~{} \\
+			\end{tabular}
+		\item To produce $\backslash$, use \texttt{\$$\backslash$backslash\$}.
+		\item \^{} and \~{} overflow their space so they need extra brackets to create extra space.
+			\begin{itemize}
+				\item This is what \^ and \~ characters look like without adding the brackets.
+			\end{itemize}
+	\end{itemize}
+\end{slide}
+%================================Slide 4
+\begin{slide}{Logo's}
+	\begin{itemize}
+		\item \LaTeX has some built in logo's.
+			\begin{center}
+				\begin{tabular}{|l|l|}
+					\hline
+					Command & Logo \\
+					\hline
+					$\backslash$LaTeX$\backslash$ & \LaTeX\ \\
+					\hline
+					$\backslash$LaTeX2e$\backslash$ & \LaTeX\ \\
+					\hline
+					$\backslash$TeX$\backslash$ & \TeX\ \\
+					\hline
+				\end{tabular}
+			\end{center}
+		\item These command tend to overflow their box, so the extra slash is to give it more space.
+	\end{itemize}
+\end{slide}
+%================================Slide 5
+\begin{slide}{Bolding, Italicizing, and Emphasizing}
+	\begin{itemize}
+		\item \LaTeX uses commands to format text.
+			\begin{center}
+				\begin{tabular}{r l}
+					\hline
+					Command & Output \\
+					\hline
+					$\backslash$textbf\{\textit{text}\} & \textbf{bold} \\
+					$\backslash$textit\{\textit{text}\} & \textit{italic} \\
+					$\backslash$texttt\{\textit{text}\} & \texttt{typewriter} \\
+					$\backslash$textsl\{\textit{text}\} & \textsl{slanted} \\
+					$\backslash$emph\{\textit{text}\} & \emph{emphasized} \\
+					$\backslash$textsf\{\textit{text}\} & \textsf{sans serif} \\
+					$\backslash$textsc\{\textit{text}\} & \textsc{small caps} \\
+				\end{tabular}
+			\end{center}
+	\end{itemize}
+\end{slide}
+%================================Slide 6
+\begin{slide}{Font Sizes}
+	\begin{itemize}
+		\item The normal font size for our document is defined by the \textit{document class} (default is 10pt).
+		\item We can change the font size periodically throughout the document.
+		\item Typically the author should rely on section commands (e.g. \texttt{$\backslash$section}) to make headers.
+		\item Likewise, we should rely on the \texttt{$\backslash$maketitle} command.
+	\end{itemize}
+\end{slide}
+%================================Slide 7
+\begin{slide}{Font Sizes}
+		\begin{center}
+				\begin{tabular}{l l}
+					\hline
+					Command & Output \\
+					\hline
+					$\backslash$tiny & \tiny tiny font \\
+					$\backslash$scriptsize & \scriptsize script size font \\
+					$\backslash$footnotesize & \footnotesize footnote size font \\
+					$\backslash$small & \small small font \\
+					$\backslash$normalsize & \normalsize normal font \\
+					$\backslash$large & \large large font \\
+					$\backslash$Large & \large larger font \\
+					$\backslash$LARGE & \LARGE even larger font \\
+					$\backslash$huge & \huge huge font \\
+					$\backslash$huge & \Huge largest font \\
+				\end{tabular}
+			\end{center}
+\end{slide}
+%================================Slide 8
+\begin{slide}{Justification}
+	\begin{itemize}
+		\item To justify text (left, center, right) we ``encapsulate'' the text we want to justify in an environment.
+			\begin{itemize}
+				\item Environments are important in \LaTeX\ and we'll explore other environments in Lecture 3.1.
+			\end{itemize}
+		\item We can justify the text to the left (flushleft), center (center), or to the right (flushright).
+		\item To begin a justification we use \texttt{$\backslash$begin\{\textit{justification}\}}.
+		\item To end a justification we use \texttt{$\backslash$end\{\textit{justification}\}}.
+		\item The \texttt{$\backslash$begin} and \texttt{$\backslash$end} commands are used for many scenarios.
+	\end{itemize}
+\end{slide}
+%================================Slide 9
+\begin{slide}{Justification Example}
+This input\ldots \\
+\\
+			\texttt{$\backslash$begin\{document\}} \\
+			\texttt{$\backslash$Text is normally justified to the left.} \\
+			\texttt{$\backslash$begin\{center\}} \\
+			\texttt{Here is some text we've centered.} \\
+			\texttt{The same can be justified to the left,} \\
+			\texttt{and to the right.} \\
+			\texttt{$\backslash$end\{center\}} \\
+			\texttt{Back to normal justification.} \\
+\end{slide}
+%================================Slide 10
+\begin{slide}{Justification Example (con't)}
+produces this output\dots \\
+\\
+	Text is normally justified to the left. \\
+	\begin{center}
+		Here is some text we've centered. \\
+		The same can be justified to the left, \\
+		and to the right.
+	\end{center}
+	Back to normal justification.
+\end{slide}
+%================================Slide 11
+\begin{slide}{Bulleted Lists}
+	\begin{itemize}
+		\item It is also important to make bulleted or enumerated lists.
+		\item Again, we will use an environment to make lists.
+		\item To begin a bulleted list, we use \texttt{$\backslash$begin\{itemize\}}.
+		\item To end the list, we use \texttt{$\backslash$end\{itemize\}}.
+		\item To add a new bullet, use \texttt{$\backslash$item}.
+		\item You can use a dash(-) instead of a bullet with \texttt{$\backslash$item[-]}.
+		\item To make a sublist, begin another bulleted list.
+	\end{itemize}
+\end{slide}
+%================================Slide 12
+\begin{slide}{Bulleted List Example}
+This input\ldots \\
+\\
+			\texttt{$\backslash$begin\{document\}} \\
+			\texttt{$\backslash$begin\{itemize\}} \\
+			\texttt{$\backslash$item The first point} \\
+			\texttt{$\backslash$begin\{itemize\}} \\
+			\texttt{$\backslash$item A subpoint to the first} \\
+			\texttt{$\backslash$end\{itemize\}} \\
+			\texttt{$\backslash$item[-] then the second with a slash} \\
+			\texttt{$\backslash$end\{itemize} \\
+			\texttt{Back to normal text.} \\
+\end{slide}
+%================================Slide 13
+\begin{slide}{Bulleted List Example (con't)}
+produces this output\ldots \\
+\\
+\\
+			\begin{itemize}
+				\item The first point
+					\begin{itemize}
+						\item A subpoint to the first
+					\end{itemize}
+				\item[-] then the second with a slash
+			\end{itemize}
+			Back to normal text.
+\end{slide}
+%================================Slide 14
+\begin{slide}{Enumerated Lists}
+	\begin{itemize}
+		\item Making a numbered list is very similar.
+		\item To begin a enumerated list, we use \texttt{$\backslash$begin\{enumerate\}}.
+		\item To end the list, we use \texttt{$\backslash$end\{enumberate\}}.
+		\item To add an item to the list, use \texttt{$\backslash$item}.
+		\item To begin a sublist, start another enumerated list.
+		\item \LaTeX\ allows authors to mix bulleted and enumerated lists.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Enumerated List Example}
+This input\ldots \\
+			\texttt{$\backslash$begin\{document\}} \\
+			\texttt{$\backslash$begin\{enumerated\}} \\
+			\texttt{$\backslash$item Our first priority} \\
+			\texttt{$\backslash$begin\{enumerated\}} \\
+			\texttt{$\backslash$item A subitem to the enumerated list} \\
+			\texttt{$\backslash$end\{enumerated\}} \\
+			\texttt{$\backslash$begin\{itemize\}} \\
+			\texttt{$\backslash$item With a bulleted list} \\
+			\texttt{$\backslash$end\{itemize\}} \\			
+			\texttt{$\backslash$item Our second priority} \\
+			\texttt{$\backslash$end\{enumerated\}} \\
+\end{slide}
+%================================Slide 15
+\begin{slide}{Enumerated List Example (con't)}
+	\begin{enumerate}
+		\item Our first priority
+			\begin{enumerate}
+				\item A subitem to the enumerated list
+			\end{enumerate}
+			\begin{itemize}
+				\item With a bulleted list
+			\end{itemize}
+		\item Our second priority
+	\end{enumerate}
+\end{slide}
+%================================Slide 16
+\begin{slide}{Formating Review}
+	\begin{itemize}
+		\item A handful of characters are used in commands, so for them to actually appear in the text we need special commands.
+		\item We can format text by using a list of commands (on slide 4) to format a section of text.
+			\begin{itemize}
+				\item \texttt{$\backslash$textit\{\textit{text}\}}, \texttt{$\backslash$textbf\{\textit{text}\}} will italicize and bold text, respectively.
+			\end{itemize}
+		\item We can make lists using $\backslash$begin\{itemize\} or $\backslash$begin\{enumerate\} to begin a list, \texttt{$\backslash$item} to insert a new item, and $\backslash$end\{itemize\} or $\backslash$begin\{enumerate\} to end the list.
+	\end{itemize}
+\end{slide}
+%================================Slide 17
+\begin{slide}{Creating Documents Review}
+	\begin{itemize}
+		\item A document is made up of two parts: the preamble and body.
+			\begin{itemize}
+				\item The preamble sets how the document will look.
+				\item The body contains the actual text.
+			\end{itemize}
+		\item NEXT: Intermediate documents.
+
+\end{document}

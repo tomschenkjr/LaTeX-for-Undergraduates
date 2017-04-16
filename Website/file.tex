@@ -1,0 +1,33 @@
+\documentclass{article} %For basic document without chapters.
+%Use \documentclass[twoside,12pt]{article} for 12 point font and two-sided document.
+
+\usepackage{setspace} %This allows for \doublespacing, \singlespacing, or \onehalfspacing
+\usepackage{natbib}		%Enables the ``natbib'' bibliography style.
+\usepackage{fullpage} %Uses narrow margins for a document
+
+
+\bibliographystyle{plainnat}	%This sets the style of the bibliography
+
+\title{Title Here}
+\author{Name Here \\
+				Institution \\
+				Email 
+				}
+
+\begin{document}	%Starts a document, must conclude with \end{document}.
+
+\maketitle	%This places \title and \author information into the document.
+
+\begin{abstract} %Sets a specially formatted paragraph for the abstract.
+Abstact here.
+\end{abstract}
+
+\newpage	%Creates a pagebreak after the abstract, it can be eliminated or used elsewhere when desired.
+
+\section{Introduction} %The typical first section, it can be elminated or renamed.
+%Adding sub in front of section (i.e., \subsection) creates a sub section.
+
+\bibliography{filebib}	%This refers to a file called filebib.bib, which is the bibliography, this can be changed.
+%Refer to filebib.bib for an example layout of a bibliography.
+
+\end{document} %MUST be included to end document, everything past here is ignored.

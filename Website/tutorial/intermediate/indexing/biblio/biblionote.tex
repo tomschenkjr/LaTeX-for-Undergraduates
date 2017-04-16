@@ -1,0 +1,179 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 1/12/2006
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+\documentclass{article}
+%================================Packages
+\usepackage{natbib}							%For making the bibliography
+\usepackage{makeidx}						%For making the index
+%================================Document Info.
+\bibliographystyle{plainnat}		%Declares the bibliography style
+\makeindex											%For making the index
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			Bibliographies} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2})
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+Besides typesetting mathematics, the other elegant feature of \LaTeX\ is generating bibliographies. The concept is pretty simple, each source can be identified with a collection of fields, such as title, journal name, author, publisher, volume, etc. Different formats (e.g. MLA, Chicago) require these fields to be organized in various ways. In text citation will also differ depending on the format.
+
+Nevertheless, it's easy to see how a computer might be able to automatically generate a bibliography. The program would need to know (a) the bibliography style, (b) different values associated with fields (e.g. David Smith = author), and (c) the style of in--text citation. Since \LaTeX\ is geared toward organizing a document while leaving the author to write, this process is fairly easy. The following shows how it is used. A bibliography has been included so you may sample the code.
+
+
+\section{Bibliographies}
+
+Creating bibliographies requires the author to combine knowledge from previous lectures. I have broken these notes down into the major parts of forming a bibliography: the preamble; bibliography (.bib) file; in--text citation commands; and the bibliography page. The conclusion is also important so make sure you read through that as well. There are several choices for bibliography styles, for this tutorial, I am using the \texttt{natbib} style which is commonly used.
+
+\subsection{Preamble}
+
+A couple of preamble commands need to be used to prepare for a bibliography. The first command is \texttt{$\backslash$usepackage\{natbib\}}, which loads the \texttt{natbib} package for \LaTeX. The second command is \texttt{$\backslash$documentstyle\{\textit{name}\}}. The \textit{name} is the style you want to use. Normally, you should just use \texttt{plain}; however, you may use \texttt{harvard}, \texttt{chicago}, or \texttt{apalike}.
+
+Here is an example of what the preamble of your code may look like:
+\begin{verbatim}
+\documentclass{article}
+\usepackage{natbib}
+\author{Irving Fischer}
+\title{The Theory of Business}
+\bibliographystyle{plain}
+\begin{document}
+\end{verbatim}
+\subsubsection{Options}
+
+You also have a couple of options about how the in--text citations will work. You can modify \texttt{natbib} options with \texttt{$\backslash$usepackage[\textit{option}]\{natbib\}}. By default, \texttt{natbib} will use round parenthesis, nevertheless, you may want to use different parenthesis with your citations. \texttt{square} will use square brackets (e.g. [ ]) instead of the default. \texttt{natbib} separates multiple citations with colons by default, but it can be changed to commas with the \texttt{comma} option. A helpful option is \texttt{longnamesfirst} where the first citation of a reference will include all of the authors, but on subsequent citations will use ``et al.''. Usually a citation with three or more authors should list all of the names the first time, but the author should use ``et al.'' for subsequent citations. One should never use ``et al.'' with two authors.
+
+Below is another sample of a preamble, but with multiple options:
+\begin{verbatim}
+\documentclass{article}
+\usepackage[square,comma,longnamesfirst]{natbib}
+\author{Irving Fischer}
+\title{The Theory of Business}
+\bibliographystyle{plain}
+\begin{document}
+\end{verbatim}
+
+\subsection{.bib File}
+
+The bibliography file (ending with .bib) is where you list all of your citations, give them special names, and associate names with different fields (e.g. author, title, etc.). In the same folder that you have stored your .tex file, you should create a file with the ending .bib. Normally, you append bib to the end of the .tex file name, that is, if your document is \texttt{essay.tex} the bibliography file should be \texttt{essaybib.bib}. This is not necessary, but helpful.
+
+First, I will present an example .bib entry and explain the parts.
+\begin{verbatim}
+@article{Barbezat89,
+author = {Debra Barbezat},
+title = {The Effect of Collective Bargaining on 
+Salaries in Higher Education},
+journal = {Industrial and Labor Relations Review},
+year = {1989},
+volume = {42},
+number = {3},
+pages = {443--455}
+}
+\end{verbatim}
+The beginning of every reference in your .bib file should start with @. In this example, the reference is an article found in a journal. If this was a book, the beginning would be \texttt{\@book\{}. There are many different ``types'' of references that are listed in table \ref{tbl:reftypes}. Every reference must have a unique name. This example uses ``Barbezat89,'' the author's last name and the year it was published. This unique name is how you will reference the document in \LaTeX. Keep it short, I traditionally use one of the author's name and the publication year.
+
+\begin{table}[!b]\caption{Brief List of Reference Types and Fields}\label{tbl:reftypes}
+	\begin{tabular}{|l|l|}
+	\hline
+	\multicolumn{2}{|c|}{Reference Types} \\
+	\hline 
+	Type					& Usage \\
+	\hline
+	@article			& Journal articles. \\
+	\hline
+	@book					& Books with single or multiple authors. \\
+	\hline
+	@inbook				& Books with editors and multiple chapter authors. \\
+	\hline
+	@misc					& General use \\
+	\hline
+	\multicolumn{2}{|c|}{Fields} \\
+	\hline
+	author				& Author's name \\
+	\multicolumn{2}{|l|}{\textit{Separate with ``and'', also, names should be in the form ``First Last''}} \\
+	\hline
+	title					& Title of book or journal \\
+	\hline
+	booktitle			& Title of book for @inbook reference types. \\
+	\multicolumn{2}{|c|}{\textit{This usually accompanies the \emph{chapter} field.}} \\
+	\hline
+	journal				& Name of academic journal. \\
+	\hline
+	year					& Year of publication. \\
+	\hline
+	pages					& Page numbers. \\
+	\multicolumn{2}{|c|}{\textit{Should not be used with \emph{@book}.}} \\
+	edition				& Book edition. \\
+	\hline
+	volume				& Volume number of a book or journal. \\
+	\hline
+	editor				& Editor of a book, use with @inbook. \\
+	\multicolumn{2}{|c|}{\textit{Use \emph{editor} for the editors, use \emph{author} for a chapter's author.}} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+
+The following lines are the specific fields. These will vary depending on the the reference type (e.g. book, journal). A few key fields are \texttt{author}, \texttt{title}, and \texttt{year} since they will be used for every reference type. If the source is a book and you intend to only use a few pages, don't use the \texttt{pages} field. You may include specific pages in the citation command, which will be covered in the next section.
+
+\subsection{In--text Citation}
+
+Now that \texttt{natbib} is loaded and the .bib file is ready, you can start to include citation commands. There are two ways to cite a reference: parenthesis just around the year and parenthesis around the authors' name and year. \texttt{$\backslash$citet\{\textit{name}\}} will put parenthesis around the year only. \texttt{$\backslash$citep\{\textit{name}\}} will put the authors' name and year in parenthesis. There are several variations: \texttt{$\backslash$citet*\{\textit{name}\}} will list all of the authors' last name if you have three or more authors in a reference, the same syntax may be used with \texttt{$\backslash$citep*\{\textit{name}\}}.
+
+\begin{table}[!t]\caption{List of Basic Citation Commands}\label{tbl:cite}
+	\begin{tabular}{|l|l|}
+	\hline
+	Command				& Output \\
+	\hline
+	\texttt{$\backslash$citet\{\textit{name}\}}								& \citet{Smith01} \\
+	\hline
+	\texttt{$\backslash$citep\{\textit{name}\}}								& \citep{Smith01} \\
+	\hline
+	\texttt{$\backslash$citep\{\textit{name},\textit{name}\}}	& \citet{Smith01,Rogers99} \\
+	\hline
+	\texttt{$\backslash$citet\{\textit{name},\textit{name}\}} & \citep{Smith01,Rogers99} \\
+	\hline
+	\texttt{$\backslash$citet[see also][]\{\textit{name}\}}		& \citet[see also][]{Smith01} \\
+	\hline
+	\texttt{$\backslash$citep[see also][]\{\textit{name}\}}		& \citep[see also][]{Smith01} \\
+	\hline
+	\texttt{$\backslash$citet[Chp. 2]\{\textit{name}\}}				& \citet[Chp. 2]{Smith01} \\
+	\hline
+	\texttt{$\backslash$citep[Chp. 2]\{\textit{name}\}} 			& \citep[Chp. 2]{Smith01} \\
+	\hline
+	\multicolumn{2}{|c|}{\textit{See also \citet{Jacobsen} for an extended list.}} \\
+	\hline
+	\end{tabular}
+\end{table}
+
+
+As I promised, you can also reference specific pages and chapters. \texttt{$\backslash$citep[chp. 10]\{\textit{name}\}} would yield something like: \citep[chp. 10]{Rogers99}. A similar syntax can include other notes: \texttt{$\backslash$citep[see also][]\{\textit{name}\}} would generate \citep[see also][]{Rogers99}.
+
+\subsection{Bibliography Page}
+
+Before \texttt{$\backslash$end\{document\}}, you need to include \texttt{$\backslash$bibliography\{\textit{bibliography file}\}} where \textit{bibliography file} is the .bib file you created (you do not need to include the .bib extension). The bibliography will begin at this point. To prevent awkward placements, it's helpful to place \texttt{$\backslash$newpage} before the bibliography command for a clean output.
+
+\section{Conclusion}
+
+Compiling the document is a bit more repetitive. First, you need to compile the Bib\TeX, then you may compile the \LaTeX\ document. Normally you just need to run \texttt{latex}. The following is the sequence you should follow when using a bibliography:
+\begin{quote}
+\noindent
+\texttt{latex}
+\texttt{bibtex}
+\texttt{latex}
+\texttt{latex}
+\end{quote}
+If you are using \TeX nicCenter, go to the build menu to find the Bib\TeX\ operation.
+
+I recommend viewing this commands source code (.tex) and it's accompanying bibliography (.bib) file. I also strongly urge that you take a look at S$\acute{e}$bastien Markel's reference sheet for \texttt{natbib} \citep{Markel}.
+
+\bibliography{biblionotebib}
+
+\end{document}

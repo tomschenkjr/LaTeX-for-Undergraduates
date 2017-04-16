@@ -1,0 +1,116 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 1/13/2006
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Document Info./Slide 1
+\title{Preamble}
+\subtitle{Generate Documents -- Windows}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2)
+\institution{Drake University}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item Generating documents from source code.
+		\item Using \TeX nicCenter.
+		\item Outputting to DVI in DOS.
+		\item Outputting to PostScript in DOS.
+		\item Outputting to PDF in DOS.
+	\end{itemize}
+\end{slide}
+%================================Slide 3
+\begin{slide}{Generating Documents}
+	\begin{itemize}
+		\item Documents can be generated in two ways: from a program and from DOS.
+		\item Generating documents in a \LaTeX\ program is very easy.
+		\item Generating documents in DOS is a bit more complicated, but more powerful.
+	\end{itemize}
+\end{slide}
+%================================Slide 4
+\begin{slide}{Using TeXnicCenter}
+	\begin{itemize}
+		\item A drop--down menu can be used to choose the output format (DVI, PDF, and PS for PostScript).
+		\item Use ``Build Output'' (F7) when working with a project and ``Build Current File'' (Ctrl + F5) when working with a single file.
+		\item ``View Output'' (F5) will display the compiled document.
+		\item The Build menu offers more build options that will be used later in the tutorial.
+	\end{itemize}
+\end{slide}
+%================================Slide 5
+\begin{slide}{Using DOS - Review}
+	\begin{itemize}
+		\item If \LaTeX\ is installed, but \TeX nicCenter is not, you must use DOS.
+		\item For Windows 2000 and Windows XP, access DOS through the Start Menu $\rightarrow$ Run, then type ``cmd.''
+			\begin{itemize}
+				\item Do not use ``command,'' this does not show appropriate file names.
+			\end{itemize}
+		\item Alternatively, you may access Run with Windows Key + R.
+	\end{itemize}
+\end{slide}
+%================================Slide 6
+\begin{slide}{Using DOS - Review (con't)}
+	\begin{itemize}
+		\item \texttt{dir} will display a list of files and folders in that directory.
+		\item \texttt{cd \textit{folder}} will open the subfolder.
+		\item \texttt{cd..} will return you up a level, \texttt{cd$\backslash$} will return to the root level (e.g. C:$\backslash$).
+	\end{itemize}
+\end{slide}
+%================================Slide 7
+\begin{slide}{DOS: Outputting to DVI}
+	\begin{itemize}
+		\item Find the directory where the source file (.tex file) is located.
+		\item \texttt{latex \textit{filename}} will output the document to DVI.
+			\begin{itemize}
+				\item Omit the .tex extension.
+			\end{itemize}
+		\item It will notify the user if there are warnings or errors.
+			\begin{itemize}
+				\item Note the error so you may return to the file and correct it.
+			\end{itemize}
+	\end{itemize}
+\end{slide}
+%================================Slide 8
+\begin{slide}{DOS: Outputting to PostScript}
+	\begin{itemize}
+		\item After creating a DVI, \texttt{dvips} transforms it to PostScript.
+		\item Options are invoked with \texttt{dvips -\textit{option filename}}
+			\begin{itemize}
+				\item \texttt{-t a4} will output to the A4 format.
+				\item \texttt{-A} will print only odd pages, \texttt{-B} will print even only.
+				\item A list of options can be accessed with \texttt{dvips}.
+			\end{itemize}
+	\end{itemize}
+\end{slide}
+%================================Slide 9
+\begin{slide}{DOS: Outputting to PDF}
+	\begin{itemize}
+		\item There are two ways of creating PDFs in DOS: pdf\LaTeX\ and ps2pdf.
+		\item \texttt{pdflatex \textit{filename}} can transform the .tex file directly to PDF.
+		\item The downside is that it will not include bookmarks and if you use encapsulated postscripts for images, compiling may fail.
+		\item In other words, pdf\LaTeX\ works for basic documents.
+		\item The other option is \texttt{ps2pdf \textit{filename}.ps}, which translates the PostScript (.ps) to PDF.
+		\item You must include the .ps after the filename.
+	\end{itemize}
+\end{slide}
+%================================Slide 10	
+\begin{slide}{Review}
+	\begin{itemize}
+		\item \TeX nicCenter is the easiest way to compile documents.
+		\item DVI, PostScript, and PDFs can be created in DOS.
+		\item \texttt{latex \textit{filename}} will output to DVI.
+		\item \texttt{dvips \textit{filename}} generates a PostScript document.
+		\item \texttt{pdflatex \textit{filename}} or \texttt{ps2pdf \textit{filename}.ps} will make a PDF document.
+	\end{itemize}
+\end{slide}
+
+\end{document}

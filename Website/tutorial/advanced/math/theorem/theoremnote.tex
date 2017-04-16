@@ -1,0 +1,112 @@
+%PLEASE READ=============================
+%This document is copyrighted by Tom Schenk Jr and Drake University (2005). It may be modified and re-compiled for personal use only. A re-compiled version may not be distributed without permission of the copyrighters.
+%Authors modifying this document for LaTeX for Undergraduates may append their name(s) in the ``\author'' command. They may not delete the names of previous authors. New authors should place their emails on the slides.
+\documentclass{article}
+%================================Packages
+\usepackage{graphicx}
+\usepackage{verbatim}   % useful for program listings
+\usepackage{color}      % use if color is used in text
+\usepackage{subfigure}  % use for side-by-side figures
+
+\usepackage{amsmath}    % need for subequations
+%================================Theorems
+\newtheorem{lem}{Lemma}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}[section]
+%================================Document Info.
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			Theorem Environment} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+The theorem package allows the author to display theorems that stand out against normal text. Each theorem will be automatically numbered by \LaTeX. The theorem environment is a bit misleading. The author may change the environment to the Lemma or Conjecture environment. Whatever the name, the environments will have the same formatting.
+
+\section{Theorems}
+
+\subsection{Preamble Commands}
+
+The theorem environment does not only display theorems, it also displays lemmas, conjectures, or whatever the author wants. In the preamble, the author declares how theorems are labeled and what command is used to start the environment. The following example will label all theorems ``Lemma'' and the environment is started with ``lem.''
+\begin{center}
+\begin{verbatim}
+\begin{lem}{Lemma}
+\end{verbatim}
+\end{center}
+
+The author may add additional theorem environments. Along with the Lemma, one may also add a Corollary environment as well.
+\begin{center}
+\begin{verbatim}
+\newtheorem{lem}{Lemma}
+\newtheorem{thm}{Theorem}
+\end{verbatim}
+\end{center}
+
+Theorems can correspond to the section number using the following:
+\begin{center}
+\begin{verbatim}
+\newtheorem{cor}{Corollary}[section]
+\end{verbatim}
+\end{center}
+
+\subsection{Creating Theorems}
+
+The Lemma that was defined earlier can be recalled with:
+\begin{quote}
+\begin{verbatim}
+\begin{lem} Let lim$_{x \rightarrow a}$ 
+$f(x) = L.$ Then there exists 
+$\delta > 0$ such that if 
+$0 < \left|x-a\right| < \delta,$ 
+then $\left|f(x)\right| < 1 + \left|L\right|$.
+\end{lem}
+\end{verbatim}
+\end{quote}
+\smallskip
+Which will display the following Lemma:
+\begin{lem} Let lim$_{x \rightarrow a}$ 
+$f(x) = L.$ Then there exists 
+$\delta > 0$ such that if 
+$0 < \left|x-a\right| < \delta,$ 
+then $\left|f(x)\right| < 1 + \left|L\right|$.
+\end{lem}
+\smallskip
+Likewise, the same document can also create the Theorem (with parenthesis) using:
+\begin{quote}
+\begin{verbatim}
+\begin{thm}[Schr\ddot{o}der -- Bernstein] If
+A and B are sets such that \left|A\right|
+\leq \left|B\right| and \left|B\right|
+\leq \left|A\right|, then \left|A\right|
+= \left|B\right|.
+\end{thm}
+\end{verbatim}
+\end{quote}
+\smallskip
+Which will display the following Lemma:
+\begin{thm}[Schr$\ddot{o}$der -- Bernstein] If A and B are sets such that $\left|A\right| \leq \left|B\right|$ and $\left|B\right| \leq \left|A\right|$, then $\left|A\right| = \left|B\right|$.
+\end{thm}
+\smallskip
+Lastly, the following Corollary corresponds to the section numbers:
+\begin{quote}
+\begin{verbatim}
+\begin{cor} The sets $2^{\textbf{N}}$ and
+\textbf{R} are numerically equivalent.
+\end{cor}
+\end{verbatim}
+\end{quote}
+\smallskip
+\begin{cor} The sets $2^{\textbf{N}}$ and \textbf{R} are numerically equivalent.
+\end{cor}
+
+\section{Conclusion}
+
+Making theorems are rather easy. Remember to follow any rules that a professor gives regarding how theorems should be identified.
+
+\end{document}
+

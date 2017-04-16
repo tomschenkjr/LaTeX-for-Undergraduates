@@ -1,0 +1,77 @@
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Document Info./Slide 1
+\title{Indexing and Bibliographies}
+\subtitle{Indexing}
+\author{Tom Schenk Jr.}
+\institution{Drake University}
+\email{tls007@drake.edu}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item Introducing the \texttt{makeidx} package.
+		\item The \texttt{$\backslash$makeindex} command.
+		\item Creating index points.
+		\item Creating the index.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Overview of Indexing}
+	\begin{itemize}
+		\item Often at the end of a book, an index is included with references to key point.
+		\item Usually this would include a separate piece of paper keeping track of words and their page of occurence.
+		\item If pages were included or excluded, then it would be necessary to adjust all of the enteries.
+		\item We can automate this process using the \texttt{makeidx} package.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{makeidx Package}
+	\begin{itemize}
+		\item To include the \texttt{makeidx} package, insert \texttt{$\backslash$usepackage\{makeidx\}} in the preamble.
+		\item We also need to enable the package by including \texttt{$\backslash$makeindex} in the preamble. \\
+\texttt{$\backslash$documentclass\{book\}} \\
+\texttt{$\backslash$usepackage\{makeidx\}} \\
+\texttt{$\backslash$title\{Senior Capstone Project\}} \\
+\texttt{$\backslash$author\{Carl Limyao\}} \\
+\texttt{$\backslash$makeindex} \\
+\texttt{$\backslash$begin\{document\}} \\
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Making Index Points}
+	\begin{itemize}
+		\item To create an index point---a point where a word is noted and placed in the index---we use \texttt{$\backslash$index\{\textit{key}\}}.
+		\item We need to include the index command after the word itself.
+			\begin{itemize}
+				\item e.g. \texttt{Maxwell's equations$\backslash$\{Maxwell\} are four equations\ldots}
+			\end{itemize}
+		\item Some entries are sub--entries of other index words. To do this we use \texttt{$\backslash$index\{\textit{key!sub--key}\}}
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Creating the Index}
+	\begin{itemize}
+		\item To generate the index, use \texttt{$\backslash$printindex} toward the end of the document.
+		\item The index will be generated in the place where the command is placed.
+		\item For general practice, it is best to place the index after the bibliography.
+		\item When generating the document, the index will be put in the output file (DVI, PS, PDF) and a .idx file with the same name as our .tex document.
+		\item The .idx file has all of our index listings.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Index Review}
+	\begin{itemize}
+		\item We use the \texttt{makeidx} package to make indexes.
+		\item It's necessary to include \texttt{$\backslash$makeindex} in the preamble.
+		\item Index entires are categorized using \texttt{$\backslash$index\{\textit{key}\}}.
+		\item Toward the end of the document, use \texttt{$\backslash$printindex} to make the index.
+	\end{itemize}
+\end{slide}
+\end{document}

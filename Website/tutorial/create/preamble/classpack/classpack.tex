@@ -1,0 +1,242 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 10/25/2005
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+%================================Slides
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+%================================Document Info./Slide 1
+\title{Preamble}
+\subtitle{Classes and Packages}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2)
+\institution{Drake University}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize} 
+		\item Structure of \LaTeX\mbox{} Documents
+		\item Preamble
+		\item Classes
+		\item Class Options
+		\item Packages
+		\item Package Options
+	\end{itemize}
+\end{slide}
+%================================Slide 3
+\begin{slide}{Structure of \LaTeX\mbox{} document}
+	\begin{itemize}
+		\item Let's focus on the source file for documents (.tex).
+		\item Every file has the same structure.
+		\item A document is composed of a preamble and a body.
+		\item The preamble tells \LaTeX\mbox{} how the document is going to look (e.g. font size, margins) and the body is the actual text.
+		\item We will concentrate on the preamble in these next two presentations.
+		\item This presentation will look at Classes and Packages.
+	\end{itemize}
+\end{slide}
+%================================Slide 4
+\begin{slide}{Structure of \LaTeX\mbox{} document}
+	\begin{quote}
+		\texttt{$\backslash$documentclass[pdf]\{article\}} \\
+		\texttt{$\backslash$usepackage\{hhref\}} \\
+		\texttt{$\backslash$title\{Exploitation and Unfreedom\}}
+		\texttt{$\backslash$author\{Trin Turner\}} \\
+		\texttt{$\backslash$institution\{Drake University\}} \\
+		\texttt{$\backslash$begin\{document\}} \\
+		\texttt{$\backslash$maketitle} \\
+		\texttt{Some part of the body...} \\
+		\texttt{$\backslash$end{document}} \\
+	\end{quote}
+	\begin{itemize}
+		\item Above is a generic layout of \LaTeX\mbox{} commands for a very basic document.
+	\end{itemize}
+\end{slide}
+%================================Slide 5
+\begin{slide}{Preamble}
+	\begin{itemize}
+		\item The preamble is the lines of text before \texttt{$\backslash$begin\{document\}}.
+		\item Preamble contains information that will be used by \LaTeX\mbox{} when it generates a document.
+		\item The first two lines of a document are \texttt{$\backslash$documentclass} and \texttt{$\backslash$usepackage} commands.
+		\item \texttt{$\backslash$documentclass} tells \LaTeX\mbox{} what kind of document you are creating.
+		\item \texttt{$\backslash$usepackage} will load features you want to enable for the document.
+		\item The preamble can also contains other information, such as the title and author, along with the pages margins (covered in the next presentation).
+	\end{itemize}
+\end{slide}
+%================================Slide 6
+\begin{slide}{Classes}
+	\begin{itemize}
+		\item Classes inform \LaTeX\mbox{} what kind of document you are creating.
+		\item This is important because the layout of one type of document (e.g. article) is different from another (e.g. book)
+		\item The Class command also lets you change the default options for a document (e.g. font size, paper format)
+		\item The first line of every document should be the Class command\footnote{Actually, the author may insert comments that will not be read by \LaTeX\mbox{} before the Class command. Beginning a line with \% will tell \LaTeX\mbox{} to ignore everything on that line.}:
+			\begin{center}			
+				\texttt{$\backslash$documentclass[\textit{options}]\{\textit{class}\}}
+			\end{center}
+	\end{itemize}
+\end{slide}
+%================================Slide 7
+\begin{slide}{Class}
+	\begin{itemize}
+		\item The Class command consists of two operators, \textit{class} and \textit{options}.
+		\item \textit{Class} must be included because it specifically tells \LaTeX\mbox{} the document type.
+			\begin{itemize}
+				\item A list of common classes are listed on slide 9.
+			\end{itemize}
+		\item \textit{Options} lets the author choose her own default parameters for the document (e.g. font size).
+			\begin{itemize}
+				\item A list of common options are listed on slide 10.
+			\end{itemize}
+	\end{itemize}
+\end{slide}
+%================================Slide 8
+\begin{slide}{Class (con't)}
+	\begin{itemize}
+		\item Using the \texttt{[\textit{options}]} command is optional, but the author \emph{must} define the class:
+			\begin{center}
+				\begin{tabular}{l l}
+					Acceptable: & \texttt{$\backslash$documentclass\{article\}} \\
+					Acceptable: & \texttt{$\backslash$documentclass[12pt]\{article\}} \\
+					Not Acceptable: & \texttt{$\backslash$documentclass[12pt]}
+				\end{tabular}
+			\end{center}
+		\item When the author defines the class but chooses no options, the document uses the default options for that class.
+	\end{itemize}
+\end{slide}
+%================================Slide 9
+\begin{slide}{List of Common Classes}
+	\begin{itemize}
+		\item There are a handful of common classes:
+			\begin{center}
+				\begin{tabular}{l l}
+					\texttt{article} & Short/medium papers with sections. \\
+					\texttt{book} & for books with chapters and title page. \\
+					\texttt{report} & for shorter books (e.g. PhD. Thesis) \\
+					\texttt{slides} & for presentations (e.g. this tutorial) \\
+					\texttt{letter} & for professional/personal letters \\
+				\end{tabular}
+			\end{center}
+		\item Only one class can be used for each document.
+		\item Students should generally use the \texttt{article} class.
+		\item There are a lot of other classes, Google for ``classes, LaTeX''
+	\end{itemize}
+\end{slide}
+%================================Slide 10
+\begin{slide}{List of Common Class Options}
+	\begin{itemize}
+		\item Each class can be slightly modified by using options. Below are options for the \texttt{article} class (defaults are in bold).
+				\begin{tabular}{l p{2in} l}
+					\texttt{\textbf{10pt},11pt,12pt} & \\ 
+					\multicolumn{2}{l}{Font for the entire document.} \\
+					\texttt{\textbf{letterpaper},legalpaper,a4paper,a5paper} & \\
+					\multicolumn{2}{l}{The dimensions of the document.} \\
+					\texttt{\textbf{onecolumn},twocolumn} & \\
+					\multicolumn{2}{l}{The number of columns on the page.} \\
+					\texttt{\textbf{oneside},twoside} & \\
+					\multicolumn{2}{l}{Single--sided or two--sided print layout.} \\
+					\texttt{\textbf{portrait},landscape} & \\
+					\multicolumn{2}{l}{Either a vertical or horizontal orientation of the page.} \\
+				\end{tabular}
+	\end{itemize}
+\end{slide}
+%================================Slide 11
+\begin{slide}{Class Options (con't)}
+	\begin{itemize}
+		\item Unlike classes themselves, an author may use many classes, for example, she may want to use A4 paper and make it two--sided.
+		\item The author may separate several packages with a comma (,):
+			\begin{center}
+			\texttt{$\backslash$documentclass[a4,twoside]\{article\}}
+			\end{center}
+		\item Remember that only one class may be used for a document.
+		\item However, the author may use as many options as she wishes, as long as they are properly separated in the command.
+	\end{itemize}
+\end{slide}
+%================================Slide 12
+\begin{slide}{Review of Classes}
+	\begin{itemize}
+		\item Remember the first line of every document should be \texttt{$\backslash$documentclass[\textit{options}]\{article\}}
+		\item The author does not have to define the option, but does have to define the class.
+		\item Many people have created their own classes, Google for ``class, LaTeX'' for some examples. Undergraduate and Graduate Deparments often create their own class to meet certain spacing/margin requirements.
+	\end{itemize}
+\end{slide}
+%================================Slide 13
+\begin{slide}{Packages}
+	\begin{itemize}
+		\item Packages load features for a document you are typing.
+		\item For instance, you can use the \texttt{multicol} package so a document layout has multiple columns.
+		\item We can also use packages to load fancy headers or bibliography styles.
+		\item Packages are not as important as classes, since they are \emph{features}.
+		\item The \textit{packages} command should follow the \textit{document class} command:
+			\begin{center}
+			\texttt{$\backslash$documentclass[\textit{options}]\{\textit{package}\}}
+			\end{center}
+		\item \textit{Packages} are not required for a document.
+	\end{itemize}
+\end{slide}
+%================================Slide 14
+\begin{slide}{Packages (con't)}
+	\begin{itemize}
+		\item Similar to $\backslash$documentclass, we do not always need to use options for a package.
+		\item If we wanted to use the \texttt{graphicx} package (don't worry what it does yet):
+			\begin{center}
+			\texttt{$\backslash$usepackage\{graphicx\}}
+			\end{center}
+		\item We may want to use the dvips option too:
+			\begin{center}
+			\texttt{$\backslash$usepackage[dvips]\{graphicx\}}
+			\end{center}
+		\item Either command is acceptable, it depends on what you need for your document.
+	\end{itemize}
+\end{slide}
+%================================Slide 15
+\begin{slide}{Package Options}
+	\begin{itemize}
+		\item There are a lot of packages and options, so we really can't list many of the useful ones.
+		\item We will introduce applicable packages related to topics we encounter during this tutorial.
+		\item It is likely a document will use multiple packages (this one does), there are two ways to list them:
+				\begin{tabular}{l l}
+				Acceptable: & \texttt{$\backslash$usepackage\{babel,ams\}} \\
+				Acceptable: & \texttt{$\backslash$usepackage\{babel\}} \\
+										& \texttt{$\backslash$usepackage\{ams\}} \\
+				Not Acceptable:	&	\texttt{$\backslash$usepackage[german]\{babel,ams\}} \\
+				Acceptable: & \texttt{$\backslash$usepackage[german]\{babel\}} \\
+										& \texttt{$\backslash$usepackage\{ams\}}
+				\end{tabular}
+	\end{itemize}
+\end{slide}
+%================================Slide 16
+\begin{slide}{Packages Review}
+	\begin{itemize}
+		\item Packages enable features for our documents we may want to use.
+		\item The package command(s) come immediately after the \texttt{$\backslash$documentclass} command.
+		\item Multiple packages for a single document can be loaded in a single line or multiple lines.
+		\item We will introduce useful packages as we explore several features in \LaTeX\mbox{}.
+	\end{itemize}
+\end{slide}
+%================================Slide 17
+\begin{slide}{Preamble Review}
+	\begin{itemize}
+ 		\item The preamble of the document is from \texttt{$\backslash$documentclass} to \texttt{$\backslash$begin\{document\}}.
+	 	\item \texttt{$\backslash$documentclass} tells \LaTeX\mbox{} the type of document it wants to be.
+ 		\item \texttt{$\backslash$usepackage} loads features we want to use for our document.
+ 		\item \texttt{$\backslash$documentclass} \emph{must} be use for each document, \texttt{$\backslash$usepackage} is optional.
+ 	\end{itemize}
+\end{slide}
+%================================Slide 18
+\begin{slide}{Preamble Review (con't)}
+ 	\begin{itemize}
+ 		\item The preamble will look similar to the one shown below:
+		 		\texttt{$\backslash$documentclass[pdf]\{article\}} \\
+			 	\texttt{$\backslash$usepackage\{graphicx,fancybox\}} \\
+				\texttt{$\backslash$usepackage\{chem\}} \\
+				\texttt{$\backslash$begin\{document\}} \\
+		\item NEXT: Title, Author, and Page Layout.
+	\end{itemize}
+\end{slide}
+\end{document}

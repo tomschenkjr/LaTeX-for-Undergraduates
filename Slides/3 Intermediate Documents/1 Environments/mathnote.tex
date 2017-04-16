@@ -1,0 +1,116 @@
+\documentclass{article}
+%================================Packages
+\usepackage{makeidx}						%For making the index
+%================================Document Info.
+\makeindex											%For making the index
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			Math Environment} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+Typesetting mathematical formulas is by far the most elegant feature of \LaTeX. Formulas, numbers, and notation can be easily typeset using commands similar to those you've already learned---even when dealing with fractions or roots. There are a variety of ways to typeset mathematical formulas, all of which depend on what format you want. This lecture describes how to typeset math in an environment and for in--text formulas.
+
+\section{Typesetting Math}
+
+\subsection{Some Notation}
+
+Table \ref{tbl:eqlist} lists some basic mathematical operators and notation. None of these can be used without placing them in one of three environments: \texttt{$\backslash$begin\{math\}}, \texttt{$\backslash$begin\{displaymath\}}, and \texttt{$\backslash$begin\{equation\}}. Usually there is shorter notation for each one of these environments, but that will be discussed at length in the next sections. Just remember that these commands need to be placed in a math environment to work. As practice, try making a document using these math commands, but not using a math environment.
+
+\begin{table}[htbp]
+	\centering
+		\caption{List of Common Formulas}
+		\begin{tabular}{llll}
+			$\backslash$cdot 							  & $\cdot$				      & $\backslash$times 						& $\times$			 \\ \\
+			$\backslash$div  							  & $\div$  					  & $\backslash$frac\{num\}\{div\}& $\frac{num}{div}$ \\ \\
+			$\backslash$sqrt 							  & $\sqrt$ 					  & $< >$						  						& $< >$ 		  	 \\ \\
+			$\backslash$leq  							  & $\leq$  					  & $\backslash$geq   						& $\geq$			   \\ \\
+			$\backslash$a\^\{b\}					  & $a^{b}$					    & $\backslash$a\_\{b\}          & $a_{b}$				 \\ \\
+			$\backslash$sum  							  & $\sum$	 					  & $\backslash$int	 		 					& $\int$ 				 \\ \\
+			$\backslash$sum\_\{n=1\}\^{}\{10\}& $\sum_{n=1}^{10}$   & $\backslash$int\_\{0\}\^{}\{1\} & $\int_{0}^{1}$ \\ \\
+			$\backslash$equiv 					  	& $\equiv$   					& $\backslash$neq   						& $\neq$ 				 \\ \\
+			$\backslash$vec\{b\}							& $\vec{b}$				    & $\backslash$prod  						& $\prod$
+		\end{tabular}
+	\label{tbl:eqlist}
+\end{table}
+
+There are many more mathematical notations that you may use. Refer to the supplemental documents for more lists of symbols.
+
+Likewise, you may also use Greek letters, provided that they are in a math environment.\footnote{\LaTeX\ can typeset almost any language with the \texttt{babel} package; however, Greek letters can be used without using any extra packages.} The commands are simply a backslash $\backslash$ followed by the name, for instance, \texttt{$\backslash$alpha} is $\alpha$. It should be noted that \LaTeX differentiates between upper and lower case lettering. For instance, \texttt{$\backslash$xi} will produce $\xi$, whereas \texttt{$\backslash$Xi} will produce $\Xi$. Again, refer to the supplemental documents for the full Greek alphabet.
+
+\subsection{Environments}
+
+As I mentioned earlier, all math commands must be placed in an environment. The three basic environments are \texttt{math}, \texttt{displaymath}, and \texttt{equation}. Since typesetting math is a common tool, the environment command is often reduced to a symbol, such as \$. The next few sections will explicate the environments and their uses.
+
+\subsubsection{\texttt{math} Environment}
+
+The easiest way to present math formulas is using the \texttt{$\backslash$math} environment. Below is an example of this command:
+\begin{verbatim}
+Although it does not appear to be different, \begin{math}2+2=4\end{math}
+is formatted to fit the lines of the text.
+\end{verbatim}
+Here is its output: \\
+\\
+Although it does not appear to be any different, \begin{math}2+2=4\end{math} is formatted to fir the lines of the text.\\
+\\
+The \texttt{math} environment formats the text so it fits within paragraphs nicely. You can use \$ instead of traditional environment notation to have the same effect. Below is an example.
+\begin{verbatim}
+Although it does not appear to be different, $2+2=4$
+is formatted to fit the lines of the text.
+\end{verbatim}
+Here is its output:\\
+\\
+Although it does not appear to be any different, $2+2=4$ is formatted to fir the lines of the text.\\
+\\
+This is the simplest environment to use to typeset text. I suggest that you try to create a few documents using the \$ operator. I should point out that \$ is normally used when making mathematical notation within normal text. Normally, you want important equations to stand out against the rest of the text. Thus, the following two environment achieve this.
+
+\subsubsection{\texttt{displaymath} Environment}
+
+It's usually proper to display mathematical formulas with a couple of free lines above and below the formula. This gives it a clear and distinct space for the reader to notice and clearly understand. For instance, the equation below stand out against the main body of the text.
+\begin{displaymath}
+E=mc^{2}
+\end{displaymath}
+As you can see, the equation is spaced from the main body of the text. It may be harder to notice, but the characters are slightly larger than using the \texttt{math}/\$ environment. Below is what the code looks like:
+\begin{verbatim}
+It's usually proper to display mathematical formulas with a couple 
+of free lines above and below the formula. This gives it a clear 
+and distinct space for the reader to notice and clearly understand. 
+For instance, the equation below stand out against the main body of the text.
+\begin{displaymath}
+E=mc^{2}
+\end{displaymath}
+As you can see, the equation is spaced from the main body of the text.
+\end{verbatim}
+Essentially, all the \texttt{displaymath} environment does is format the equation so it stands out nicely. Similar to the \texttt{math} environment, there is also a shorter notation: $\backslash$[ and $\backslash$]. You can substitute this instead of \texttt{$\backslash$begin\{displaymath\}} and \texttt{$\backslash$end\{displaymath\}}, respectively.
+
+The next environment, \texttt{equation}, is essentially the same, but is a bit more powerful.
+
+\subsubsection{\texttt{equation} Environment}
+
+For academic journals, editors usually require that important equations are numbered. This would not be a bad idea for school papers either. The \texttt{equation} environment does exactly that, number the equations. Similar to the \texttt{displaymath} environment, this environment will space the equation from the rest of the body so it stands out. For instance, lets return to the above example:
+\begin{equation}\label{eq:relativity}
+E=mc^{2}
+\end{equation}
+Likewise, as you have noticed, it numbers the equation. As you may have guessed, if the order of equations were to change, \LaTeX\ will automatically renumber the equations.
+
+However, the purpose of numbering an equation is to make it easier to reference equations. Using a couple of commands, you can link an equation with a references. Instead of referring to it as ``Einstein's famous equation,'' I can simply refer to it as equation (\ref{eq:relativity}). Consider the code I used in the previous example:
+\begin{verbatim}
+\begin{equation} \label{eq:relativity}
+E=mc^{2}
+\end{equation}
+\end{verbatim}
+The \texttt{label} command assigns a name to the equation. \footnote{For this example, I have named it ``eq:relativity.'' As a matter of convention, when naming equations, people use \texttt{eq:}\textit{name}, because, as you will learn, this same method can be used to name tables or figures for the same reason.} When you want to refer to that equation, you can use the following command \texttt{$\backslash$ref\{eq:relativity\}}. This is helpful if the equation number happens to change.
+
+\section{Conclusion}
+
+There are three different math environment: \texttt{math}, \texttt{displaymath}, and \texttt{equation}, each with their own unique benefits. The \texttt{math} environment is meant for in--text equations, you can use \$ as an easier way to begin and end the environment. On the other hand, \texttt{displaymath} will separate the equation from the text so it will stand out. You can also use \texttt{$\backslash$[} and \texttt{$\backslash$]} to begin and end that environment as well.
+
+The \texttt{equation} environment is very powerful. It's similar to \texttt{displaymath} environment insofar as it separates the equation from the text. However, it will also number that equation based on the order it appears. Also, you may use \texttt{$\backslash$label\{\textit{name}\}} to assign the equation a name. If you want to refer to that equation by its number in the text, then you may use \texttt{$\backslash$ref\{\textit{name}\}}.
+
+\end{document}

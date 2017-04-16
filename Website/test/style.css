@@ -1,0 +1,337 @@
+/*
+Author: Tom Schenk Jr.
+Version: 1.0
+Description: Used in conjunction with http://www.genericface.com/LaTeX/
+Revision: 4/25/2006
+*/
+
+a {
+	color: #00679E; 
+	text-decoration: underline;	
+}
+
+a:visited {
+	color: #00679E; 
+	text-decoration: underline
+}
+
+a:hover {
+	color: #000000; 
+	text-decoration: none;
+}
+
+a:active {
+	color: #000000; 
+	text-decoration: none;		
+}
+
+#body {
+	background:#ffff url(image/background.jpg) center repeat-y;
+	width: 760px;
+	margin: 0 auto;
+	font-size: 11px; 
+	font-weight: normal; 
+	color: #333333; 
+	line-height: 19px; 
+	vertical-align: top; 
+	font-family: verdana, arial, geneva, helvetica;
+}
+
+#header {
+	background:#fff url(image/header.jpg) no-repeat bottom; 	
+ 	height: 183px;
+	margin: 0 auto;
+	width:760px;
+	padding:0;
+	border:#fc9 0px solid;
+}
+	
+#topnav	{
+	list-style:none;
+	margin:0 auto;	
+	padding:12px 20px 0 0;
+	text-align:right;	
+}
+
+#topnav li {
+	list-style:none;
+	display:inline;
+	padding:0;
+	margin:0;
+	font-weight:bold;
+}
+
+#topnav li a:link, #topnav li a:visited {
+	text-decoration:none;	
+	color:#CCCCCC;
+	border-bottom: none;
+}
+
+#topnav li a:hover, #topnav li a:active {
+	color:#D0D6EF;	
+}
+
+#content {
+	margin:0 auto;
+	padding:0;
+	width:740px;
+}
+
+.section {
+	font-size: 13px; 
+	font-weight: bold; 
+	color: #455367; 
+	vertical-align: top; 
+	font-family: georgia, serif;	
+}
+
+.subsection {
+	font-size: 11px; 
+	font-weight: bold; 
+	color: #666C76; 
+	vertical-align: top; 
+	font-family: georgia, serif;	
+}	
+
+#sidenav {
+	width: 220px;
+	float: left;
+	padding: 0px 8px 10px 8px;
+	margin: 0px;
+	display:inline;
+}
+
+#sidetext {
+	font-size: 10px; 
+	font-weight: normal; 
+	color: #666666; 
+	line-height: 15px; 
+	font-family: arial, verdana, tahoma, helvetica, sans-serif;
+	background: url(image/boxtop.gif) no-repeat left top;
+}
+
+#sidetext ul {
+	background: url(image/boxbottom.gif) no-repeat left bottom;
+}
+	
+
+
+
+
+
+
+
+
+
+
+body {
+	margin: 0px; 
+	padding: 0px; 
+	height: 100%; 
+	background-color: #E6C633;
+}
+
+html {
+	height: 100%;
+}
+
+a {
+	color: #00679E; 
+	text-decoration: underline;	
+}
+
+a:visited {
+	color: #00679E; 
+	text-decoration: underline
+}
+
+a:hover {
+	color: #000000; 
+	text-decoration: none;
+}
+
+a:active {
+	color: #000000; 
+	text-decoration: none;		
+}
+
+.bodytext {
+	font-size: 11px; 
+	font-weight: normal; 
+	color: #333333; 
+	line-height: 19px; 
+	vertical-align: top; 
+	font-family: verdana, arial, geneva, helvetica;		
+}
+
+.header {
+	font-size: 13px; 
+	font-weight: bold; 
+	color: #455367; 
+	vertical-align: top; 
+	font-family: georgia, serif;	
+}
+
+.subheader {
+	font-size: 11px; 
+	font-weight: bold; 
+	color: #666C76; 
+	vertical-align: top; 
+	font-family: georgia, serif;	
+}
+
+.list {
+	font-size: 11px; 
+	font-weight: normal; 
+	color: #256EA9; 
+	line-height: 19px; 
+	vertical-align: top; 
+	font-family: verdana, arial, geneva, helvetica;
+}
+
+.bluetxt {
+	font-size: 11px; 
+	font-weight: normal; 
+	color: #256EA9; 
+	font-family: verdana, arial, geneva, helvetica;
+}
+
+.contact {
+	font-size: 10px; 
+	font-weight: normal; 
+	color: #666666; 
+	line-height: 15px; 
+	font-family: arial, verdana, tahoma, helvetica, sans-serif;
+}
+
+.separator {
+	font-size: 12px; 
+	font-weight: normal; 
+	color: #C8C8C8; 
+	font-family: georgia, serif;
+}
+
+td {
+	font-size: 11px; 
+	font-weight: normal; 
+	color: #5F5F5F; 
+	line-height: 19px; 
+	vertical-align: top; 
+	font-family: verdana, arial, geneva, helvetica;
+}
+
+tr {
+	font-size: 11px; 
+	font-weight: normal; 
+	color: #5F5F5F; 	
+	line-height: 19px; 
+	vertical-align: top; 
+	font-family: verdana, arial, geneva, helvetica;
+}
+
+p {
+	font-size: 11px; 
+	font-weight: normal; 
+	color: #5F5F5F; 
+	line-height: 19px; 
+	vertical-align: top; 
+	font-family: verdana, arial, geneva, helvetica;
+}
+
+.contentfade {
+	background: url(images/content_fade_top.gif) repeat-x top
+}
+
+.navi {
+	font-size: 11px; 
+	font-weight: normal; 
+	color: #0367A5; 
+	text-decoration: none; 
+	font-family: georgia, serif;
+}
+
+.navi:link {
+	color: #0367A5; 
+	text-decoration: none;
+}
+
+.navi:visited {
+	color: #0367A5; 
+	text-decoration: none;
+}
+
+.navi:hover {
+	color: #000000; 
+	text-decoration: none; 
+	border-bottom: #B4B4B4 1px dashed;
+}
+
+.navi:active {
+	color: #000000; 
+	text-decoration: none; 
+	border-bottom: #B4B4B4 1px dashed;
+}
+	
+.tableb {
+	border-right: #c2c2c2 1px solid; 
+	border-left: #c2c2c2 1px solid; 
+	border-bottom: #c2c2c2 1px solid; 
+	border-top: #c2c2c2 1px solid; 
+	padding-top: 5px; 
+	padding-bottom: 5px; 
+	padding-left: 5px; 
+	padding-right: 5px; 
+	background-color: #fcfcfc;	
+}
+
+.textfield {
+	border-right: #b6ab77 1px solid; 
+	border-left: #b6ab77 1px solid; 
+	border-top: #b6ab77 1px solid; 
+	border-bottom: #b6ab77 1px solid; 
+	padding-right: 4px; 
+	padding-left: 4px; 
+	font-family: franklin gothic book, microsoft sans serif, tahoma, verdana; font-size: 11px; color: #333333; 
+	letter-spacing: 0.03em; 
+	background-color: #f6e177; 
+	height: 17px
+}
+
+.textarea {
+	border-right: #99afc2 1px solid; 
+	border-left: #99afc2 1px solid; 
+	border-top: #99afc2 1px solid; 
+	border-bottom: #99afc2 1px solid; 
+	padding-right: 4px; 
+	padding-left: 4px; 
+	padding-top: 4px; 
+	padding-bottom: 4px; 
+	font-family: franklin gothic book, microsoft sans serif, tahoma, verdana; 
+	font-size: 11px; color: #333333; 
+	letter-spacing: 0.03em; 
+	background-color: #f6e177; 
+	scrollbar-base-color: #f6e177; 
+	scrollbar-arrow-color: #828282; 
+	scrollbar-darkshadow-color: #eeeeee; 
+	scrollbar-shadow-color: #eeeeee;
+}
+
+H1 { 
+	text-indent: 1em; 
+	font-size: 10px; 
+	line-height: 10pt; 
+	font-weight: normal; 
+	color: #666666; 
+	line-height: 15px; 
+	font-family: arial, verdana, tahoma, helvetica, sans-serif;
+}
+
+H2 { 
+	text-indent: 2.5em; 
+	font-size: 10px; 
+	line-height: 16pt; 
+	font-weight: normal; 
+	color: #666666; 
+	line-height: 15px; 
+	font-family: arial, verdana, tahoma, helvetica, sans-serif;
+}

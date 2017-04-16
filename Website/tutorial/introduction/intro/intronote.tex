@@ -1,0 +1,220 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 10/24/2005
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+\documentclass{article}
+%================================Packages
+\usepackage{graphicx}
+\usepackage{verbatim}   % useful for program listings
+\usepackage{color}      % use if color is used in text
+\usepackage{subfigure}  % use for side-by-side figures
+
+\usepackage{amsmath}    % need for subequations
+%================================Document Info.
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			Introduction} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2})
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section*{Example Document}
+
+This output is an excerpt from a sample document written by Harvey Gould. To view the source code, return to the website and open the \texttt{.txt} file.
+
+\section{Output}
+
+\begin{center}
+Introduction to \LaTeX \\   % \\ = new line
+Harvey Gould \\
+January 16, 2005
+\end{center}
+
+\section{Introduction}
+\TeX\ looks more difficult than it is. It is
+almost as easy as $\pi$. See how easy it is to make special
+symbols such as $\alpha$,
+$\beta$, $\gamma$,
+$\delta$, $\sin x$, $\hbar$, $\lambda$, $\ldots$ We also can make
+subscripts
+$A_{x}$, $A_{xy}$ and superscripts, $e^x$, $e^{x^2}$, and
+$e^{a^b}$. We will use \LaTeX, which is based on \TeX\ and has
+many higher-level commands (macros) for formatting, making
+tables, etc. More information can be found in Ref.~\cite{latex}.
+
+We just made a new paragraph. Extra lines and spaces make no
+difference. Note that all formulas are enclosed by
+\$ and occur in \textit{math mode}.
+
+The default font is Computer Modern. It includes \textit{italics}
+or {\it italics}, \textbf{boldface} or {\bf boldface},
+\textsl{slanted} or {\sl slanted}, and \texttt{monospaced} or {\tt
+monospaced} (typewriter) fonts.
+
+\section{Equations}
+Let us see how easy it is to write equations.
+\begin{equation}
+\Delta =\sum_{i=1}^N w_i (x_i - \bar{x})^2 .
+\end{equation}
+It is a good idea to number equations, but we can have a
+equation without a number by writing
+\begin{equation}
+P(x) = \frac{x - a}{b - a} , \nonumber
+\end{equation}
+and
+\begin{equation}
+g = \frac{1}{2} \sqrt{2\pi} . \nonumber
+\end{equation}
+Note the different ways of writing a ratio.
+
+We can give an equation a label so that we can refer to it later.
+\begin{equation}
+\label{eq:ising}
+E = -J \sum_{i=1}^N s_i s_{i+1} ,
+\end{equation}
+Equation~(\ref{eq:ising}) expresses the energy of a configuration
+of spins in the Ising model.\footnote{It is necessary to process (typeset) a
+file twice to get the counters correct.}
+
+We can define our own macros to save typing. For example, suppose
+that we introduce the macros:
+\begin{verbatim}
+ \newcommand{\lb}{{\langle}}
+ \newcommand{\rb}{{\rangle}}
+\end{verbatim}
+\newcommand{\lb}{{\langle}}
+\newcommand{\rb}{{\rangle}}
+Then we can write the average value of $x$ as
+\begin{verbatim}
+\begin{equation}
+\lb x \rb = 3
+\end{equation}
+\end{verbatim}
+The result is
+\begin{equation}
+\lb x \rb = 3 .
+\end{equation}
+
+Examples of more complicated equations:
+\begin{equation}
+I = \! \int_{-\infty}^\infty f(x)\,dx \label{eq:fine}.
+\end{equation}
+We can do some fine tuning by adding small amounts of horizontal
+spacing:
+\begin{verbatim}
+ \, small space       \! negative space
+\end{verbatim}
+as is done in Eq.~(\ref{eq:fine}).
+
+We also can align several equations:
+\begin{align}
+a & = b \\
+c &= d ,
+\end{align}
+or number them as subequations:
+\begin{subequations}
+\begin{align}
+a & = b \\
+c &= d .
+\end{align}
+\end{subequations}
+
+We can also have different cases:
+\begin{equation}
+\label{eq:mdiv}
+m(T) =
+\begin{cases}
+0 & \text{$T > T_c$} \\
+\bigl(1 - [\sinh 2 \beta J]^{-4} \bigr)^{\! 1/8} & \text{$T < T_c$}
+\end{cases}
+\end{equation}
+write matrices
+\begin{eqnarray}
+\textbf{T} &=&
+\begin{pmatrix}
+T_{++} \hfill & T_{+-} \\
+T_{-+} & T_{--} \hfill 
+\end{pmatrix} , \nonumber \\
+& =&
+\begin{pmatrix}
+e^{\beta (J + B)} \hfill & e^{-\beta J} \hfill \\
+e^{-\beta J} \hfill & e^{\beta (J - B)} \hfill
+\end{pmatrix}.
+\end{eqnarray}
+and 
+\newcommand{\rv}{\textbf{r}}
+\begin{equation}
+\sum_i \vec A \cdot \vec B = -P \! \int \! \rv \cdot
+\hat{\mathbf{n}}\, dA = P \! \int \! {\vec \nabla} \cdot \rv\, dV.
+\end{equation}
+
+\section{Tables}
+Tables are a little more difficult until you get the knack. TeX
+automatically calculates the width of the columns.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|r|l|}
+\hline
+lattice & $d$ & $q$ & $T_{\rm mf}/T_c$ \\
+\hline
+square & 2 & 4 & 1.763 \\
+\hline
+triangular & 2 & 6 & 1.648 \\
+\hline
+diamond & 3 & 4 & 1.479 \\
+\hline
+simple cubic & 3 & 6 & 1.330 \\
+\hline
+bcc & 3 & 8 & 1.260 \\
+\hline
+fcc & 3 & 12 & 1.225 \\
+\hline
+\end{tabular}
+\caption{\label{tab:5/tc}Comparison of the mean-field predictions
+for the critical temperature of the Ising model with exact results
+and the best known estimates for different spatial dimensions $d$
+and lattice symmetries.}
+\end{center}
+\end{table}
+
+\section{Lists}
+
+Some example of formatted lists include the
+following:
+
+\begin{enumerate}
+
+\item bread
+
+\item cheese
+
+\end{enumerate}
+
+\begin{itemize}
+
+\item Tom
+
+\item Dick
+
+\end{itemize}
+
+\begin{thebibliography}{5}
+
+\bibitem{latex}Helmut Kopka and Patrick W. Daly, \textsl{A Guide to
+\LaTeX: Document Preparation for Beginners and Advanced Users},
+third edition, Addison-Wesley (1999).
+
+\bibitem{website}Some useful links are
+given at {\tt {<}http://sip.clarku.edu/tutorials/TeX/{>}}.
+
+\end{thebibliography}
+
+\end{document}
+

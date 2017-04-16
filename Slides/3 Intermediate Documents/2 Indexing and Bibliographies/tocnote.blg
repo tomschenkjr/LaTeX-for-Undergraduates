@@ -1,0 +1,8 @@
+This is BibTeX, Version 0.99cThe top-level auxiliary file: C:\Documents and Settings\Tom\My Documents\LaTeX Tutorial\Website\tutorial\intermediate\indexing\toc\tocnote.aux
+The style file: plainnat.bst
+Database file #1: tocnotebib.bib
+You're missing a field name---line 32 of file tocnotebib.bib
+ : @book{Padilla95, 
+ :                  %I've included this to show that not all references need to be included in the bibliography.
+I'm skipping whatever remains of this entry
+(There was 1 error message)

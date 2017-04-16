@@ -1,0 +1,110 @@
+This is pdfeTeX, Version 3.141592-1.20a-rc7.2-2.2 (MiKTeX 2.4) (preloaded format=latex 2005.8.6)  11 JAN 2006 02:52
+entering extended mode
+**C:/Documents*and*Settings/Tom/My*Documents/LaTeX*Tutorial/Website/tutorial/intermediate/environments/table/tablenote.t
+ex
+
+(C:/Documents and Settings/Tom/My Documents/LaTeX Tutorial/Website/tutorial/intermediate/environments/table/tablenote.te
+x
+LaTeX2e <2003/12/01>
+Babel <v3.8a> and hyphenation patterns for english, french, german, ngerman, dumylang, nohyphenation, loaded.
+(C:\texmf\tex\latex\base\article.cls
+Document Class: article 2004/02/16 v1.4f Standard LaTeX document class
+(C:\texmf\tex\latex\base\size10.clo
+File: size10.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (C:\texmf\tex\latex\base\makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write3
+
+Writing index file tablenote.idx
+(tablenote.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 18.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 26.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 26.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 26.
+
+[1
+
+{sfonts.map}]
+Overfull \hbox (60.79604pt too wide) in paragraph at lines 45--46
+\OT1/cmr/m/n/10 ter be-tween the col-umn jus-ti-fi-ca-tions will cre-ate ver-ti-cal lines (e.g. $\OMS/cmtt/m/n/10 n$\OT1
+/cmtt/m/n/10 begin\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 tabular\OMS/cmtt/m/n/10 gf\OT1/cmtt/m/n/10 l|l|c\OMS/cmtt/m/n/10 g\
+OT1/cmr/m/n/10 ).
+ []
+
+
+Overfull \hbox (68.86072pt too wide) in paragraph at lines 68--69
+[]\OT1/cmr/m/n/10 Likewise, you may span a cell across mul-ti-ple columns with $\OMS/cmtt/m/n/10 n$\OT1/cmtt/m/n/10 mult
+icolumn\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 #\OMS/cmtt/m/n/10 gf\OT1/cmtt/m/it/10 x\OMS/cmtt/m/n/10 gf\OT1/cmtt/m/it/10 co
+ntent\OMS/cmtt/m/n/10 g\OT1/cmr/m/n/10 ,
+ []
+
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 111.
+ (C:\texmf\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 111.
+ [3] (tablenote.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 306 strings out of 95519
+ 3364 string characters out of 1189652
+ 48922 words of memory out of 1049626
+ 3444 multiletter control sequences out of 35000
+ 10002 words of font info for 36 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 607
+ 23i,8n,19p,825b,243s stack positions out of 1500i,500n,5000p,200000b,32768s
+ 55 PDF objects out of 300000
+ 0 named destinations out of 300000
+ 1 words of extra memory for PDF output out of 65536
+<C:\texmf\fonts\type1\bluesky\cm\cmbx10.pfb><C:\texmf\fonts\type1\bluesky\cm\cmti10.pfb><C:\texmf\fonts\type1\bluesky\
+cm\cmitt10.pfb><C:\texmf\fonts\type1\bluesky\cm\cmtt8.pfb><C:\texmf\fonts\type1\bluesky\cm\cmr8.pfb><C:\texmf\fonts\type
+1\bluesky\cm\cmr6.pfb><C:\texmf\fonts\type1\bluesky\cm\cmsy10.pfb><C:\texmf\fonts\type1\bluesky\cm\cmtt10.pfb><C:\texmf\
+fonts\type1\bluesky\cm\cmr7.pfb><C:\texmf\fonts\type1\bluesky\cm\cmr10.pfb><C:\texmf\fonts\type1\bluesky\cm\cmbx12.pfb><
+C:\texmf\fonts\type1\bluesky\cm\cmti12.pfb><C:\texmf\fonts\type1\bluesky\cm\cmr12.pfb><C:\texmf\fonts\type1\bluesky\cm\c
+mr17.pfb><C:\texmf\fonts\type1\bluesky\cm\cmcsc10.pfb>
+Output written on tablenote.pdf (3 pages, 85722 bytes).

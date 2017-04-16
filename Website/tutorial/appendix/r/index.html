@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>GNU R and LaTeX</title>
+
+	<meta name="Description" content="A LaTeX tutorial that is geared towards the use of LaTeX by undergraduates.">
+	<meta name="Keywords" content="LaTeX, Tutorial, Drake University, LaTeX 2e">
+	<meta http-equiv="Pragma" CONTENT="no-cache">
+	<meta http-equiv="Cache-Control" CONTENT="no-cache">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body margin="0px" background="/LaTeX/images/background.jpg">
+<div align="center" style="height:100%; width:100%">
+  <table width="778" border="0" cellspacing="0" cellpadding="0" height="100%">
+    <tr>
+      <td width="6" nowrap><img style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='/LaTeX/images/table_border_left.png', sizingMethod='scale'); width: 6px; height: 100%"  src="/LaTeX/images/spacer.jpg"></td>
+      <td width="770" background="/LaTeX/images/table_bg.gif" valign="top" nowrap>
+        <div align="center">
+          <table width="751" border="0" cellspacing="0" cellpadding="0">
+              <td colspan=2><a href="/LaTeX/"><img src="/LaTeX/images/banner.jpg" width="751" height="155" border="0"  alt="Home"></a></td> 
+	      <td background="/LaTeX/images/navi_bg.jpg">
+	     </tr>
+	</table>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000"
+</body>
+</html>
+          <table width="751" border="0" cellspacing="0" cellpadding="0" class="contact">
+	    <tr> 
+              <td colspan="5" height="20" nowrap><a href="/LaTeX/">Home</a>>><a href="/LaTeX/tutorial">Tutorial</a>>>3<sup>rd</sup> Party Applications and L<sup>A</sup>T<sub>E</sub>X>>R/GNU S</td>
+            </tr>
+ 	     <tr>
+	      <td colspan="5" height="20" nowrap></td>
+            </tr>
+            <tr> 
+              <td width="15" nowrap></td>
+              <td valign="top" width="209"><a href="http://www.r-project.org/"><img src="/LaTeX/images/rinstall.jpg" width="209" height="106" border="0" alt="Download GNU R"></a><br>
+                <br>
+                <a href="http://www.ci.tuwien.ac.at/~leisch/Sweave/"><img src="/LaTeX/images/sweaveinstall.jpg" width="209" height="106" border="0" alt="Download Sweave"></a><br>
+                <br>
+                <table border="0" cellspacing="0" cellpadding="0" width="209" background="/LaTeX/images/boxborders_bg.gif" class="contact">
+                  <tr> 
+                    <td colspan="3" height="15" nowrap><img src="/LaTeX/images/boxborders_top.gif" width="209" height="15" border="0" alt=""></td>
+                  </tr>
+                  <tr> 
+                    <td width="15" nowrap></td>
+                     <td valign="top" class="contact">Questions? Broken Link? Contact <a href="mailto:tls007@drake.edu">Tom Schenk</a> with questions about LaTeX or the website.<br>      
+                      </td>
+
+                    <td width="15" nowrap></td>
+                  </tr>
+                  <tr> 
+                    <td colspan="3" height="15" nowrap><img src="/LaTeX/images/boxborders_bottom.gif" width="209" height="15" border="0" alt=""></td>
+                  </tr>
+                </table>
+              </td>
+              <td width="15" nowrap></td>
+              <td valign="top" width="497"> 
+                <p><span class="header">A.2 R/GNU S Statistical Suite</span><br>
+			<b>Target Majors:</b> Actuarial/Statistics, Economics, Mathematics, Engineering<br>
+			<b>Supplemental Docs</b>
+			<UL>
+			<LI> <i>An Introduction to R</i> <a href="http://cran.r-project.org/doc/manuals/R-intro.html">HTML</a> <a href="http://cran.r-project.org/doc/manuals/R-intro.pdf">PDF</a>
+			<LI> <a href="http://www.ci.tuwien.ac.at/~leisch/Sweave/Sweave-manual-20050914.pdf">Sweave manual (PDF)</a>.
+			</UL>
+		 
+		  Topics covered in this slide:
+		  <UL>
+		  <LI> Review of R/GNU S statistical suite.
+		  <LI> Sweave package for R/GNU S.
+		  </UL>
+
+		  <a href="http://www.r-project.org/">GNU R</a> is a free statistical suite modeled after the commercial <i>S-plus</i> statistical suite (developed by the same person). In this respect, GNU R is sometimes referred to as GNU S. The Sweave library allows users to write R code in a L<sup>A</sup>T<sub>E</sub>X document. When the document is processed, the L<sup>A</sup>T<sub>E</sub>X code will be interpreted as text, while the GNU R code will be recognized and outputed as well. That is, as the document is generated, your calculations are also being generated an inserted into your document (including graphs and figures)! Normally, graphs/figures/etc. are generated first and saved as .eps files. Those objects are then included using the <font face="courier">\includegraphics</font> command. Using Sweave, in conjunction with R and L<sup>A</sup>T<sub>E</sub>X, it is a one-step process where graphs are generated and included as it is compiled. Tables can be generated under similar circumstances. Nevertheless, GNU R is a sophisticated and technical suite, so this is namely targeted towards those using complicated statistical analysis. Below is a link to the needed programs and websites explaining GNU R and Sweave.
+
+		  <p class="subheader">GNU R</p>
+		  As previously mentioned, GNU R, or simply R, is an open-source implementation of <i>S-plus</i> that is compatible with Windows, Linux, and MacOS. Sometimes it is referred to as GNU S after it's commercial counterpart. However, it is a very technical and sophisticated suite. Instead of using menu's (e.g. a Graphical User Interface (GUI)), it is command line driven where the operator must know typed commands (<a href="http://www.r-project.org/screenshots/desktop.jpg">screenshot</a>). Nevertheless, if you are apt to using sophisticated statistical analysis (e.g. OLS regression, Probit/Tobit, panel data, etc.), I strongly suggest that you use this program. You can get a better overview of the program at <a href="http://www.r-project.org/">The R Project for Statistical Computing</a>. You may also download the program from their <a href="http://cran.r-project.org/mirrors.html">downloads</a> section. They have a handful of <a href="http://cran.r-project.org/manuals.html">manuals</a> available, my particular favorite is <a href="http://cran.r-project.org/doc/manuals/R-intro.html"><i>An Introduction to R</i></a>.
+
+		  <p class="subheader">Sweave</p>
+		  Along with R, you will need the Sweave library. This is the actual program that will parse the code for L<sup>A</sup>T<sub>E</sub>X and R commands. Similar to L<sup>A</sup>T<sub>E</sub>X, R uses packages to load extra features. Thus, Sweave is not an independent program, but a package loaded into R. A variety of documents is located at <a href="http://www.ci.tuwien.ac.at/~leisch/Sweave/">Sweave's website</a> which are helpful. Particularly helpful is <a href="http://www.ci.tuwien.ac.at/~leisch/Sweave/Sweave-dsc2003.pdf"><i>Sweave and Beyond</i></a>, a conceptual overview, and the <a href="http://www.ci.tuwien.ac.at/~leisch/Sweave/Sweave-manual-20050914.pdf">Sweave manual</a>. Of course, it assumes you are familar with GNU R.
+
+		  <p class="subheader">A Few Comments</p>
+		  Sweave requires that the author type her document into R, generally, this may not be desireable for the author. Nevertheless, (1) knowing R is very useful and (2) this is particularly handy when working with a lot of graphs or tables. I'd also like to thank <a href="http://c1p8.ing.unitn.it:8080/blog/">Paolo Bosetti</a> for his <a href="http://c1p8.ing.unitn.it:8080/blog/2005/10/12/latex-to-the-power-of-r/">blog entry</a> on Sweave.<br>
+		  <br>
+		  There is no slide show for this section.
+
+              </td>
+              <td width="15" nowrap></td>
+            </tr>
+            <tr> 
+              <td colspan="5" height="40" nowrap></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td width="6" nowrap><img style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/LaTeX/images/table_border_right.png', sizingMethod='scale'); width: 6px; height: 100%" src="/LaTeX/images/spacer.jpg"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+\documentclass{article}
+%================================Packages
+\usepackage{makeidx}						%For making the index
+\usepackage{setspace}
+%================================Document Info.
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			Linebreaks, Paragraphs, and Sections} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+This lecture is the first on the body of a \LaTeX\ document. The material in the body is what appears in the documents output. This lecture reviews some basic commands: creating linebreaks and paragraphs. It will also introduce sectioning commands. Sectioning is a new concept for WYSIWYG users since it utilizes one of the powerful features of \LaTeX\ : autonumbering.
+
+\section{Body}
+
+The border between the preamble and body is the \texttt{$\backslash$begin\{document\}} command. As it implies, this command tells \LaTeX\ when to start the actual document. The information that appears after this command is considered the body. Information that appears before this command is the preamble.
+
+\subsection{Linebreaks}
+
+Linebreaking, or creating a new line, might seem like a trite topic, but it still worth mentioning. Normally, hitting return is adequate for making a new line; however, sometimes it is necessary to use a command to create a linebreak---especially a linebreak after a series of commands. The author may use \texttt{$\backslash$$\backslash$} to create a new linebreak.
+
+\subsection{Paragraphs}
+
+A new paragraph is created after two consecutive linebreaks. By default, \LaTeX\ will indent the newly created paragraphs, but this can be stopped with the \texttt{$\backslash$noindent} command before the paragraph. Likewise, if the \textit{document class} do not indent by default, then the author may use \texttt{$\backslash$indent} to create an indent.
+
+The author may also change the size of the indentation by using the \texttt{$\backslash$setlength} in the \textit{preamble} (recall that the preamble is everything before \texttt{$\backslash$begin\{document\}}). \texttt{$\backslash$setlength\{$\backslash$\{parindent\}\{\textit{\#}pt\}} where \# is a number that sets the indent length. This command will apply the indentation parameter to the entire document.
+
+Normally, professors require that the document is double spaced. By default, \LaTeX\ outputs in single line spacing. The \texttt{setspace} package lets the author change the spacing. \texttt{$\backslash$singlespacing}, \texttt{$\backslash$onehalfspacing}, and \texttt{$\backslash$doublespacing} will change the documents spacing after each corresponding command. That is, a portion of the document can be single spaced, while other parts are double or one half spaced.
+
+\subsection{Sections}
+
+You've been seen several examples of sections in this and previous lecture notes. Sections are similar to chapters, except on a smaller scale. They are a useful way of presenting a structured argument in a document. Sections are created with \texttt{$\backslash$section\{\textit{Name}\}}, where \textit{Name} is the name of the section. Likewise, you can create subsections using \texttt{$\backslash$subsection\{\textit{Name}\}}. You can create subsub\ldots section by simply adding an additional ``sub.'' This section's name is ``Body'' and the subsection is ``Sections.''
+
+As you may have noticed, sections and subsections are numbered. \LaTeX\ automatically numbers each section, so if you were rearrange the ordering of a section, it will be renumbered. Likewise, the section names and numbers will be included in the table of contents, if you choose to have one (table of contents covered in Lecture 3.2.1).
+
+Chapters are created using \texttt{$\backslash$chapter\{\textit{Name}\}} command. However, chapters can only be used with the \texttt{book} or \texttt{report} class. \texttt{$\backslash$part\{\textit{Name}\}} will separate the document into parts without interfering with the chapter numbers.
+
+If you do not want to number any of the sectioning commands (e.g. section, chapter, or part), then include an asterisk in the command: \texttt{$\backslash$section*\{\textit{Name}\}}, \texttt{$\backslash$chapter*\{\textit{Name}\}}, etc.
+
+Overall, I recommend that you make use of the sectioning commands. It will make the organization of your paper clearer and easier to read.
+
+\section{Conclusion}
+
+We've covered a bit of ground in the last few tutorials. Below is a sample code incorporating some things learned in the last few lectures:
+
+\subsection{Sample Code}
+
+\begin{verbatim}
+\documentclass{article}
+\usepackage{setspace}
+\begin{document}
+\doublespacing
+\section*{Introduction}
+Here is an example of double--spaced text explained in this tutorial. 
+\LaTeX\ normally outputs with single--spaced text, but the 
+$\backslash$doublespacing allows double spacing. It is important, however, 
+to include the \texttt{setspace} package in the \textit{preamble}. This is 
+an excellent example of the interaction between the preamble and the body.
+
+\onehalfspacing
+Now we turn to a one--half spacing example. This sort of spacing isn't used 
+as much, but is a good substitute for double--spacing. Notice that we can 
+combine several different spacing styles within one document. However, this 
+sort of dichotomous typing is rarely used.
+\end{document}
+\end{verbatim}
+
+\subsection{Sample Output}
+\section*{Introduction}
+\doublespacing
+Here is an example of double--spaced text explained in this tutorial. \LaTeX\ normally outputs with single--spaced text, but the $\backslash$doublespacing allows double spacing. It is important, however, to include the \texttt{setspace} package in the \textit{preamble}. This is an excellent example of the interaction between the preamble and the body.
+
+\onehalfspacing
+Now we turn to a one--half spacing example. This sort of spacing isn't used as much, but is a good substitute for double--spacing. Notice that we can combine several different spacing styles within one document. However, this sort of dichotomous typing is rarely used.
+
+
+\end{document}

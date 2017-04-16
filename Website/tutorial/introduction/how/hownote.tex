@@ -1,0 +1,86 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 10/25/2005
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+\documentclass{article}
+%================================Packages
+
+%================================Document Info.
+
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			How \LaTeX\ Works} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2)
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+Now that we know the gist of \LaTeX\, we must now know how \LaTeX\ works. Whereas word processors have a single file used for viewing and editing, \LaTeX\ uses a source file (.tex) that is edited and ``compiled'' to make readable outputs (.pdf or .ps). All we need to edit documents is an ASCII text editor (basically any text editor) to save the .tex file.
+
+\section{Files}
+
+\subsection{.tex File}
+
+The initial process to creating a \LaTeX\ document is to start with a source file (.tex). Fortunately, we do not even need to have \LaTeX\ installed on the computer to type a .tex file. Where word processors need a program (e.g. Word, WordPerfect) to create a document, we just need a text editor (Notepad/Wordpad for Windows, TextEditor for MacOS). Below is an example of a very basic .tex file.
+\begin{center}
+\begin{tabular}{l}
+\texttt{$\backslash$documentclass[pdf]\{article\}} \\
+\texttt{$\backslash$usepackage\{hhref\}} \\
+\texttt{$\backslash$title\{The Dogma of Cultural Relativity\}} \\
+\texttt{$\backslash$author\{Scott Belcher\}} \\
+\texttt{$\backslash$begin\{document\}} \\
+\texttt{$\backslash$maketitle} \\
+\texttt{$\backslash$section\{Introduction\}} \\
+\textit{Introductory Material}\ldots \\
+\texttt{$\backslash$section\{Body\}} \\
+\textit{The body of the document}\ldots \\
+\texttt{$\backslash$end\{document\}} \\
+\end{tabular}
+\end{center}
+
+\subsection{Compiling}
+
+Compiling a document converts the .tex file to a readable output, such as a PDF or PostScript file. The compiling process leaves the original .tex document unmodified when the readable file is produced. The compiling process itself requires us to install \LaTeX\ so we'll defer a deeper discussion until Lecture 2.3. Nevertheless, we can briefly discuss the broad process.
+
+Below is a simple diagram illustrating how the source file becomes a readable output. It should be noted that a Device Independent File (.dvi) is created from the source file (.tex). This file format is unique to \LaTeX\ but can be viewed by anyone with a DVI viewer. Normally, a DVI viewer is packaged with a \LaTeX\ installation program, so any \LaTeX\ user can view a DVI file. Although this file is ``readable,'' we'll reserve the term strictly for PostScript and PDF files which are meant for mass distribution and viewing.
+\begin{center}
+\begin{tabular}{c c c c c}
+Source File (.tex) & $\rightarrow$ & Device Independent File (.dvi) & $\rightarrow$ & Readable Output (.pdf or .ps) \\
+\end{tabular}
+\end{center}
+
+\subsection{Other Files}
+
+Finally, after compiling a document, there will be some residual files, most of which are not immediately important. Below is a table of different file types you may encounter. The origin of these documents come from more advanced processes that we'll discuss later, but the reader should note these types just in case she were to come across them.
+\begin{center}
+	\begin{tabular}{l l}
+			\hline
+			\multicolumn{1}{c}{Extension}							&	\multicolumn{1}{c}{Description} \\
+			\hline
+			.tex	&	The \LaTeX\ input file. \\
+			.log			&	A log of messages from compiling a .tex file. \\
+			.bib		&	Contains all of our bibliography information. \\
+			.aux		& Contains formatting setting for the bibliography. \\
+			.blg		& A log of messages from compiling a .bib file. \\
+			.dvi		&	An output file viewable with a special viewer. \\
+			.ps			& PostScript format viewable with a viewer \\
+							& (e.g. GhostViewer) \\
+			.pdf		& Portable Document Format (Acrobat) \\
+			\hline
+	\end{tabular}
+\end{center}
+
+\section{Conclusion}
+
+This discussion reviewed the three major file categories: source file (.tex); device independent file (.dvi); and readable outputs (.ps or .pdf). Each \LaTeX\ document starts with a source file (.tex), which is then ``compiled'' to make a readable output. The reader will find that the .tex file is the most important since it is the file that an author must edit. 
+
+A snippet of a source file (.tex) was given in this document and the slide show, we will start discussing the specific commands beginning with Lecture 2.1. Likewise, a more extensive example was posted on the previous lecture and all source files (.tex) are distributed with every lecture. An interested reader may want to explore source files to see how the commands work---but remember, \LaTeX\ must be installed before a document can be compiled (Lecture 1.3).
+
+\end{document}

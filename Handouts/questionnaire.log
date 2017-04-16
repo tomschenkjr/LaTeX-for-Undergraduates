@@ -1,0 +1,106 @@
+This is e-TeX, Version 3.141592-2.2 (MiKTeX 2.4) (preloaded format=latex 2005.8.6)  18 OCT 2005 21:18
+entering extended mode
+**questionnaire.tex
+(questionnaire.tex
+LaTeX2e <2003/12/01>
+Babel <v3.8a> and hyphenation patterns for english, french, german, ngerman, dumylang, nohyphenation, loaded.
+(C:\texmf\tex\latex\base\article.cls
+Document Class: article 2004/02/16 v1.4f Standard LaTeX document class
+(C:\texmf\tex\latex\base\size10.clo
+File: size10.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (questionnaire.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
+)
+! Emergency stop.
+<*> questionnaire.tex
+                     
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 210 strings out of 95898
+ 2028 string characters out of 1195289
+ 47385 words of memory out of 1049626
+ 3325 multiletter control sequences out of 35000
+ 3986 words of font info for 15 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 607
+ 23i,1n,17p,272b,155s stack positions out of 1500i,500n,5000p,200000b,32768s
+No pages of output.

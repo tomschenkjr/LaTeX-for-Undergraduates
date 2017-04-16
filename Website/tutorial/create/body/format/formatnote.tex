@@ -1,0 +1,226 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 1/9/2006
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+\documentclass{article}
+%================================Packages
+\usepackage{graphicx}
+\usepackage{verbatim}   % useful for program listings
+\usepackage{color}      % use if color is used in text
+\usepackage{subfigure}  % use for side-by-side figures
+
+\usepackage{amsmath}    % need for subequations
+%================================Document Info.
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			General Environments} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2)
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+Some of the more advanced features in \LaTeX\ are enabled by environments---such as math equations. 
+
+You may have noticed a handful of operators are used to begin and end commands, for instance, \texttt{$\backslash$} and \{ \} are often used in the syntax. So what happens if we want to actually make those characters appear in the text and not function as operators (such as above)?
+
+More importantly, how do we italicize, bold, or use different fonts in a document? As explained earlier, \LaTeX\ will take care of most of our formatting needs (e.g. section headers), nevertheless, it is still necessary to use traditional formatting throughout a document.
+
+Lastly, this lecture will explore how to create bulleted or enumerate lists in our document. The material on lists is directly related to the next lecture on environments.
+
+\section{Formatting}
+
+\subsection{Special Characters}
+
+A number of characters are ``special'' characters. That is, they are used in regular English syntax, but serve an important function in \LaTeX. I have already pointed out that $\backslash$ is one of these characters. Simply including it in our code will cause \LaTeX\ to misinterpret its meaning. Instead, we must use commands to make certain characters. Below is a list of characters and their corresponding codes:
+\begin{tabular}{l l l l l l l l l}
+				\texttt{$\backslash$\$} & \texttt{$\backslash$\%} & \texttt{$\backslash$\&} & \texttt{$\backslash$\#} & \texttt{$\backslash$\{} & \texttt{$\backslash$\}} & \texttt{$\backslash$\_} & \texttt{$\backslash$\^{}\{\}} & \texttt{$\backslash$\~{}\{\}} \\
+				\$ & \% & \& & \# & \{ & \} & \_ & \^{} & \~{} \\
+\end{tabular}
+You may have noticed some of the special commands are followed with \{\}. Let us take a look at the carrot (\^{}) character as an example. The following is what ``apple'' should look like if properly proceeded by a carrot: \^{}apple (\texttt{$\backslash$\^\{\}apple}). Say, for instance, I omitted the \{\}, then it would appear as \^apple (\texttt{$\backslash$\^apple}). As you can see, the carrot then acts as an accent character. Implicitly, \{\} acts as an artificial space between \^{} and ``apple.'' The same is true for the tild\~e character.
+
+Along with special formatting commands, there are special logo's that \LaTeX\ can recognize. Below is a list of commands and their respective outputs:
+		\begin{table}\caption{Built--in Logo Commands}\label{tbl:logo}	
+			\begin{center}
+				\begin{tabular}{|l|l|}
+					\hline
+					Command & Logo \\
+					\hline
+					$\backslash$LaTeX$\backslash$ & \LaTeX\ \\
+					\hline
+					$\backslash$LaTeXe$\backslash$ & \LaTeXe\ \\
+					\hline
+					$\backslash$TeX$\backslash$ & \TeX\ \\
+					\hline
+				\end{tabular}
+			\end{center}
+		\end{table}
+This is a nifty tool, but seldom used when not creating a \LaTeX\ tutorial. You may have noticed the use of an extra $\backslash$ at the end of the commands. Again, this is to solve a spacing problem. If you were not to include the extra backslash, then it would appear like this: \LaTeX Tutorial (\texttt{$\backslash$LaTeX Tutorial}).
+
+\subsection{Formatting}
+
+Formatting text is rather simple. \texttt{$\backslash$textbf\{\textit{argument}\}}, for instance, will produce \textbf{bold} text. \texttt{$\backslash$texttt\{\textit{argument}\}} will produce \texttt{typewriter} font; \texttt{$\backslash$textsc\{\textit{argument}\}} will use \textsc{small caps}; \texttt{$\backslash$textbf\{\textsl{argument}\}} will make the text appear \textsl{slanted}. \texttt{$\backslash$textit\{\textit{argument}\}} will produce \textit{italicized} font, but so will \texttt{$\backslash$emph\{\textit{argument}\}}---depending on the circumstances. Normally, italicizing a word is meant to emphasize its importance; meanwhile, italicizing is usually meant for design purposes.
+
+Consider the following two paragraphs. Both use \texttt{$\backslash$emph} to emphasize a word. Although the second paragraph's default is italics, emphasized words are still contrasted.
+
+\begin{quote}
+A student may be absent up to \emph{six} times before being dismissed from class. Likewise, he or she may only be tardy \emph{twelve} times before also being dismissed. An absent or tardiness can be excused if he or she brings a valid note.
+\end{quote}
+
+\begin{quote}
+\textit{A student may be absent up to \emph{six} times before being dismissed from class. Likewise, he or she may only be tardy \emph{twelve} times before also being dismissed. An absent or tardiness can be excused if he or she brings a valid note.}
+\end{quote}
+
+Figure \ref{tbl:format} outlines some basic formatting commands and their results.
+
+\begin{table}[!h] \caption{Widely Used Formatting Commands} \label{tbl:format}
+	\begin{center}
+		\begin{tabular}{r l} 
+		\hline
+		Command & Output \\
+		\hline
+		$\backslash$textbf\{\textit{text}\} & \textbf{bold} \\
+		$\backslash$textit\{\textit{text}\} & \textit{italic} \\
+		$\backslash$texttt\{\textit{text}\} & \texttt{typewriter} \\
+		$\backslash$textsl\{\textit{text}\} & \textsl{slanted} \\
+		$\backslash$emph\{\textit{text}\} 	& \emph{emphasized} \\
+		$\backslash$textsf\{\textit{text}\} & \textsf{sans serif} \\
+		$\backslash$textsc\{\textit{text}\} & \textsc{small caps} \\ 
+		\end{tabular}
+	\end{center}		
+\end{table}
+
+\subsection{Font Sizes}
+
+Recall from Lecture 2.1.1, an author may change the font size as an option in the \textit{document class} command (e.g. \texttt{$\backslash$documentclass[12pt]\{article\}}). Sometimes, one may want to temporarily change a font size. This may be done with a variety of commands. For instance, \texttt{$\backslash$tiny} will change all proceeding text to \tiny size 5 font \normalsize(note: there are no brackets with this command). On the other hand, \texttt{$\backslash$large} will create \large size 12 font. \normalsize To return to your default font size, you must turn off the command with \texttt{$\backslash$normalsize}. Consider the following example:
+
+\begin{verbatim}
+Here is an example of \footnotesize footnotesize font. 
+\normalsize After returning to normal size, you may want to use a
+\LARGE large font.
+\end{verbatim}
+
+And its output:
+
+\begin{quote}
+Here is an example of \footnotesize footnotesize font. \normalsize After returning to normal size, you may want to use a \LARGE large font.
+\end{quote}
+
+It should be noted that these commands are case sensitive. That is, \texttt{$\backslash$}LARGE is different from \texttt{$\backslash$Large}. Table \ref{tbl:font} shows font commands and their respective output. In general, each increase (decrease) in font size is +2 (-2) in point size.
+
+\begin{table}[!h] \caption{Font Commands and Their Respective Output (default is 10pt)} \label{tbl:font}
+	\begin{center}
+		\begin{tabular}{r l} 
+		\hline
+		Command & Output \\
+		\hline
+					$\backslash$tiny & \tiny tiny font \\
+					$\backslash$scriptsize & \scriptsize script size font \\
+					$\backslash$footnotesize & \footnotesize footnote size font \\
+					$\backslash$small & \small small font \\
+					$\backslash$normalsize & \normalsize normal font \\
+					$\backslash$large & \large large font \\
+					$\backslash$Large & \large larger font \\
+					$\backslash$LARGE & \LARGE even larger font \\
+					$\backslash$huge & \huge huge font \\
+					$\backslash$huge & \Huge largest font \\		\end{tabular}
+	\end{center}		
+\end{table}
+
+\subsection{Justifications}
+
+\subsubsection{Flushleft, Center, and Flushright}
+
+Justifications are another aesthetic tool for a word processor. In general, \LaTeX\ indents the first paragraph\footnote{You may prevent and indentation by using \texttt{$\backslash$noindent}.} on the left margin, but aligned on the right margin. The author may control the alignment, however, with \emph{environments}---this concept will be developed in a later lecture.
+
+For instance, one would follow the following syntax:
+\\
+\noindent
+\texttt{$\backslash$begin\{\textit{argument}\}}
+Desired text\ldots
+\texttt{$\backslash$end\{\textit{argument}\}}
+Where \textit{argument} is either \texttt{center}, \texttt{flushleft}, or \texttt{flushright}. The text between begin and end will function accordingly. Below is an example code and output of centered text.
+\begin{verbatim}
+\begin{center}
+Text between the beginning and end portion of the command will be 
+centered. Try it with flushleft and flushright.
+\end{center}
+\end{verbatim}
+\begin{center}
+Text between the beginning and end portion of the command will be 
+centered. Try it with flushleft and flushright.
+\end{center}
+
+\subsubsection{Quote}
+
+\LaTeX\ has a few predefined justification commands, such as quote.\footnote{Similar justifications are covered more extensively in Lecture 3.1.1.} This will add a block indentation on the left, but remain the font size the same. Below is an example.
+\begin{verbatim}
+\begin{quote}
+The quote environment is best utilized when quoting text that is 
+three lines or more. I have used it to make examples stand out.
+\end{quote}
+\end{verbatim}
+\begin{quote}
+The quote environment is best utilized when quoting text that is 
+three lines or more. I have used it to make examples stand out.
+\end{quote}
+
+\subsection{Bullets and Enumerations}
+
+Setting up bulleted or numbered lists are similar to justifications insofar as they are placed between \texttt{$\backslash$begin\{\textit{argument}\}} and \texttt{$\backslash$end\{\textit{argument}\}}. However, when creating a bulleted list, the \textit{argument} is \textt{itemize}. Each item in the list begins with \texttt{$\backslash$item}. You may customize how a bullet looks by placing a character between square brackets after \texttt{item}, such as \texttt{item[-]}.
+\begin{verbatim}
+\begin{itemize}
+\item First item.
+\item[-] Second item.
+\item[+] Then some more\ldots
+\end{itemize}
+\end{verbatim}
+\begin{itemize}
+\item First item.
+\item[-] Second item.
+\item[+] Then some more\ldots
+\end{itemize}
+
+A similar syntax is used for numbered lists. However, a numerated list is \texttt{enumerated}. You can create sub-numbering (or sub-bullets) by creating another list under an item. The following is a large example.
+\begin{verbatim}
+\begin{enumerate}
+\item First item.
+\item Second item.
+	\begin{enumerate}
+	\item Sub-item.
+	\item Another sub-item.
+	\end{enumerate}
+\item Then some more\ldots
+	\begin{itemize}
+	\item Bulleted item.
+	\end{itemize}
+\end{enumerate}
+\begin{verbatim}
+\item First item.
+\item Second item.
+	\begin{enumerate}
+	\item Sub-item.
+	\item Another sub-item.
+	\end{enumerate}
+\item Then some more\ldots
+	\begin{itemize}
+	\item Bulleted item.
+	\end{itemize}
+\end{verbatim}
+
+%================================Conclusion
+
+\section{Conclusion}
+
+A lot of material was covered in this section. Table \ref{tbl:logo} lists some basic logos that \LaTeX\ has built-in. Likewise, a number of characters that are used by \LaTeX\ can usually be shown in a document by preceding it with a backslash ($\backslash$)---one notable exception is the backslash which is shown with \texttt{\$$\backslash$backslash\$}. Table \ref{tbl:format} list some basic formatting commands (e.g. italics, bolding). Table \ref{tbl:font} shows the font commands to change the font from the default. 
+
+Bulleted and enumerated lists were also introduced. One notable concept was placing text between \texttt{$\backslash$begin} and \texttt{$\backslash$end}. This form of a command will be brought up again in Lecture 3.1 and is very powerful.
+
+\end{document}
+

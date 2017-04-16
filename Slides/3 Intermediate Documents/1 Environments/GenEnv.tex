@@ -1,0 +1,144 @@
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Document Info./Slide 1
+\title{Environments}
+\subtitle{General Environments}
+\author{Tom Schenk Jr.}
+\institution{Drake University}
+\email{tls007@drake.edu}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item Preview of environments
+		\item Review of environments encountered
+		\item Quotation and Verse Environment
+		\item Abstract Environment
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Overview of Environments}
+	\begin{itemize}
+		\item Environments will apply a special formatting to the text within it.
+		\item Each environment has a special attribute for it.
+		\item For instance, we used the \texttt{itemize} environment to make a bulleted list.
+		\item The \texttt{math} environment is another extremely useful environment.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Review of Environments}
+	\begin{itemize}
+		\item We've already seen a couple of environments in a document: \texttt{itemize} and \texttt{enumerate}.
+		\item These environments all started with \texttt{$\backslash$begin\{\textit{Environment Name}\}}.
+		\item They both ended with \texttt{$\backslash$end\{\textit{Environment Name}\}}.
+		\item All environments begin and end in the same way, but differ in the content between these commands.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Very Basic Environment Layout}
+	\texttt{$\backslash$begin\{document\}} \\
+	\texttt{$\backslash$begin\{\textit{Environment Name}\}} \\
+	\textit{Stuff within the environment} \\
+	\texttt{$\backslash$end\{\textit{Environment Name}\}} \\
+\end{slide}
+%================================Slide 2
+\begin{slide}{Quotation Environment}
+	\begin{itemize}
+		\item For long quotes, documents usually indent on both sides and have more indentation for the beginning of a new paragraph.
+		\item In a word processor it would require the author to adjust the indentations on the document ruler at the top of the page.
+		\item \LaTeX\ uses the \texttt{quotation} environment.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Quotation Example}
+	\texttt{$\backslash$begin\{document\}} \\
+	Normal text for our document. \\
+	\texttt{$\backslash$begin\{quotation\}} \\
+	\texttt{It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity\ldots} \\
+
+	\texttt{There were a king with a large jaw and a queen with a plain face, on the throne of England; there were a king with a large jaw and a queen with a fair face, on the throne of France.} \\
+	\texttt{$\backslash$end\{quotation\}} \\
+	Back to normal text.
+\end{slide}
+%================================Slide 2
+\begin{slide}{Quotation Example}
+	Normal text for our documents \\
+	\begin{quotation}
+	It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity\ldots \\
+
+	There were a king with a large jaw and a queen with a plain face, on the throne of England; there were a king with a large jaw and a queen with a fair face, on the throne of France. \\
+	\end{quotation}
+	Back to normal text.\footnote{Of course the following comes from Charles Dicken's \textit{The Tale of Two Cities}}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Verse}
+	\begin{itemize}
+		\item The \texttt{verse} environment is suited for poetry.
+		\item Similar to the \texttt{quotation} environment, the entire paragraph is indented from the left and the right.
+		\item However, the first line is not indented further, while the subsequent lines are indented further.
+		\item For this environment, it's important to end a line using $\backslash$$\backslash$, instead of returns.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Verse Example}
+	\texttt{$\backslash$begin\{document\}} \\
+	\texttt{$\backslash$begin\{verse\}} \\
+	\texttt{Verse is best set for poems,$\backslash$$\backslash$} \\
+	\texttt{But since I don't know any, this will make due,$\backslash$$\backslash$} \\
+	\texttt{As long as the concept is clear.$\backslash$$\backslash$} \\
+	\texttt{$\backslash$end\{document\}} \\
+\end{slide}
+%================================Slide 2
+\begin{slide}{Verse Example (con't)}
+	\begin{verse}
+		Verse is best set for poems, \\
+		But since I don't know any, this will make due, \\
+		As long as the concept is clear.
+	\end{verse}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Abstract Environment}
+	\begin{itemize}
+		\item In academic journals, each article (just under the title) usually has an abstract that summarizes the study and findings.
+		\item We can use the \texttt{abstract} environment to make an abstract for our paper.
+		\item The alignment will look similar to the \texttt{quotation} environment, but uses smaller text.
+		\item Abstracts are usually a good idea for a larger independent study or capstone paper.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Abstract Example}
+	\texttt{$\backslash$begin\{document\}} \\
+	\texttt{$\backslash$maketitle} \\
+	\texttt{$\backslash$begin\{abstract\}} \\
+	\texttt{This paper studies the relationship between unionization and wages. Using new multiple regression techniques we found that unionization and wages were positively related. This contradicts earlier findings that used antiquated techniques.} \\
+	\texttt{$\backslash$end\{abstract\}} \\
+\end{slide}
+%================================Slide 2
+\begin{slide}{Abstract Example (con't)}
+	\begin{abstract}
+	This paper studies the relationship between unionization and wages. Using new multiple regression techniques we found that unionization and wages were positively related. This contradicts earlier findings that used antiquated techniques.
+	\end{abstract}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Abstract Environment (con't)}
+	\begin{itemize}
+		\item In an earlier slide I made it a point to insert \texttt{$\backslash$maketitle} \emp{before} the abstract.
+		\item It's easy to accidently place it after since the abstract is always the first part of the document.
+		\item However, making this mistake will cause a linebreak between the abstract and the first page.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{General Environment Review}
+	\begin{itemize}
+		\item Environments begin with \texttt{$\backslash$begin\{\textit{Environment Name}\}} and end with \texttt{{$\backslash$begin\{\textit{Environment Name}\}}}.
+		\item Quotation and verse environments can be used for long quotes or poetry verses, respectively.
+		\item Abstract environment will neatly place a formatted abstract at the top of our page.
+		\item NEXT: The \texttt{math} environment and mathematical equations.
+	\end{itemize}
+\end{slide}

@@ -1,0 +1,210 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 9/19/2005
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Document Info./Slide 1
+\title{Indexing and Bibliographies}
+\subtitle{Bibliographies}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2})
+\institution{Drake University}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item The bibliography file.
+		\item Creating the .bib file.
+		\item Inserting references in our document.
+		\item Necessary commands (\texttt{$\backslash$bibliographystyle},\texttt{$\backslash$bibliography}).
+		\item Other bibliography styles.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Overview of Bibliographies}
+	\begin{itemize}
+		\item Similar to table of contents, \LaTeX\ is easily able to generate a bibliography at the end of our document.
+		\item There are a handful of ways a bibliography can be generated: one method is using \texttt{$\backslash$thebibliography} environment.
+		\item We will be using BibTeX to generate our bibliographies---this is more automatic and is generally more appropriate for undergraduate students.
+		\item \textit{Not So Short Introduction} covers \texttt{thebibliography} method.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Overview of Bib\TeX}
+	\begin{itemize}
+		\item The Bib\TeX\ is a program and file structure created by Leslie Lamport (the creator of \LaTeX\mbox{}) and Oren Patashnik.
+		\item Using Bib\TeX\ typically involves a command in the preamble defining the bibliography style, a command in the body where we want the bibliography inserted, and another file with a .bib extension with our bibliography information.
+		\item A publications title, author(s), year of publication, publisher, etc., divided into fields in the .bib file.
+		\item Depending on our bibliography style, \LaTeX\ organizes the order of the fields into a recognizable bibliography style and displays it in our document.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{The Bibliography File}
+	\begin{itemize}
+		\item The most efficient use of Bib\TeX is creating our bibliography file as we research and write our paper.
+		\item Authors that we don't reference simply will not be included in the bibliography.
+		\item Bibliography files end in .bib, we can use our normal \LaTeX\ editor to create the bibliography file.
+		\item No matter which bibliography style we use (e.g. MLA), the .bib file will look the same.
+		\item The bibliography style is chosen in our .tex document.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{The .bib File}
+	\begin{itemize}
+		\item First, each bibliography entry will be defined by type (e.g. book, article, manual)---this will tell \LaTeX\ how to organize the entries.
+		\item The type is defined by \texttt{@book}, \texttt{@article}, \texttt{manual} for a book, article, and manual, respectively (later we will list typical entry types).
+		\item Next to the entry type, we need to create a short name we will refer to each entry.
+			\begin{center}
+				\texttt{@article\{Smith81,}
+			\end{center}
+		\item The name of this article entry is \texttt{Smith81}, which we will use when we reference this document.
+		\item The open curly bracket \{ is important as well as the comma---we will close the bracket at the end of the bibliography entry.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{The .bib File (con't)}
+	\begin{itemize}
+		\item After declaring the entry type and its name, we start entering the fields of the entry.
+		\item Fields are specific values, for instance, \texttt{author = \{Matt Smith\},} is the entry for the author.
+		\item Typically in our .bib file, entries are indented and a linebreak after each field.
+		\item The next slide gives an example of a bibliography entry.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Bibliography Example}
+	\texttt{@article\{Dixit77,} \\
+	\indent \texttt{author = \{Avinash Dixit and Joseph Stiglitz\},} \\
+	\indent \texttt{year = \{1977\},} \\
+	\indent \texttt{title = \{Monopolistic Competition and Optimum Product Diversity\},} \\
+	\indent \texttt{journal = \{American Economic Review\},} \\
+	\indent \texttt{volume = \{67\},} \\
+	\indent \texttt{number = \{3\},} \\
+	\indent \texttt{pages = \{297--308\},} \\
+	\texttt{\}}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Bibliography Example (con't)}
+	\begin{itemize}
+		\item The supplemental document contains an example output of a bibliography, remember the style will differ depending on the style we choose (covered later in this lecture).
+		\item However, it is important to note the ending curly bracket \} that ends the bibliography entry.
+		\item Also note the comma at the end of each field entry.
+		\item Puttiing curly brackets around each field entry is optional, but suggested.
+		\item In my experience, it's best to name each entry by the author's last name and the year of publication (i.e \texttt{Dixit77}) to easily remember.
+		\item Now we can take a look of how to cite a reference.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Referencing}
+	\begin{itemize}
+		\item In the body of our document, we will use commands to reference entries by the entry name we determined.
+		\item We use the \texttt{$\backslash$cite\{\textit{name}\}} will cite \textit{name} (i.e. where \textit{name} would be \texttt{Dixit77} according to our earlier example).
+		\item By default, \LaTeX\ uses a numbering system for bibliographies---each bibliography entry is assigned a number by alphabetical order:
+			\begin{center}
+				[1] Dixit, Avinash and Joseph Stiglitz. Monopolistic Competition and Optimum Product Diversity. \textit{American Economic Review}, \textbf{67},3:297--308.
+			\end{center}
+		\item In the document, the source will be cited by this number:
+			\begin{center}
+				Dixit and Stiglitz [1] created a mathematical version of monopolistic competition\ldots
+			\end{center}
+		\item This format is sometimes used by journals; however, it is generally unacceptable for homework, we will explore a more useful bibliography format later in this lecture.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Necessary commands}
+	\begin{itemize}
+		\item Running a bibliography requires at least two commands; \texttt{$\backslash$bibliographystyle\{\textit{style}\}} and \texttt{$\backslash$bibliography\{\textit{bibfile}\}}.
+		\item \texttt{$\backslash$bibliographystyle\{\textit{style}\}} can be placed anywhere in the document (preamble or body) as long as its before \texttt{$\backslash$end\{document\}}. 
+		\item \texttt{$\backslash$bibliography\{\textit{bibfile}\}} can be placed anywhere before in the body, but this command starts the bibliography, so it should be placed immediately before \texttt{$\backslash$end\{document\}}.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{bibliographystyle Command}
+	\begin{itemize}
+		\item \texttt{$\backslash$bibliographystyle\{\textit{style}\}} tells \LaTeX\ the style we want for our bibliography.
+		\item The \texttt{plain} style was shown earlier.
+		\item The website contains links to other style examples, but these are unacceptable for classes.
+		\item Later in the lecture, we will look at the \texttt{natbib} style.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{bibliography Command}
+	\begin{itemize}
+		\item \texttt{$\backslash$bibliography\{\textit{bibfile}\}} begins the bibliography file.
+		\item \textit{bibfile} is the .bib file we created, you do not have to insert .bib in this command.
+		\item For example, if our bibliography was named \textit{paperbib.bib} on our computer, then we'd use \texttt{$\backslash$bibliography\{paperbib\}} as our command.
+		\item If we have multiple bibliographies, we may separate them using a comma; for instance, if our .bib files were named \textit{paperbib.bib} and \textit{morebib.bib}, then we'd use \texttt{$\backslash$bibliography\{paperbib,morebib\}}.
+		\item Even when we start changing our bibliography styles, we do not have to change this command.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{More Useful Bibliography Styles}
+	\begin{itemize}
+		\item We mentioned earlier that the default or \textit{plain} bibliography style is unacceptable for academia.
+		\item We will introduce the \texttt{natbib} style, which is modeled on the MLA style.
+		\item The website contains a link to a complete list of other acceptable styles. %reference reed
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{More Useful Bibliography Styles}
+	\begin{itemize}
+		\item To include the \texttt{natbib} style, we must use the \texttt{natbib} package: \texttt{$\backslash$usepackage\{natbib\}}.
+		\item With \texttt{natbib} loaded, we need to load the \texttt{plainnat} style using \texttt{$\backslash$bibliographystyle\{\textit{plainnat}\}}.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{natbib: Citation Commands}
+	\begin{itemize}
+		\item \texttt{natbib} has several \textit{cite} commands for different outputs (we will use the \texttt{Dixit77} example from above (more on the website):
+			\begin{center}
+				\begin{tabular}{l|l}
+					\hline \\
+					Command & Output \\
+					\hline \\
+					\texttt{$\backslash$citet\{Dixit77\}} & Dixit and Stiglitz (1977) \\
+					\texttt{$\backslash$citep\{Dixit77\}} & (Dixit and Stiglitz, 1977) \\
+					\texttt{$\backslash$citealt\{Dixit77\}} & Dixit and Stiglitz 1977 \\
+					\texttt{$\backslash$citeauthor\{Dixit77\}} & Dixit and Stiglitz \\
+					\texttt{$\backslash$citeyear\{Dixit77\}} & 1977 \\
+					\texttt{$\backslash$citeyearpar\{Dixit77\}} & (1977) \\
+				\end{tabular}
+			\end{center}
+		\item In general, \texttt{$\backslash$citet} does not put parenthesis around the name, while \texttt{$\backslash$citep} will
+		\item Where there are three or more authors, et al. will be used.
+	\end{itemize}
+\end{slide}	
+%================================Slide 2
+\begin{slide}{Generating Bibliographies}
+	\begin{itemize}
+		\item To generate the Bib\TeX file, \texttt{bibtex} is used.
+		\item Similar to a table of contents, we need to repeat a few commands to make sure \LaTeX\ has the correct reference names (we will assume our document is named \textit{capstone}:
+			\begin{center}
+				\begin{tabular}{l}
+					\texttt{latex capstone} \\
+					\texttt{bibtex capstone} \\
+					\texttt{latex capstone} \\
+					\texttt{latex capstone} \\
+				\end{tabular}
+			\end{center}
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Bibliography Review}
+	\begin{itemize}
+		\item We assign values of the bibliography entry in the documents .bib file.
+		\item \texttt{$\backslash$cite\{\textit{name}\} will cite the bibliography entry.}
+		\item We need to commands for the bibliography: \texttt{$\backslash$bibliographystyle\{\textit{style}\}} is the bibliography style and \texttt{$\backslash$bibliography} inserts the bibliography.
+		\item The \texttt{natbib} style is preferred for homework.
+		\item Look at the lecture notes for detailed examples, also look at the supplemental documents for a listing of bibliography styles (especially Reed University's website).
+	\end{itemize}
+\end{slide}
+
+\end{document}

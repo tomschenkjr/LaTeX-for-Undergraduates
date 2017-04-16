@@ -1,0 +1,85 @@
+\documentclass{article}
+%================================Packages
+\usepackage{makeidx}						%For making the index
+%================================Document Info.
+\makeindex											%For making the index
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			Making Indexes} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+For books and long articles with many technical terms, it is common to include an index at the end of the document. Normally this would involve the author making a list of key terms and the pages numbers they are written. Obviously, this would be particularly laborious and not particularly practical. Returning to one of the strong benefits of \LaTeX, we can automate this process using the \texttt{makeidx}\index{makeidx} package. Using this package, we only have to include the \textit{index points}\index{Index Points} and \LaTeX\ will record the page numbers and order the index automatically. All of a sudden, something non--practical is feasible.
+
+\section{Making Indexes}
+
+\subsection{\texttt{makeidx} Package}
+
+The first step is to invoke the \texttt{makeidx}\index{makeidx} package using the following:
+\begin{center}
+\texttt{$\backslash$usepackage\{makeidx\}}
+\end{center}
+
+After we invoke the package, we invoke indexes with the following command also placed in the preamble:
+\begin{center}
+\texttt{$\backslash$makeindex}\index{makeindex}
+\end{center}
+
+\subsection{Making Index Points}
+
+Now that we've enabled ourselves to make indexes, we need to create \textit{index points}\index{Index Points}. Each \textit{index points} is a word or phrase we declare to be significant enough to note it in the index. The point it noted and the corresponding page number is matched to it. It is important to note that we do not categorically create index points. That is, we don't declare that any instance of ``parametric'' is an index point; instead, we must define each point. This helps protect against too many page references in the index.
+
+To create an index point, we use the following command:
+\begin{center}
+\texttt{$\backslash$index\{\textit{key}\}}
+\end{center}
+where \textit{key} is the word or phrase we want to include in the index. This command is included immediately after a word/phrase that we want to indicate in the index. For instance:
+\begin{center}
+\texttt{Maxwell's equations$\backslash$index\{Maxwell\}\index{Maxwell} are four equations that govern the rules of electric and magnetic fields\ldots}
+\end{center}
+will association \textit{Maxwell} with the aforementioned sentence. At the end of this lecture note, there will be an entry for Maxwell that refers to this page. It is very important to be consistent with capitalization, \LaTeX\ will differentiate between ``Maxwell'' and ``maxwell.'' 
+
+Index points\index{Index Points} may belong to a parent topic. For instance, Maxwell's equations might belong under physics or electricity. We can create these parent--child relations while creating index points in the document using the following:
+\begin{center}
+\texttt{$\backslash$index\{\textit{key}!\textit{sub-key}\}}
+\end{center}
+For example, we may want to place ``Poisson Distribution'' in our index, but have it placed under ``Statistical Distribution.''
+\begin{center}
+\texttt{The Poisson Distribution$\backslash$index\{Statistical Distributions!Poisson Distribution\}\index{Statistical Distributions!Poisson Distribution} is used with a discrete random variable\ldots}
+\end{center}
+
+Lastly, we need to tell \LaTeX\ when to start the index. The following command lets \LaTeX\ know where you want the index:
+\begin{center}
+\texttt{$\backslash$printindex}
+\end{center}
+
+\section{Conclusion}
+
+So after an entire document is typed, it should resemble the following:
+\begin{verbatim}
+\documentclass{article}
+\usepackage{madeidx}
+\makeindex
+\begin{document}
+Herbert Croly's \textit{The Promise of American Life} was written at 
+the turn of the 20th century. Croly outlined a deep division between 
+the Democratic Party\index{Political Parties!Democratic Party}, 
+between what he calls Jeffersonian\index{Jefferson, Thomas} and 
+Hamiltonian\index{Hamilton, Alexander} branches of the Democratic Party. 
+Since Croly's book, even the Republican Party\index{Political Parties!Republican Party} 
+had their own divisions, especially between Henry Taft\index{Taft, Henry} 
+and Theodore Roosevelt\index{Roosevelt, Theodore}.
+\printindex
+\end{document}
+\end{verbatim}
+Below is an index printout for this lecture note. As always, look at the input file (the .tex file) to see how the index points\index{Index Points}.
+
+\printindex
+
+\end{document}

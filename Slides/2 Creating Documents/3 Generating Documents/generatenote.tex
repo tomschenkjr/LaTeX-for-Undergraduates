@@ -1,0 +1,60 @@
+%PLEASE READ=============================
+%This document is copyrighted by Tom Schenk Jr and Drake University (2005). It may be modified and re-compiled for personal use only. A re-compiled version may not be distributed without permission of the copyrighters.
+%Authors modifying this document for LaTeX for Undergraduates may append their name(s) in the ``\author'' command. They may not delete the names of previous authors.
+\documentclass{article}
+%================================Packages
+\usepackage{graphicx}
+\usepackage{verbatim}   % useful for program listings
+\usepackage{color}      % use if color is used in text
+\usepackage{subfigure}  % use for side-by-side figures
+
+\usepackage{amsmath}    % need for subequations
+%================================Document Info.
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			Generating Documents--Windows} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+There are a few ways to transform your source file with almost unreadable code into a finished document that can be distributed to others. If you are using a 3$^{\textrm{rd}}$ party program, such as \TeX nicCenter, compiling documents is rather easy. Otherwise, the author needs to use MS--DOS, a slightly more powerful and laborious method. This lecture will cover both methods of generating documents in Windows.
+
+\section{Generating Documents}
+
+\subsection{\TeX nicCenter}
+
+The easiest way to compile a document is to use \TeX nicCenter. A drop--down menu at the top of the screen lets the user to choose the output format and to compile. There are a couple of ways to compile a document: ``Build Output'' (F7) and ``Build Current File'' (Ctrl + F7). You should Build Output if you are working with several project files; Build Current File is used with a single file. You may also view the document with ``View Output'' (F5). All of these are also available under the Build menu, along with some more advanced compiling commands. Some of these will be used later in the tutorial.
+
+\subsection{MS--DOS}
+
+A 3$^{\textrm{rd}}$ party program may not be available for use. Instead, the traditional way of compiling documents, MS--DOS may be used. Some readers may have never used DOS in their life, for those familiar with Windows 3.1 and before, it is a familiar sight. A very brief review of basic DOS commands will be covered.
+
+To access DOS in Windows 2000 and XP, access ``Run\ldots'' under the Start menu. In the Run\ldots window, type \texttt{cmd}. However, do \emph{not} use \texttt{command}, this is will cause problems trying to read long file and folder names. Prior to Windows 2000 (including Windows ME), you are forced to use \texttt{command}.
+
+After access DOS, there are a few ways of moving out of and into different files and folders. The \texttt{dir} command will list all of the files and folders in the current directory. To open a subfolder, use \texttt{cd \textit{folder}}. To go up a level, use \texttt{cd..}; likewise, \texttt{cd$\backslash$} allows the user to return to the root directory (e.g. \texttt{C:$\backslash$}). If there are additional questions, you may type \texttt{help} at any time.
+
+\subsubsection{Generating DVI Files}
+
+First, find where you have saved the .tex file. In the DOS prompt, type \texttt{latex \textit{filename}}---omitting the .tex of the \textit{filename}. For instance, if your file is inhsp.tex, then the appropriate command is \texttt{latex inhsp}. The window will scroll very quickly as \LaTeX\ outputs its operations. If there are any errors, \LaTeX\ will briefly stop to ask how you wish to continue. Normally, the user can press enter to continue. You should note what the error was so you may fix it later.
+
+\subsubsection{Generating PostScript Files}
+
+After creating a DVI file, a PostScript file can be made with \texttt{dvips \textit{filename}} (again omitting file extensions). There are, however, a number of options you may use in conjunction with this command. A few key options are \texttt{dvips -t a4}, which outputs the PostScript formatted for A4 paper. \texttt{dvips -A} and \texttt{dvips -B} outputs odd and even pages only, respectively.  Finally, \texttt{dvips pp \#} allows the user to insert specified page ranges to print (e.g. \# = 4,8-11,13). There are a number of other options which can be found with \texttt{dvips}
+
+\subsubsection{Generating PDF Files}
+
+There are two ways of making PDF files: pdf\LaTeX\ and ps2pdf. Both are usually available with any \LaTeX\ distributions. \texttt{pdflatex \textit{filename}} (omit file extensions) will make a PDF file out of a souce file (.tex). It is fairly quick and uncomplicated; however, it might be difficult if not impossible to use if the document contains an encapsulated PostScript file (i.e. an image).
+
+An alternative option is \texttt{ps2pdf \textit{filename}.ps} (remember to include extensions for this command). Instead of make a .tex into a PDF, this makes a PostScript file into a PDF. That is, you must make the source file into a PostScript file before using \texttt{ps2pdf}. If pdf\LaTeX\ is creating the outputs you desire, then \texttt{ps2pdf} is a great alternative.
+
+\section{Conclusion}
+
+Making readable outputs is straight forward in \TeX nicCenter. DOS is a bit more tricky, nevertheless, \texttt{latex}, \texttt{dvips}, and pdf\LaTeX\ will make DVI, PostScript, and PDF files, respectively.
+
+\end{document}
+

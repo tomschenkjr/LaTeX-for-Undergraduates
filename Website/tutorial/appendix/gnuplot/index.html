@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>gnuplot and LaTeX</title>
+
+	<meta name="Description" content="A LaTeX tutorial that is geared towards the use of LaTeX by undergraduates.">
+	<meta name="Keywords" content="LaTeX, Tutorial, Drake University, LaTeX 2e">
+	<meta http-equiv="Pragma" CONTENT="no-cache">
+	<meta http-equiv="Cache-Control" CONTENT="no-cache">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body margin="0px" background="/LaTeX/images/background.jpg">
+<div align="center" style="height:100%; width:100%">
+  <table width="778" border="0" cellspacing="0" cellpadding="0" height="100%">
+    <tr>
+      <td width="6" nowrap><img style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='/LaTeX/images/table_border_left.png', sizingMethod='scale'); width: 6px; height: 100%"  src="/LaTeX/images/spacer.jpg"></td>
+      <td width="770" background="/LaTeX/images/table_bg.gif" valign="top" nowrap>
+        <div align="center">
+          <table width="751" border="0" cellspacing="0" cellpadding="0">
+              <td colspan=2><a href="/LaTeX/"><img src="/LaTeX/images/banner.jpg" width="751" height="155" border="0"  alt="Home"></a></td> 
+	      <td background="/LaTeX/images/navi_bg.jpg">
+	     </tr>
+	</table>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000"
+</body>
+</html>
+          <table width="751" border="0" cellspacing="0" cellpadding="0" class="contact">
+	    <tr> 
+              <td colspan="5" height="20" nowrap><a href="/LaTeX/">Home</a>>><a href="/LaTeX/tutorial">Tutorial</a>>>3<sup>rd</sup> Party Applications and L<sup>A</sup>T<sub>E</sub>X>>gnuplot</td>
+            </tr>
+ 	     <tr>
+	      <td colspan="5" height="20" nowrap></td>
+            </tr>
+            <tr> 
+              <td width="15" nowrap></td>
+              <td valign="top" width="209"><a href="http://www.gnuplot.info/"><img src="/LaTeX/images/gnuplot.jpg" width="209" height="106" border="0" alt="Download GNU R"></a><br>
+                <br>
+                <a href="http://www.gnuplot.info/files/tutorial.pdf"><img src="/LaTeX/images/gnuptutorial.jpg" width="209" height="106" border="0" alt="Download Sweave"></a><br>
+                <br>
+                <table border="0" cellspacing="0" cellpadding="0" width="209" background="/LaTeX/images/boxborders_bg.gif" class="contact">
+                  <tr> 
+                    <td colspan="3" height="15" nowrap><img src="/LaTeX/images/boxborders_top.gif" width="209" height="15" border="0" alt=""></td>
+                  </tr>
+                  <tr> 
+                    <td width="15" nowrap></td>
+                     <td valign="top" class="contact">Questions? Broken Link? Contact <a href="mailto:tls007@drake.edu">Tom Schenk</a> with questions about LaTeX or the website.<br>      
+                      </td>
+
+                    <td width="15" nowrap></td>
+                  </tr>
+                  <tr> 
+                    <td colspan="3" height="15" nowrap><img src="/LaTeX/images/boxborders_bottom.gif" width="209" height="15" border="0" alt=""></td>
+                  </tr>
+                </table>
+              </td>
+              <td width="15" nowrap></td>
+              <td valign="top" width="497"> 
+                <p><span class="header">A.3 gnuplot: Data and Function Plotting</span><br>
+			<b>Target Majors:</b> Actuarial/Statistics, Economics, Mathematics, Engineering, Computer Sciences, Physics, Environmental/Biological Sciences, Social Sciences<br>
+			<b>Tutorial</b> (by David Klotz and the gnuplot team): <a href="http://www.gnuplot.info/files/tutorial.pdf">PDF</a> <a href="http://www.gnuplot.info/files/tutorial.ps">PostScript</a><br>
+			<b>Supplemental Docs</b>
+			<UL>
+			<LI> <a href="http://www.gnuplot.info/">Gnuplot Homepage</a>
+			<LI> <a href="http://www.cs.uni.edu/Help/gnuplot/"><i>Introduction to GnuPlot</i></a> (University of Northern Iowa)
+			<LI> <a href="http://www.gnuplot.info/help.html">Other gnuplot tutorials</a>
+			</UL>
+
+		  Topics covered in this slide:
+		  <UL>
+		  <LI> Review of gnuplot.
+		  <LI> Installing gnuplot.
+		  <LI> Outputting in L<sup>A</sup>T<sub>E</sub>X
+		  </UL>
+
+		  <p class="subheader">What is gnuplot?</p>
+
+		  <a href="http://www.gnuplot.info/">Gnuplot</a> is a data and function plotting program that can be used to create very sophisticated graphs. Normally, gnuplot is used in conjunction with other programs, such as <a href="http://www.r-project.org/">GNU R</a>, <a href="http://www.octave.org/">GNU Octave</a>, or <a href="http://gretl.sourceforge.net/"><i>gretl</i></a> to name a few. Similar to many powerful computing programs, gnuplot is a command-line driven interface where the graph's output depends on the arguments in the command. You may either plot mathematical functions (similar to Mathematica) or create graphs using a data set. Here are some <a href="http://gnuplot.sourceforge.net/demo/">examples</a> of graphs.
+
+		  <p class="subheader">Installation</p>
+
+		  Gnuplot is compatible with Windows, MacOS, Unix, Linux, Solaris, and other operating systems. You can obtain a copy from their <a href="http://www.gnuplot.info/download.html">downloads</a> page. Normally, programs are "autoinstalled," where folders and icons are automatically placed in the computer and menus. Here, you are required to unzip the program and place it in the appropriate locations. For Windows, this is typically in C:\Program Files or for MacOS, in the Application folder. Please see their webpage for more help on installation.
+
+		  <p class="subheader">Outputting to L<sup>A</sup>T<sub>E</sub>X</p>
+
+		  David Klotz and the gnuplot development team have put together an excellent <a href="http://www.gnuplot.info/files/tutorial.pdf">tutorial</a> (PDF) on how to output a graph into L<sup>A</sup>T<sub>E</sub>X. Their tutorial requires some working knowledge of gnuplot, but I've provided some links to gnuplot tutorials in the supplemental documents area. If you are wanting to plot mathematical functions, I suggest looking at Mathematica. However, if you do not have Mathematica or are interested in plotting data, I strongly recommending learning gnuplot.<br>
+<br>
+		  There is no slide show for this section.
+
+              </td>
+              <td width="15" nowrap></td>
+            </tr>
+            <tr> 
+              <td colspan="5" height="40" nowrap></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td width="6" nowrap><img style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/LaTeX/images/table_border_right.png', sizingMethod='scale'); width: 6px; height: 100%" src="/LaTeX/images/spacer.jpg"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
+

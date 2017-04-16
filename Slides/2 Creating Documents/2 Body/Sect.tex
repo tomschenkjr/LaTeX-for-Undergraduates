@@ -1,0 +1,181 @@
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Document Info./Slide 1
+\title{Body}
+\subtitle{Spacing, Paragraphs, and Sectioning}
+\author{Tom Schenk Jr.}
+\institution{Drake University}
+\email{tls007@drake.edu}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item Spacing
+		\item Creating linebreaks.
+		\item Creating paragraphs
+		\item Creating chapters and sections.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Spacing}
+	\begin{itemize}
+		\item \LaTeX\ feeds the input document line--by--line and assembles it according to your commands and document class.
+		\item When it sees multiple spaces, it treats it as one ordinary space.
+		\item Trying to create a certain ``look'' by using a lot of spaces is difficult in \LaTeX.
+		\item This is because \LaTeX\ is trying to organize the document using a logical and consistent fashion.
+		\item Nevertheless, we can use the \texttt{$\backslash$hspace\{\textit{length}\}} to create a long space.	\\
+		Ex: \texttt{Here is a \texttt{$\backslash$hspace\{\textit{1in} long space.\}}} \\
+		Here is a \hspace{1in} long space. \\
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Creating Linebreaks}
+	\begin{itemize}
+		\item There are two ways of creating linebreaks:
+			\begin{itemize}
+				\item Typing a return at the end of the line (Enter key).
+				\item Using two backslashes ($\backslash$$\backslash$) at the end of the line.
+			\end{itemize}
+		\item Typically, using the enter key is adequate.
+		\item $\backslash$$\backslash$ is sometimes needed while making tables.
+		\item If the output file doesn't have a linebreak where it should, then use $\backslash$$\backslash$.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Creating Paragraphs}
+	\begin{itemize}
+		\item Using two line breaks---either two returns or two sets of $\backslash$$\backslash$ will create a new paragraph.
+		\item \LaTeX\ automatically indents for a normal document (\texttt{article},\texttt{book}, etc. classes).
+		\item The author may use commands to force indentation or to tell \LaTeX\ not to.
+		\item \texttt{$\backslash$noindent} forces \LaTeX\ not to indent the new paragraph.
+		\item \texttt{$\backslash$indent} forces \LaTeX\ to create an indentation.
+		\item Use either command before starting a new paragraph---creating an indent is by default.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Creating Paragraphs (con't)}
+	\begin{itemize}
+		\item An author may not want to indent or may want to change how big the default indentation is.
+		\item We can use \texttt{$\backslash$setlength\{$\backslash$parindent\}} in the preamble to change the indentation.
+	\end{itemize}
+			\texttt{$\backslash$documentclass[pdf]\{article\}} \\
+			\vdots
+			\texttt{$\backslash$setlength\{$\backslash$parindent\}\{\#pt\}} \\
+			\texttt{$\backslash$begin\{document\}} \\
+	\begin{itemize}
+		\item Insert a number to represent the number of pixel spaces it will indent---0 will have no indent.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Creating Paragraphs (con't)}
+	\begin{itemize}
+		\item Likewise we may want to adjust the space between paragraphs (from where one ends to where the next one begins).
+		\item We can use \texttt{$\backslash$setlength\{$\backslash$parskip\}} in the preamble.
+			\texttt{$\backslash$documentclass[pdf]\{article\}} \\
+			\vdots
+			\texttt{$\backslash$setlength\{$\backslash$parskip\}\{\#pt plus \#pt minus \#pt\}} \\
+			\texttt{$\backslash$begin\{document\}} \\
+		\item The first \# tells \LaTeX your preferred length, but can vary by ``plus \#'' or ``minus \#'' if necessary.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Creating Paragraphs (con't)}
+	\begin{itemize}
+		\item More importantly, we can change the spacing between lines (i.e. double spacing).
+		\item You can use another form of a \texttt{$\backslash$setlength}, but the \texttt{setspace} package is tremendously powerful.
+			\texttt{$\backslash$documentclass[pdf]\{article\}} \\
+			\texttt{$\backslash$usepackage\{setspace\}} \\
+			\vdots
+			\texttt{$\backslash$begin\{document\}} \\
+			\texttt{$\backslash$doublespacing} \\
+			\texttt{Double---spaced text.} \\
+			\texttt{$\backslash$singlespacing} \\
+			\texttt{Now we're back to single---spaced.} \\
+			\texttt{$\backslash$onehalfspacing} \\
+			\texttt{There is also one and a half spacing.} \\
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Creating Paragraphs (con't)}
+	\begin{itemize}
+		\item When using the \texttt{setspace} package, everything after \texttt{$\backslash$doublespacing}, \texttt{$\backslash$singlespacing}, \texttt{$\backslash$onehalfspacing}.
+		\item You can put \texttt{$\backslash$doublespacing}, \texttt{$\backslash$singlespacing}, or \texttt{$\backslash$onehalfspacing} in the preamble so the entire document is the same.
+		\item However, you may not want to double space certain parts of your document (i.e. abstract), so you may want to place it later in the document.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Chapters and Sections}
+	\begin{itemize}
+		\item One of the most powerful features of \LaTeX\ is sectioning.
+		\item \LaTeX will automatically number chapters, sections, and subsections.
+		\item These will automatically appear in our table of contents if we choose to have one.
+		\item The most basic command is \texttt{$\backslash$section\{\textit{Section Name}\}}, with the \textit{section name} and number appearing at the top of that section.
+			\texttt{$\backslash$begin\{document\}} \\
+			\texttt{$\backslash$section\{Introduction\}} \\
+			\texttt{Introductory portion of our paper\ldots} \\
+			\texttt{$\backslash$section\{Experiment\}} \\
+			\texttt{Experimental portion---\LaTeX\ will automatically number these sections.} \\
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Chapters and Sections (con't)}
+	\begin{itemize}
+		\item \texttt{$\backslash$section} works for all classes.
+		\item \texttt{$\backslash$chapter} can only be used in the \texttt{report} or \texttt{book} class.
+		\item \texttt{$\backslash$chapter\{\textit{Chapter Name}\}} will create a chapter with the \textit{chapter name} and number at the top.
+		\item You can use the \texttt{chapter} and \texttt{section} commands in the same document.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Chapters and Sections (con't)}
+	\begin{itemize}
+		\item You may also want to create subsections under other sections. This can be done with the \texttt{$\backslash$subsection\{\textit{Subsection Name}\}} command.
+		\item \LaTeX\ also uses \texttt{$\backslash$paragraph\{\textit{Paragraph Name}\}} and \texttt{$\backslash$subparagraph\{\textit{Subparagraph Name}\}}, although they are infrequently used.
+		\item If you have chapters and want to separate the book into parts, you may use the \texttt{$\backslash$part\{\textit{Part Name}\}} command, which won't interfere with chapter numbers.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Chapters and Sections (con't)}
+	\begin{itemize}
+		\item Sometimes we may not want to include chapter, section, subsection, etc. numbers in our paper.
+		\item \texttt{$\backslash$section*\{\textit{Section Name}\}} and \texttt{$\backslash$chapter*\{\textit{Chapter Name}\}} will put the title above the section or chapter, but without the autonumbering.
+		\item You may use the * to also stop other sectioning commands from numbering.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Chapters and Sections (con't)}
+	\begin{itemize}
+		\item If we're using a table of contents, some of our chapters or sections may have long names that we don't want to have in our table of contents.
+		\item We can use brackets to make a name that appears in the body of our paper and another name in the table of contents.
+		\item \texttt{$\backslash$section[\textit{Table of Content's Name}]\{\textit{The Longer Name for the Actual Paper}\}} command will parse out two different section names.
+		\item The same command can be used with parts, chapters, subsections, etc.
+		\item It can also use the asterisk to exclude autonumbering.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Chapters and Sections (con't)}
+	\section{Section}
+	Some text\ldots
+	\subsection{Subsection}
+	More text\ldots
+	\section*{Numberless Section}
+	Even more text\ldots
+	\section{Section}
+	And finally\ldots
+\end{slide}
+%================================Slide 2
+\begin{slide}{Spacing and Sectioning Review}
+	\begin{itemize}
+		\item Linebreaks can be created using the Return key or $\backslash$$\backslash$.
+		\item A pair of linebreaks will create a new paragraph.
+		\item There are a handful of ways to change the line spacing in the document.
+		\item Chapters and sections are autonumbering and ties in with the table of contents.
+	\end{itemize}
+\end{slide}
+\end{document}

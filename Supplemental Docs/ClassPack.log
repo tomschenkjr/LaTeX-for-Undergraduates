@@ -1,0 +1,149 @@
+This is e-TeX, Version 3.141592-2.2 (MiKTeX 2.4) (preloaded format=latex 2005.8.6)  29 AUG 2005 19:46
+entering extended mode
+**ClassPack.tex
+(ClassPack.tex
+LaTeX2e <2003/12/01>
+Babel <v3.8a> and hyphenation patterns for english, french, german, ngerman, dumylang, nohyphenation, loaded.
+(C:\texmf\tex\latex\base\article.cls
+Document Class: article 2004/02/16 v1.4f Standard LaTeX document class
+(C:\texmf\tex\latex\base\size10.clo
+File: size10.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (C:\texmf\tex\latex\hyperref\hyperref.sty
+Package: hyperref 2003/11/30 v6.74m Hypertext links for LaTeX
+ (C:\texmf\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\@linkdim=\dimen103
+\Hy@linkcounter=\count87
+\Hy@pagecounter=\count88
+(C:\texmf\tex\latex\hyperref\pd1enc.def
+File: pd1enc.def 2003/11/30 v6.74m Hyperref: PDFDocEncoding definition (HO)
+) (C:\texmf\tex\latex\00miktex\hyperref.cfg
+File: hyperref.cfg 2003/03/08 v1.0 MiKTeX 'hyperref' configuration
+)
+Package hyperref Info: Hyper figures OFF on input line 1880.
+Package hyperref Info: Link nesting OFF on input line 1885.
+Package hyperref Info: Hyper index ON on input line 1888.
+Package hyperref Info: Plain pages ON on input line 1893.
+Package hyperref Info: Backreferencing OFF on input line 1900.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2004.
+(C:\texmf\tex\latex\ltxmisc\url.sty
+\Urlmuskip=\muskip10
+Package: url 2004/03/15  ver 3.1  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 2143.
+\Fld@menulength=\count89
+\Field@Width=\dimen104
+\Fld@charsize=\dimen105
+\Choice@toks=\toks15
+\Field@toks=\toks16
+Package hyperref Info: Hyper figures OFF on input line 2618.
+Package hyperref Info: Link nesting OFF on input line 2623.
+Package hyperref Info: Hyper index ON on input line 2626.
+Package hyperref Info: backreferencing OFF on input line 2633.
+Package hyperref Info: Link coloring OFF on input line 2638.
+\c@Item=\count90
+\c@Hfootnote=\count91
+)
+*hyperref using default driver hypertex*
+(C:\texmf\tex\latex\hyperref\hypertex.def
+File: hypertex.def 2003/11/30 v6.74m Hyperref driver for HyperTeX specials
+) (C:\texmf\tex\latex\setspace\setspace.sty
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+) (ClassPack.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+Package hyperref Info: Link coloring OFF on input line 12.
+ (C:\texmf\tex\latex\hyperref\nameref.sty
+Package: nameref 2003/12/03 v2.21 Cross-referencing by name of section
+\c@section@level=\count92
+)
+LaTeX Info: Redefining \ref on input line 12.
+LaTeX Info: Redefining \pageref on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 23.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 26.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 26.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 26.
+
+
+Overfull \hbox (23.9969pt too wide) in paragraph at lines 25--35
+ [][] 
+ []
+
+[1
+
+]
+Overfull \hbox (26.91693pt too wide) in paragraph at lines 54--65
+ [][][] 
+ []
+
+[2]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 77.
+
+Overfull \hbox (59.17326pt too wide) in paragraph at lines 73--84
+ [][][] 
+ []
+
+[3] [4] [5] (ClassPack.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1900 strings out of 95898
+ 25194 string characters out of 1195289
+ 68352 words of memory out of 1069569
+ 4941 multiletter control sequences out of 35000
+ 9797 words of font info for 35 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 607
+ 25i,9n,25p,714b,259s stack positions out of 1500i,500n,5000p,200000b,32768s
+
+Output written on ClassPack.dvi (5 pages, 12712 bytes).

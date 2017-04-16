@@ -1,0 +1,245 @@
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Document Info./Slide 1
+\title{Environments}
+\subtitle{Math Environment}
+\author{Tom Schenk Jr.}
+\institution{Drake University}
+\email{tls007@drake.edu}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item Basic math symbols
+		\item \texttt{displaymath} and \texttt{equation} environment.
+		\item Referencing equations.
+		\item General math equations.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Basic Math Symbols}
+	\begin{itemize}
+		\item In word processors, inserting math symbols/greek letters usually involves a few menus.
+		\item \LaTeX\ uses command to make advanced symbols.
+		\item We can use normal operators: $+$,$-$,$=$,$x$.
+		\item For more complex operators, such as fractions, we use commands:
+			\begin{center}
+				$\backslash$frac\{\textit{numerator}\}\{\textit{denominator}\} \\
+				$\frac{\textit{numerator}}{\textit{denominator}}$
+			\end{center}
+		\item The next slide contains a table of basic math operators.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Basic Math Symbols Table}
+	\begin{center}
+		\begin{tabular}{l l l l}
+			\hline \\
+			Command & Output & Command & Output\\
+			\hline \\
+			\texttt{$\backslash$cdot} & $\cdot$ & \texttt{$\backslash$times} & $\times$ \\
+			\texttt{$\backslash$div} & $\div$ & \texttt{$\backslash$equiv} & $\equiv$ \\ 
+			\texttt{$\backslash$sqrt} & $\sqrt{}$ & \texttt{< >} & $<$ $>$ \\
+			\texttt{$\backslash$leq} & $\leq$ & \texttt{$\backslash$geq} & $\geq$ \\
+			\texttt{$\backslash$sum} & $\sum$ & \texttt{$\backslash$int} & $\int$ \\
+		\end{tabular}
+	\end{center}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Math Example}
+	\texttt{$\backslash$frac\{$a$\}\{$b$\} $\backslash$cdot $\backslash$frac\{$c$\}\{$d$\}} \\
+	$\frac{a}{b} \cdot \frac{c}{d}$
+	\begin{itemize}
+		\item Refer to the supplemental documentation for more lists of operators and symbols.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Greek Characters}
+	\begin{itemize}
+		\item Greek letters can also be made by using simple commands.
+		\item For instance, the letter Alpha ($\alpha$) can be made with \texttt{$\backslash$alpha}.
+		\item \LaTeX\ recognizes the difference of upper case and lower case in the input code.
+		\item For example, \texttt{$\backslash$xi} and \texttt{$\backslash$Xi} produces $\xi$ and $\Xi$, respectively.
+		\item The supplemental documents contain the list of Greek characters.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Super and Subscripts}
+	\begin{itemize}
+		\item To make a superscript we use the following command: \\
+		\texttt{$\backslash$$a$\^{}\{$x$\}} will produce $a^{x}$.
+		\item To make a subscript we use the following command: \\
+		\texttt{$\backslash$$\beta$\_\{$1$\}} will produce $\beta_{1}$ \\
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Displaymath Environment}
+	\begin{itemize}
+		\item One of the many math environments is the \texttt{displaymath} environment.
+		\item This environment will give an equation some vertical spacing between lines.
+		\item This environment is especially helpful if we're trying to point out an equation in a document.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Displaymath Environment Example}
+	\texttt{Here we have some very basic text that would appear in a document. Then we want to introduce an equation, like the one below:} \\
+	\texttt{$\backslash$begin\{displaymath\}} \\
+	\texttt{E=MC\^{}\{2\}} \\
+	\texttt{$\backslash$end\{displaymath\}} \\
+	\texttt{Now we return to normal text. We can see how the equation is easy to read.}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Displaymath Environment Example (con't)}
+	Here we have some very basic text that would appear in a document. Then we want to introduce an equation, like the one below:
+	\begin{displaymath}
+	E=MC^{2}
+	\end{displaymath}
+	Now we return to normal text. We can see how the equation is easy to read.
+\end{slide}
+%================================Slide 2
+\begin{slide}{Displaymath Alternative}
+	\begin{itemize}
+		\item We can use an alternative to the \texttt{displaymath} environment that has the same output, but without having to type the cumbersome environment commands.
+		\item Placing \texttt{$\backslash$[} and \texttt{$\backslash$]} around an equation will make it display the exact same way as using the \texttt{displaymath} environment.
+		\item This takes a lot less time with no difference to the reader.
+		\item If you prefer to keep a very organized input source file, then using environments will be a much cleaner look.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Displaymath Alternative Example}
+	\texttt{Let's return to a similar example to the one above. Here we will use the shorter command. Remember, this command is meant to make an equation appear with a lot of space around it, such as the one below:} \\
+	\texttt{$\backslash$[E=MC\^{}\{2\}$\backslash$]} \\
+	\texttt{Now we return to normal text. We can see how the equation is easy to read. Also, we dropped two lines from the code.}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Displaymath Alternative Example (con't)}
+	Let's return to a similar example to the one above. Here we will use the shorter command. Remember, this command is meant to make an equation appear with a lot of space around it, such as the one below:
+	\[E=MC^{2}\]
+	Now we return to normal text. We can see how the equation is easy to read. Also, we dropped two lines from the code.
+\end{slide}
+%================================Slide 2
+\begin{slide}{Equation Environment}
+	\begin{itemize}
+		\item In academic journals mathematical equations are often numberd either to the left or right of the equation.
+		\item This allows authors to reference by number.
+		\item This involves a little bit of formatting in word processors, and even when it's done, it does not automatically renumber the equations.
+		\item To create a numbered equation, we can use the \texttt{equation} environment.
+		\item The equation will appear the same way they do in \texttt{displaymath}, except it is numbered.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Equation Environment Example}
+	\texttt{In an academic journal, we may want to introduce an important equation and have it numbered for easy reference. So we will induce the equation using the equation environment:} \\
+	\texttt{$\backslash$begin\{equation\}} \\
+	\texttt{y=$\backslash$alpha+$\backslash$beta\_\{n\}x} \\
+	\texttt{$\backslash$end\{equation\}} \\
+	\texttt{Now we return to normal text and continue the article. We can also reference the above equation by number.}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Equation Environment Example (con't)}
+	In an academic journal, we may want to introduce an important equation and have it numbered for easy reference. So we will induce the equation using the equation environment:
+	\begin{equation}
+	y=\alpha+\beta_{n}x
+	\end{equation}
+	Now we return to normal text and continue the article. We can also reference the above equation by number.
+\end{slide}
+%================================Slide 2
+\begin{slide}{More on Equation Environment}
+	\begin{itemize}
+		\item If we insert an equation prior to the first equation, then \LaTeX\ will automatically renumber all of the equations.
+		\item Also, \LaTeX\ has an easy way to reference equations.
+		\item Putting the actual equation number in the text isn't efficient, if the equation number changed, then we would manually need to change it.
+		\item So, we can label equations and then refer to that equation by name. When the equation numbers change, our corresponding references would also change.
+		\item Next to \texttt{$\backslash$begin\{environment\}}, we place \texttt{$\backslash$label\{eq:\textit{name}\}}
+		\item We then refer to that in our text with either with \texttt{($\backslash$ref\{eq:\textit{name}\})} or \texttt{$\backslash$eqref\{eq:\textit{name}\}}.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{More on Equation Environment Example}
+	\texttt{Let's return to the equation example. Now we want to have our equation numbered and labeled so we can refer to it.}
+	\texttt{$\backslash$begin\{equation\}} \texttt{$\backslash$label\{eq:\textit{line}\}} \\
+	\texttt{y=$\backslash$alpha+$\backslash$beta\_\{n\}x} \\
+	\texttt{$\backslash$end\{equation\}} \\
+	\texttt{Now we return to normal text and continue the article. As you can see, the above equation is labeled \texttt{($\backslash$ref\{eq:\textit{line}\})}}.
+\end{slide}
+%================================Slide 2
+\begin{slide}{More on Equation Environment Example (con't)}
+	Let's return to the equation example. Now we want to have our equation numbered and labeled so we can refer to it.
+	\begin{equation} \label{eq:line}
+	y=\alpha+\beta_{n}x
+	\end{equation}
+	Now we return to normal text and continue the article. As you can see, the above equation is labeled (\ref{eq:line}).
+\end{slide}
+%================================Slide 2
+\begin{slide}{General Equations}
+	\begin{itemize}
+		\item \texttt{displaymath} and \texttt{equation} environments inserts space between the equation and the body text.
+		\item Sometimes it's appropriate to include the equations within a sentence without extra spacing.
+		\item Within the body of the text, we can use \texttt{\$} to start and end an equation.
+		\item This is especially helpful when we're just showing an equation after some algebraic manipulation.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{General Equation Example}
+	\texttt{Below we present the Pythagorean theorem in it's common form:}
+	\texttt{$\backslash$begin\{displaymath\}} \\
+	\texttt{a\^{}\{2\}+b\^{}\{2\}=c\^{}\{2\}} \\
+	\texttt{$\backslash$end\{displaymath\}} \\
+	\texttt{But there are several forms, we can also look at it as \$$\backslash$sqrt\{a\^{}\{2\}+b\^{}\{2\}\}=c\$. We can also reference the above equation by number.}
+\end{slide}
+%================================Slide 2
+\begin{slide}{General Equation Example (con't)}
+	Below we present the Pythagorean theorem in it's common form: \\
+	\begin{displaymath}
+	a^{2}+b^{2}=c^{2}
+	\end{displaymath}
+	But there are several forms, we can also look at it as $\sqrt{a^{2}+b^{2}}=c$.
+\end{slide}
+%================================Slide 2
+\begin{slide}{Matrices}
+	\begin{itemize}
+		\item When we're using the \texttt{displaymath} and \texttt{equation} environment we can make nice looking matrices.
+		\item Within our environment we need to include another command called \texttt{$\backslash$begin\{array\}} to begin the actual matrix
+		\item Next to the beginning of the array, we include the justification of our matrix, for matrices we always use \texttt{\{ccc\}} to center the numbers in the columns.
+		\item Look closely at the following example to see how matrices work.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Matrix Example}
+	\texttt{$\backslash$begin\{displaymath\}} \\
+	\texttt{$\backslash$left( $\backslash$begin\{array\}\{ccc\} $\backslash$$\backslash$} \\
+	\texttt{x\_\{11\} \& x\_\{12\} \& x\_\{1i\} $\backslash$$\backslash$} \\
+	\texttt{x\_\{21\} \& x\_\{22\} \& x\_\{2i\} $\backslash$$\backslash$} \\
+	\texttt{x\_\{j1\} \& x\_\{j2\} \& x\_\{ji\}} \\
+	\texttt{$\backslash$end\{array\} $\backslash$right)} \\
+	\texttt{$\backslash$end\{displaymath\}}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Matrix Example (con't)}
+	\begin{displaymath}
+	\left( \begin{array}{ccc}
+	x_{11} & x_{12} & x_{1i} \\
+	x_{21} & x_{22} & x_{2i} \\
+	x_{j1} & x_{j2} & x_{ji}
+	\end{array} \right)
+	\end{displaymath}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Math Environment Review}
+	\begin{itemize}
+		\item The \texttt{displaymath} environment inserts an equation with lots of space around it.
+		\item The \texttt{equation} environment is the same as the \texttt{displaymath}, but numbers each equation.
+		\item To make equations within the text, begin and end the formula with \$.
+		\item Within a math environment, we can make a matrix using \texttt{$\backslash$begin\{array\}}.
+		\item Take a look at the supplemental documents for lists of commands and extensive math formatting.
+		\item NEXT: Tables
+	\end{itemize}
+\end{slide}
+
+\end{document}

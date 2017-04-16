@@ -1,0 +1,117 @@
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+%================================Document Info./Slide 1
+\title{Introduction}
+\subtitle{How \LaTeX Works}
+\author{Tom Schenk Jr.}
+\institution{Drake University}
+\email{tls007@drake.edu}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item Introduce classes and packages
+		\item Options
+		\item Processing Files
+		\item File Types
+	\end{itemize}
+NOTE: This presentation only includes a cursory overview of classes, packages, and options. If you're interested in the layout and syntax of a \LaTeX\mbox{} document please go to the next presentation entitled ``Classes and Packages.''
+\end{slide}
+%================================Slide 3
+\begin{slide}{Classes and Packages}
+	\begin{itemize}
+		\item Classes and packages are used to define how a document looks and the features that are added into it.
+		\item A \textit{class} is the type of document.
+			\begin{itemize}
+				\item e.g. article, book, slide show, etc.
+				\item Only one class per document (can't be a book and presentation).
+			\end{itemize}
+		\item A \textit{package} loads features for a document.
+			\begin{itemize}
+				\item For instance, we may want to include graphics in our document so we call for the appropriate package.
+				\item Can contain many packages in a single document.
+			\end{itemize}
+	\end{itemize}
+\end{slide}
+%================================Slide 4
+\begin{slide}{Options}
+	\begin{itemize}
+		\item Classes and packages both have options available.
+		\item An example of a \textit{class} option is changing from letter size (default) to A4 paper.
+		\item An example of a \textit{package} option is changing the background of a slide.
+		\item We will continue this in the next few slides and in the next presentation.
+	\end{itemize}
+\end{slide}
+%================================Slide 5
+\begin{slide}{Classes}
+	\begin{itemize}
+		\item Classes are the type of document we want to use for the paper.
+			\begin{itemize}
+				\item \texttt{Article}---used for documents with sections, but not chapters. Most commonly used and is good for almost all papers.
+				\item \texttt{Book}---similar to \texttt{article}, but with chapters and a cover page.
+				\item \texttt{Report}---for smaller books (e.g. PhD thesis).
+				\item \texttt{Slides}---for presentations (e.g. this presentation), uses big letters.
+			\end{itemize}
+	\end{itemize}
+\end{slide}
+%================================Slide 6
+\begin{slide}{Classes (con't)}
+	\begin{itemize}
+		\item Classes are invoked with,
+			\begin{center}
+			\texttt{$\backslash$documentclass[\textit{options}]\{\textit{class}\}}
+			\end{center}
+		\item So if we wanted an article for a paper while studying in Europe where they use A4,
+			\begin{center}
+			\texttt{$\backslash$documentclass[\textit{a4}]\{\textit{article}\}}
+			\end{center}
+	\end{itemize}
+\end{slide}
+%================================Slide 7
+\begin{slide}{Packages}
+	\begin{itemize}
+		\item Packages are features or add--in's for a document.
+		\item There are a plethora of packages available, you can even ``easily'' write your own.
+		\item Packages are invoked by:
+			\begin{center}
+			\texttt{$\backslash$usepackage[\textit{options}]\{\textit{package}\}}
+			\end{center}
+		\item Many, many, many packages are often use so it's hard to break them down.
+		\item Classes and packages will be discussed at length in the next presentation.
+	\end{itemize}
+\end{slide}
+%================================Slide 8
+\begin{slide}{Processing Files}
+	\begin{itemize}
+		\item The next presentation will discuss the layout and syntax of a document.
+		\item However, we can discuss how a document is created in broad terms.
+		\item Making a document in a word processor (Word, Wordperfect) consists of a single file (e.g. *.doc).
+		\item A \LaTeX\mbox{} document consists of several files.
+			\begin{itemize}
+				\item This is because we take the original \LaTeX\mbox{} file and make ``readable'' files out of it.
+			\end{itemize}
+	\end{itemize}
+\end{slide}
+%================================Slide 9
+\begin{slide}{Processing Files (con't)}
+\parbox[s]{100pt}{\LaTeX File} $\rightarrow$
+\end{slide}
+%===INSERT MORE SLIDES HERE========
+%
+%
+%==================================
+%================================Slide X
+\begin{slide}{Conclusion}
+	\item A document's class and packages defines the document type (article, book, etc.) and its features.
+	\item Each class and package has options available.
+	\item The author edits a \LaTeX\mbox{} file (\texttt{.tex}), which is then made into a Device Independent file (\texttt{.dvi}).
+	\item The DVI file is then made into either a PostScript (\texttt{.ps}), PDF (\texttt{.pdf}) or both files for distribution to others.
+	\item Meanwhile, the original \texttt{.tex} file is unchanged in this process.
+	\item NEXT: The layout and syntax of a \LaTeX\mbox{} document.
+
+\end{document}

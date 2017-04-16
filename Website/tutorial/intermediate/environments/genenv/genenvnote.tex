@@ -1,0 +1,163 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 9/3/2005
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+\documentclass{article}
+%================================Packages
+\usepackage{graphicx}
+\usepackage{verbatim}   % useful for program listings
+\usepackage{color}      % use if color is used in text
+\usepackage{subfigure}  % use for side-by-side figures
+
+\usepackage{amsmath}    % need for subequations
+%================================Document Info.
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			General Environments} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2})
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+Some of the more advanced features in \LaTeX\ are enabled by environments---such as math equations. Environments are not terribly difficult, you have already seen a couple: bulleted and enumerated lists. In this lecture, a few basic environments will be reviewed before advancing to more interesting possibilities.
+
+\section{Environments}
+
+An environment is text and/or commands between \texttt{$\backslash$begin\{\textit{environment name}\}} and \texttt{$\backslash$end\{\textit{environment name}\}}. If you recall from Lecture 2.2.2, a bulleted list is an example of an environment.
+\begin{verbatim}
+\begin{itemize}
+\item First item.
+\item Second item.
+\item Then some more\ldots
+\end{itemize}
+\end{verbatim}
+Its output:
+\begin{itemize}
+\item First item.
+\item Second item.
+\item Then some more\ldots
+\end{itemize}
+
+Everything between begin and end will be formatted depending on the environment name. A few environments are discussed below.
+
+\subsection{Quotation and Verse}
+
+The \texttt{quotation} environment is the same as the \texttt{quote} environment from Lecture 2.2.2's lecture notes; however, it will be reiterated here.
+
+Again, stressing the important of logical design, creating block quotation is left up to \LaTeX\ instead of the user. The \texttt{quotation} environment will indent the text from the left and right. For example,
+
+\begin{verbatim}
+\begin{quotation}
+When once an efficient national government is established, the 
+best mean in the country will not only consent to serve, but also
+will enerally be appointed to manage for it\ldots.
+\end{quotation}
+\end{verbatim}
+\begin{quotation}
+When once an efficient national government is established, the 
+best mean in the country will not only consent to serve, but also
+will enerally be appointed to manage for it\ldots.
+\end{quotation}
+
+If you notice, the first paragraph is indented. You may offset that indentation by using the \texttt{$\backslash$noindent} command.
+\begin{verbatim}
+\begin{quotation}
+\noindent
+It adds no small weight to all these considerations to recollect
+history informs us of no long--lived republic which had not a
+senate. 
+\end{quotation}
+\end{verbatim}
+\begin{quotation}
+\noindent
+It adds no small weight to all these considerations to recollect
+history informs us of no long--lived republic which had not a
+senate. 
+\end{quotation}
+
+One could also apply different justifications within an environment. Here the text is centered.
+\begin{verbatim}
+\begin{quotation}
+\begin{center}
+``Shall I compare thee to a summer's day?
+Thou art more lovely and more temperate:
+Rough winds do shake the darling buds of May,
+And summer's lease hath all too short a date''.
+\end{center}
+\end{quotation}
+\end{verbatim}
+\begin{quotation}
+\begin{center}
+``Shall I compare thee to a summer's day?
+Thou art more lovely and more temperate:
+Rough winds do shake the darling buds of May,
+And summer's lease hath all too short a date''.
+\end{center}
+\end{quotation}
+
+Another pertinent environment is \texttt{verse}. Below is an example of its output.
+\begin{verbatim}
+\begin{verse}
+``Shall I compare thee to a summer's day?
+Thou art more lovely and more temperate:
+Rough winds do shake the darling buds of May,
+And summer's lease hath all too short a date''.
+\end{verse}
+\end{verbatim}
+\begin{verse}
+``Shall I compare thee to a summer's day?
+Thou art more lovely and more temperate:
+Rough winds do shake the darling buds of May,
+And summer's lease hath all too short a date''.
+\end{verse}
+
+\subsection{Abstract}
+
+Lastly, the \texttt{abstract} environment is one of the best. An abstract is a block of text at the beginning of a document that summarizes a research paper's topic and results. For published papers, the abstract may appear in the table of contents or as part of the citation in a bibliography.
+
+\LaTeX\ will automatically format the text and identify the block of text as the abstract. Below is an example of an abstract:
+\begin{verbatim}
+\begin{abstract}
+This study estimates the effect of unionization while 
+controlling for other functions. Namely, this study 
+attempts to answer two questions: (1) does unionization 
+increase graduate assistant (GA) stipends and (2) does 
+the extent of unionism contribute to wage increases? 
+Using a data set of 2001--2002 stipends and an OLS 
+regression, this study concludes that unionization does 
+not impact stipend amounts. Similar to findings with 
+faculty unions, wage differences are created by the 
+student's discipline, region (i.e. cost--of--living), 
+and institution type.
+\end{abstract}
+\end{verbatim}
+\begin{abstract}
+This study estimates the effect of unionization while 
+controlling for other functions. Namely, this study 
+attempts to answer two questions: (1) does unionization 
+increase graduate assistant (GA) stipends and (2) does 
+the extent of unionism contribute to wage increases? 
+Using a data set of 2001--2002 stipends and an OLS 
+regression, this study concludes that unionization does 
+not impact stipend amounts. Similar to findings with 
+faculty unions, wage differences are created by the 
+student's discipline, region (i.e. cost--of--living), 
+and institution type.
+\end{abstract}
+
+Normally, the abstract will be inserted right after \texttt{$\backslash$begin\{document\}}, \texttt{$\backslash$maketitle} or after the table of contents. If you place the abstract before \texttt{$\backslash$maketitle}, you will have an unexpected page break.
+
+%================================Conclusion
+
+\section{Conclusion}
+
+This was a brief introduction to environments. The \texttt{quotation} environment will indent the text from the left and right. Including \texttt{$\backslash$noindent} will create a formal block quote. The \texttt{abstract} environment is very useful for research papers. However, I strongly recommend that one only uses this for an independent study paper or senior capstone.
+
+\end{document}
+

@@ -1,0 +1,117 @@
+%This document is provided to the general audience to (1) give readers a template to learn and (2) to let other students update and improve the material when needed. Anyone is allowed to modify this document provided they do not remove these lines or do not remove my name from this document. If you do make improvements to this tutorial, I welcome those authors to provide their name alongside the materials they improve.
+%©2005 Tom Schenk Jr.
+%================================Supplemental Document
+\documentclass{article}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{setspace}
+%================================Author Information
+\title{Classes and Packages}
+\author{Tom Schenk Jr.}
+%================================Document
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	This document is meant to supplement the ``Classes and Packages'' slides found at the Drake University \LaTeX\mbox{} Tutorial. This document will briefly preview the structure of a \LaTeX document, namely, the preamble and body. We will detail the purpose of classes and packages in \LaTeX. We will also look at options and how they contribute to a document. By the end of this supplemental document the reader should be able to (1) identify the types of documents \LaTeX\mbox can make, (2) the purpose of packages, and (3) different ways to list multiple packages and options.
+\end{abstract}
+
+\section{Document Structure}
+
+\doublespacing
+A \LaTeX\mbox{} document can be separated into two main parts: the preamble and body. The preamble is similar to the header or Cascading Style Sheets (CSS) in HTML. It does not specifically show up in the document, but it does define how the document will look and act. The body of the text is what will appear in the document; that is, it contains the headers, text, footnotes, and bibliography. Below is what an entire document may look like:
+\begin{center}
+	\begin{tabular}{l}
+		\texttt{$\backslash$documentclass[pdf]\{article\}} \\
+		\texttt{$\backslash$usepackage[english]\{babel\}} \\
+		\texttt{$\backslash$begin\{document\}} \\
+		\texttt{$\backslash$section\{Introduction\}} \\
+		\texttt{Here is where we would start out document with a basic introduction.} \\
+		\texttt{$\backslash$section\{Experiment\}} \\
+		\texttt{Here we would explicate our paper in more detail.}
+		\texttt{$\backslash$end\{document\}} \\
+	\end{tabular}
+\end{center}
+Our focus in this paper will be the preamble which is from \texttt{$\backslash$documentclass} to \texttt{$\backslash$begin\{document\}}. Our next topic will cover the remainder of the document.
+
+\section{Preamble}
+
+The preamble always resides at the top of a \LaTeX\mbox{} document. A lot of information is defined in the preamble, including the type of document, features in the document, the dimensions of the page, and title and author information. Comparing it to a word processor, the preamble is similar to the default font and options we've chosen for a Microsft Word or OpenOffice document. Nevertheless, the two most important components of the preamble is the \textit{document class} and \textit{packages}.
+
+\subsection{Document Class}
+
+The first line of every \LaTeX\mbox{} document should contain:
+\begin{center}
+	\texttt{$\backslash$documentclass[\textit{options}]\{\textit{class}\}}
+\end{center}
+The document class tells \LaTeX\mbox{} what type of document you are trying to publish. This is why it is the first line in every \LaTeX\mbox{} document, if it doesn't first identify the type of document it needs to publish, it will have a hard time filling in the body. $\backslash$document class contains two arguments, the \textit{options} and \textit{class}. 
+
+The \textit{class} is the argument that tells \LaTeX\mbox{} the type of document you're trying to publish---such as an article or a letter. \textit{options} tweaks the class---such as changing the font size or making it a double-sided print. Every document must have a specific class defined; however, you do not need to use any options, in that case, \LaTeX\mbox{} will use its defaults. Table~\ref{Classes} is a list of the basic classes and a brief description. 
+
+\begin{table}[!hbp]
+	\centering
+		\begin{tabular}{l l}
+			\hline
+			\multicolumn{1}{c}{Class}							&	\multicolumn{1}{c}{Description} \\
+			\hline
+			\texttt{article}	&	A basic layout meant for journal articles and works well for homework. \\
+			\texttt{book}			&	For books with chapters and parts. \\
+			\texttt{report}		&	For shorter books with chapters (such as PhD. thesis). \\
+			\texttt{letter}		& For professional and personal letters. \\
+			\texttt{slides}		&	For presentations (such as this one). \\
+			\hline
+		\end{tabular}
+	\caption{Basic Classes}
+	\label{Classes}
+\end{table}
+
+Options will tweak certain parts of a class. For instance, \LaTeX usually uses 10pt font (unless it's a slide) for a document. This may seem small to the traditional 12pt font or, perhaps, unacceptable for some professors. Likewise, you may be studying in Europe and must turn in a paper using the A4 standard (as opposed to 8.5 x 11 inches). We can use options to change these small aspects of our document. Unlike classes, we do not have to choose an option. \LaTeX\mbox{} comes with default options for a class (such as 10pt font), which it will use if the author does not specify anything different. Table~\ref{Coptions} lists common set of options and their defaults in bold.
+
+\begin{table}[!hbp]
+	\centering
+		\begin{tabular}{l p{2.5in} l}
+			\hline
+			\multicolumn{1}{c}{Options}							&	\multicolumn{1}{c}{Description} \\
+			\hline
+			\texttt{\textbf{10pt},11pt,12pt,etc}	&	Changes the font for the entire document (you can still use different fonts manually) \\
+			\texttt{\textbf{letterpaper},legalpaper,a4paper,a5paper}			&	The size of the paper. \\
+			\texttt{\textbf{onecolumn},twocolumn}	&	The number of columns in the document. \\
+			\texttt{\textbf{oneside},twoside}	& Whether the document is oriented for one--sided or two--sided printing (where the page numbers are placed). Does not tell your printer to print two--sided. \\
+			\texttt{\textbf{portrait},landscape}	&	Vertical or horizontal orientation. \\
+			\hline
+		\end{tabular}
+	\caption{Basic Classes}
+	\label{Coptions}
+\end{table}
+
+\subsubsection{Working with Classes}
+
+Now that we have an overview of classes and their options, lets look at a couple of scenarios a student my encounter.
+\begin{enumerate}
+	\item Typing a 7--10 page research paper for a class with any font.
+	Since we are allowed to use any font for this paper, we don't have to use any options and it's assumed one--sided is acceptable. Thus, we can use a very simple command:
+		\begin{center}
+			\texttt{$\backslash$documentclass\{article\}}
+		\end{center}
+Since we're not using chapters, nor making a presentation, we can use the basic \texttt{article} class.
+	\item Typing a 20 to 100 page independent research paper. You decide to use 10 point font, but opt for a two--sided document to save on paper.
+	We might be tempted to use the \texttt{book} class, but this would be a little too much for a paper this size. Instead, we should still use the \texttt{article} class since it won't be long enough to divide into chapters. The article class will still let us divide it into sections (this will be explored later in the tutorial). Likewise, the only option we need to change (that is, not use the default) is to make it a two--sided document. Thus:
+		\begin{center}
+			\texttt{$\backslash$documentclass[twoside]\{article\}}
+		\end{center}
+	\item Typing a 100+ page senior capstone paper with 12 point font and two--sided.
+	Here we have a situation of having multiple options, but first, let's deal with the class. Again, we may be tempted to use the \texttt{book} class; however, we may want to consider the \texttt{report} or \texttt{article} class. The \texttt{report} class is similar to the \texttt{book} class insofar as having chapters; however, new chapters in a book always start on the right--hand page (this can be changed with \texttt{[openleft],[openright]} option). The \texttt{report} class will start a new chapter on the next available page. Likewise, if the paper doesn't need chapters we can resort to the \texttt{article} class. If we change our minds we can always change the class.
+\indent
+	For options we need to use the \texttt{12pt} and \texttt{twoside} option. If you read the slides then you know you can use a comma to separate multiple options for a class. So, we may choose the \texttt{report} class with a couple of options:
+		\begin{center}
+			\texttt{$\backslash$documentclass[12pt,twoside]\{report\}}
+		\end{center}
+Note that options don't have to follow any particular order and remember that a class always has to be included or our document won't compile correctly (we will cover compiling later in the tutorial).
+\end{enumerate}
+
+\subsection{Packages}
+
+So far we've covered \textit{document classes} and how they create the template for our document. \textit{Packages} will enable us to use certain features for our documents. This is equivalent to using add--in's in a word processor. These packages ar
+
+\end{document}

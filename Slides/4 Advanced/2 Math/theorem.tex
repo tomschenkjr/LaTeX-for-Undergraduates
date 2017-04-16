@@ -1,0 +1,77 @@
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Theorems
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+%================================Document Info./Slide 1
+\title{Advanced Mathematical Documents}
+\subtitle{Theorem Environment}
+\author{Tom Schenk Jr.}
+\institution{Drake University}
+\email{tls007@drake.edu}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item The package.
+		\item Creating theorems.
+	\end{itemize}
+\end{slide}
+%================================Slide 3
+\begin{slide}{Preamble Commands}
+	\begin{itemize}
+		\item Since there are theorems, lemmas, conjectures, etc., the author is allowed to create different style.
+		\item This is done in the preamble with:
+			\begin{center}
+				\texttt{$\backslash$newtheorem\{\textit{abbrev.}\}\{\textit{Name}\}}
+			\end{center}
+		\item The \textit{abbrev.} is how the command will be started, \textit{Name} is what will be displayed in the document.
+		\item Ex: \texttt{$\backslash$newtheorem\{\textit{Thm}\}\{Theorem\}}
+	\end{itemize}
+\end{slide}
+%================================Slide 4
+\begin{slide}{Creating a Theorem}
+	\begin{itemize}
+		\item In the body, the theorem environment starts and ends with:
+			\begin{center}
+				\texttt{$\backslash$begin\{\textit{abbrev.}\}} \\
+				\texttt{$\backslash$end\{\textit{abbrev.}\}}
+			\end{center}
+		\item Using the previous example, the command would look like this:
+			\begin{center}
+				\texttt{$\backslash$begin\{thm\}} \\
+				\texttt{$\backslash$end\{thm\}}
+			\end{center}		
+	\end{itemize}
+\end{slide}
+%================================Slide 5
+\begin{slide}{Theorem Example}
+\begin{verbatim}
+\begin{thm} Let lim$_{x \rightarrow a}$ 
+$f(x) = L.$ Then there exists 
+$\delta > 0$ such that if 
+$0 < \left|x-a\right| < \delta,$ 
+then $\left|f(x\right| < 1 + \left|L\right|$.
+\end{thm}
+\end{verbatim}
+\smallskip
+Output:
+\smallskip
+\begin{thm} Let $\lim_{x \rightarrow a}$ $f(x) = L.$ Then there exists $\delta > 0$ such that if $0 < \left|x-a\right| < \delta,$ then $\left|f(x)\right| < 1 + \left|L\right|$.
+\end{thm}
+\end{slide}
+%================================Slide 6
+\begin{slide}{Conclusion}
+	\begin{itemize}
+		\item The author can add or adjust preamble commands to make theorems appear as Lemmas, Conjectures, or whatever is needed.
+		\item It is important to remember to use the \$ symbol in the theorem environment, that is, the theorem environment is \emph{not} a math environment.
+	\end{itemize}
+\end{slide}
+
+\end{document}

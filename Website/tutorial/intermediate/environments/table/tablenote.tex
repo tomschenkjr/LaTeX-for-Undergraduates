@@ -1,0 +1,128 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 1/11/2006
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+\documentclass{article}
+%================================Packages
+\usepackage{makeidx}						%For making the index
+%================================Document Info.
+\makeindex											%For making the index
+\title{\textsc{\LaTeX\ for Undergraduates\\
+			Tabular Environment (Tables)} \\
+			Lecture Notes}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2})
+\date{\textit{Version of \today}}
+%================================Body
+\begin{document}
+
+\maketitle
+
+\section{Motivation}
+
+New users sometime catch on to tables slowly; however, once adapted, making tables is very fast. This lecture describes how to make tables in a \LaTeX\ document.
+
+\section{Tabular Environment}
+
+The first thing is to point out that the name of the basic table environment is called \texttt{tabular}. The \texttt{table} environment, which you may have encountered, is similar, but a little more advanced. When using the \texttt{tabular} environment, the table is place at that exact place; that is, if a table is large, it may be cut off by a page break. The \texttt{table} environment will ``float'' so it will appear on another page instead of being interrupted. Nevertheless, the most important thing to learn is the \texttt{tabular} environment since \texttt{table} builds upon this.\footnote{The \texttt{table} environment is discussed in the advanced portion of the tutorial.}
+
+Tables can be broken down into two parts: columns (which run vertical) and rows (which run horizontal). An easy way to remember the difference is columns of a building are large pillars, which stand vertically. A row is similar to an auditorium where seats are aligned side-to-side in relation to the stage.
+
+The first step is to start the tabular environment with \texttt{$\backslash$begin\{tabular\}}. Immediately following this, the author must determine the number of columns and how the text should be justified with \texttt{l}, \texttt{c}, or \texttt{r} for left, right, and centered, respectively. Let's look at the following:
+\texttt{$\backslash$begin\{tabular\}\{l l c\}}
+The text in the first and second column is justified to the left. The text in the third column is centered. As you can see, it is important to know the number of columns before starting a table. Knowing the number of columns is not needed as it can be determine along the way.
+
+The next few lines is the actual content of the cells.
+\begin{verbatim}
+\begin{tabular}{l l c}
+Cell 1 & Cell 2 & Cell 3 \\
+Cell 4 & Cell 5 & Cell 6 \\
+Cell 7 &				& Cell 8
+\end{tabular}
+\end{verbatim}
+The \texttt{\&} will start the next sell. Double backslashes will start a new column. Two breaks (e.g. \texttt{\&}) will create three cells, one break will create two cell, and so on. The number of cells in a row needs to match the number of columns that you determined previously, if not, \LaTeX\ will complain bitterly. As you can see, new columns will be created if needed. Below is an example of the above code:
+\begin{tabular}{l l c}
+Cell 1 & Cell 2 & Cell 3 \\
+Cell 4 & Cell 5 & Cell 6 \\
+Cell 7 &				& Cell 8
+\end{tabular}
+
+You may include horizontal and vertical lines. Placing the | (pipe) character between the column justifications will create vertical lines (e.g. \texttt{$\backslash$begin\{tabular\}\{l|l|c\}}). Likewise, \texttt{$\backslash$hline} will insert horizontal lines between rows. Below is an example of including horizontal and vertical lines.
+\begin{verbatim}
+\begin{tabular}{|l|l|c|}
+\hline
+Cell 1 & Cell 2 & Cell 3 \\
+\hline
+Cell 4 & Cell 5 & Cell 6 \\
+\hline
+Cell 7 & & Cell 9
+\end{tabular}
+\end{verbatim}
+\begin{tabular}{|l|l|c|}
+\hline
+Cell 1 & Cell 2 & Cell 3 \\
+\hline 
+Cell 4 & Cell 5 & Cell 6 \\
+\hline
+Cell 7 & & Cell 9 \\
+\hline
+\end{tabular}
+\\
+Partial lines can be made with \texttt{$\backslash$cline\{\textit{m}-\textit{n}\}}, where \textit{m} is the beginning column number and \textit{n} is the ending column number. For instace, if you wanted a line from column 2 to column 4, the corresponding command would be \texttt{$\backslash$cline\{2-4\}}.
+
+Likewise, you may span a cell across multiple columns with \texttt{$\backslash$multicolumn\{\#\}\{\textit{x}\}\{\textit{content}\}}, where \# is the number of columns, \textit{x} is the justification of the text (e.g. c, l, or r), and \textit{content} is the text. Below is an example of a complex code:
+\begin{verbatim}
+	\begin{tabular}{|l|l|}
+	\hline
+	\multicolumn{2}{|c|}{18 and over} \\
+	\hline
+	C. Anderson & 20 pts \\
+	\hline
+	D. Smith & 15 pts \\
+	\hline
+	A. Britten & 15 pts \\
+	\hline
+	\multicolumn{2}{|c|}{16 to 17} \\
+	\hline
+	B. Simpson & 13 pts \\
+	\hline
+	C. Griffen & 9 pts \\
+	\hline
+	\end{tabular}
+\end{verbatim}
+	\begin{tabular}{|l|l|}
+	\hline
+	\multicolumn{2}{|c|}{18 and over} \\
+	\hline
+	C. Anderson & 20 pts \\
+	\hline
+	D. Smith & 15 pts \\
+	\hline
+	A. Britten & 15 pts \\
+	\hline
+	\multicolumn{2}{|c|}{16 to 17} \\
+	\hline
+	B. Simpson & 13 pts \\
+	\hline
+	C. Griffen & 9 pts \\
+	\hline
+	\end{tabular}
+
+\section{Conclusion}
+
+
+The \texttt{tabular} can be tricky since a lot is going on in large tables. There are a few key items:
+\begin{itemize}
+	\item You must know the number of columns being used.
+	\item \& starts a new cell in that row.
+	\item Number of cells in a row must equal number of columns you chose---add more if necessary.
+	\item A row must be ended with $\backslash$$\backslash$ ---hitting the enter key won't work.
+		\begin{itemize}
+			\item You do not need to use $\backslash$$\backslash$ with \texttt{$\backslash$hline}.
+		\end{itemize}
+\end{itemize}
+If a table is not showing up right, subtract any \texttt{hline}, \texttt{cline}, or \texttt{multicolumn} commands. In my experience, tables are often confused by not having the right values in \texttt{cline} and \texttt{multicolumn} arguments (e.g. values do not sum up to the number of columns).
+
+\end{document}

@@ -1,0 +1,149 @@
+%READ BEFORE EDITING=======================DO NOT DELETE==========================
+%Author(s): Tom Schenk Jr.
+%Last Revision: 10/25/2005
+%Copyright: Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License
+%Copyright URI: http://creativecommons.org/licenses/by-nc-sa/2.5/
+%You may edit and distribute this document for non-commercial services with attributions to previous authors. You may add your name to the \author{} command if you contributed to this document.
+
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Document Info./Slide 1
+\title{Introduction}
+\subtitle{How \LaTeX\ Works}
+\author{Tom Schenk Jr.}		%Add your name here if you modified this document. (e.g. \author{name1, name2})
+\institution{Drake University}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item The process of making a \LaTeX\ document.
+		\item Files that you will encounter.
+		\item \LaTeX\ editors.
+	\end{itemize}
+\end{slide}
+%================================Slide 3
+\begin{slide}{Making a Document}
+	\begin{itemize}
+		\item Making a document in a Word Processor (i.e. Word, OpenOffice, etc.) usually consists of one file that you use for editing and viewing.
+		\item Making a document in \LaTeX\ consists of two main files.
+			\begin{itemize}
+				\item A ``source file'' that the author edits (.tex).
+				\item A viewable output file meant for viewing and distribution (PDF, PostScript (.ps), DVI(.dvi)).
+			\end{itemize}
+		\item Almost any text editor or word processor can be a \LaTeX\ editor, which can be seamlessly converted to an output file.
+	\end{itemize}
+\end{slide}
+%================================Slide 4
+\begin{slide}{Making a Document}
+	\begin{itemize}
+		\item The (.tex) file is edited and ``compiled'' to make a readable output.
+		\item Below is the list of file formats: \\
+\begin{tabular}{|c|}
+\hline
+Source File \\
+(.tex) \\
+\hline \\
+DeVice Independent File \\
+(.dvi) \\
+\hline \\
+Readable Output \\
+(PDF, PostScript) \\
+\hline
+\end{tabular}
+		\item Compiling the source file into .dvi and PostScript/PDF is rather easy. (Lecture 2.3)
+	\end{itemize}
+\end{slide}
+%================================Slide 5
+\begin{slide}{Making a Document}
+	\begin{itemize}
+		\item Below is a basic layout of a \LaTeX\ source file:
+			\small
+				\texttt{$\backslash$documentclass[pdf]\{article\}} \\
+				\texttt{$\backslash$usepackage\{hhref\}} \\
+				\texttt{$\backslash$title\{The Dogma of Cultural Relativity\}} \\
+				\texttt{$\backslash$author\{Scott Belcher\}} \\
+				\texttt{$\backslash$begin\{document\}} \\
+				\texttt{$\backslash$maketitle} \\
+				\texttt{$\backslash$section\{Introduction\}} \\
+				\rmfamily\textit{Introductory Material\ldots} \\
+				\texttt{$\backslash$section\{Body\}} \\
+				\rmfamily\textit{The body of the document\ldots} \\
+				\texttt{$\backslash$end\{document\}} \\
+	\end{itemize}
+\end{slide}
+%================================Slide 6
+\begin{slide}{Making a Document}
+	\begin{itemize}
+		\item When you compile the document, \LaTeX\ feeds the document through line-by-line.
+		\item Likewise, commands in \LaTeX\ take the following format: \texttt{$\backslash$command\{\textit{argument}\}}.
+		\item As the document is fed through, \LaTeX\ recognizes $\backslash$ is the beginning of the command and \{ is the beginning of the argument.
+		\item As a consequence, we will have to get use to some small quarks for making paragraphs and new lines. (Lecture 2.2.2)
+		\item Likewise, we will have to use some commands to format text (i.e. \textit{italics},\textbf{bolding}) (Lecture 2.2.2)
+	\end{itemize}
+\end{slide}
+%================================Slide 7
+\begin{slide}{Files You May Encounter}
+	\begin{itemize}
+		\item Editing a \LaTeX\ document means editing the .tex document.
+		\item There are three output formats: DeVice Independent (.dvi), PostScript (.ps), and Portable Document Format (.pdf).
+		\item Other than these four file types, there are auxiliary files that are either created while compiling a document or needed for more advanced features (e.g. bibliographies.
+		\item The next slide explicates some file formats you may encounter.
+	\end{itemize}
+\end{slide}
+%================================Slide 8
+\begin{slide}{Files You May Encounter}
+	\begin{tabular}{l l}
+			\hline
+			\multicolumn{1}{c}{Extension}							&	\multicolumn{1}{c}{Description} \\
+			\hline
+			.tex	&	The \LaTeX\ input file. \\
+			.log			&	A log of messages from compiling a .tex file. \\
+			.bib		&	Contains all of our bibliography information. \\
+			.aux		& Contains formatting setting for the bibliography. \\
+			.blg		& A log of messages from compiling a .bib file. \\
+			.dvi		&	An output file viewable with a special viewer. \\
+			.ps			& PostScript format viewable with a viewer \\
+							& (e.g. GhostViewer) \\
+			.pdf		& Portable Document Format (Acrobat) \\
+			\hline
+	\end{tabular}
+\end{slide}
+%================================Slide 9
+\begin{slide}{Editors}
+	\begin{itemize}
+		\item \LaTeX\ input files (.tex) are ASCII files.
+		\item This means they are highly portable and can be edited on almost any text editor. Some editors are easier than others.
+		\item Generic editors are able to open any document and save using ASCII.
+			\begin{itemize}
+				\item Notepad, Wordpad for Windows and TextEditor for MacOS.
+			\end{itemize}
+		\item Specific editors are geared toward \LaTeX\ with syntax highlighting: TeXnicCenter for Windows and AlphaX for MacOS.
+		\item We will discuss different editors in more detail later in the tutorial (Lecture 1.3).
+	\end{itemize}
+\end{slide}
+%================================Slide 10
+\begin{slide}{Editors}
+	\begin{itemize}
+		\item Word Processors sometimes have trouble saving in another format (i.e. Works$\rightarrow$Word).
+		\item \LaTeX\ is namely concerned about two things: ASCII format and correct syntax.
+		\item This means making the same document on different operating systems is fairly easy.
+		\item In some ways, \LaTeX\ is meant to be device independent.
+	\end{itemize}
+\end{slide}
+%================================Slide 11
+\begin{slide}{Review}
+	\begin{itemize}
+		\item A \LaTeX\ document differentiates between an editable input file and a viewable output file.
+		\item .tex file is the file that is edited.
+		\item Basically any text editor can make a \LaTeX\ document.
+		\item It is very easily to switch between PC/Mac/Linux/Unix/Solaris while making a document.
+		\item NEXT: Installing \LaTeX\
+	\end{itemize}
+\end{slide}
+\end{document}

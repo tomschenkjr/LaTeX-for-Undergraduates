@@ -1,0 +1,153 @@
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Document Info./Slide 1
+\title{Preamble}
+\subtitle{Classes and Packages}
+\author{Tom Schenk Jr.}
+\institution{Drake University}
+\email{tls007@drake.edu}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item Brief Recap of \LaTeX\mbox{} files.
+		\item How to start and end a document.
+		\item Paragraphs and linebreaks.
+		\item Chapters, sections, and subsections.
+		\item Title, author, and date headers.
+	\end{itemize}
+\end{slide}
+%================================Slide 3
+\begin{slide}{Body of a Document}
+	\begin{itemize}
+		\item Body of the document consists of the material that will be seen in the final print.
+		\item The layout of the text and features we use depend on what we put in the preamble.
+		\item This presentation briefly introduced formatting, but will be covered more extensively in the next presentation.
+	\end{itemize}
+\end{slide}
+%================================Slide 4
+\begin{slide}{Paragraphs}
+	\begin{itemize}
+		\item Hitting return after a line will create a new line.
+		\item Alternatively, the author can use \texttt{$\backslash$$\backslash$} to create line breaks.
+		\item Two returns or two \texttt{$\backslash$$\backslash$} will create a new paragraph.
+		\item \LaTeX\mbox{} will automatically create indentations unless you instruct it not to.
+	\end{itemize}
+\end{slide}
+%================================Slide 5
+\begin{slide}{Paragraphs (con't)}
+	\begin{itemize}
+		\item If you want a new paragraph without indentation, use the  (block style).
+		\item \texttt{$\backslash$indent} can be used to create an indent when a new paragraph does not contain one.
+		\item Refer to the supplemental document for examples of document breaks.
+	\end{itemize}
+\end{slide}
+%================================Slide 6
+\begin{slide}{Chapters and Sections}
+	\begin{itemize}
+		\item Occasionally we want to break out document into into sections.
+		\item Books are necessarily divided into chapters, and perhaps sections.
+		\item When using the \texttt{Book} class, we may use \texttt{$\backslash$Chapter\{\textit{name}\}} command to create a new chapter with \textit{Name} at the beginning of the chapter.
+		\item We can force chapters to start on the right--hand or left--hand page using either \texttt{[openright]} or \texttt{[openleft]} option. By default, chapters will start on the right--hand side for the \texttt{book} class.		
+		\item \texttt{$\backslash$part\{\textit{name}\} will insert a part without interfering with chapter numbers.
+	\end{itemize}
+\end{slide}
+%================================Slide 7
+\begin{slide}{Chapters and Sections}
+	\begin{itemize}
+		\item \texttt{$\backslash$section\{\textit{name}\}} will create a numbered section for our document with \textit{Name} at the top of the section.
+		\item \texttt{$\backslash$subsection\{\textit{name}\}} will create a numbered subsection for our document with \textit{Name} at the top of the subsection.
+		\item We can keep adding subsections under subsections with more ``sub'' prefixes---i.e. \texttt{$\backslash$subsubsubsection}.
+		\item Section and subsection commands will work for \texttt{article} or \texttt{book} classes. However, \texttt{$\backslash$chapter\{\textit{name}\}} will only work for the \texttt{book} class.
+	\end{itemize}
+\end{slide}
+%================================Slide 8
+\begin{slide}{Chapters and Sections (con't)}
+	\begin{itemize}
+		\item Chapters, section, subsections, etc., are also automatically numbered
+\section{Section}
+\subsection{Subsection}
+\subsubsection{Subsubsection}
+\section{Another Section}
+		\item If a \texttt{$\backslash$section} command is inserted before others, then the sections will be renumbered.
+		\item \texttt{$\backslash$section*\{\textit{name}\} will create a section header without numbers.
+	\end{itemize}
+\end{slide}
+%================================Slide 9
+\begin{slide}{Chapters and Sections (con't)}
+	\begin{itemize}
+		\item Parts, chapters, sections, and subsection numbers and name will be included in the table of contents if we choose to have one.
+		\item Sometimes our sections will have a lengthy name that we do not want to include in the table of contents.
+		\item Thus, we are able to give our sections a name that will appear in the full text and brief name for the table of contents.
+		\begin{center}
+			\texttt{$\backslash$section[\itshape{Table of Contents Title}]\{\textit{Full Name for the Main Text}\}
+		\end{center}
+	\end{itemize}
+\end{slide}
+%================================Slide 10
+\begin{slide}{Title, Author, and Date}
+	\begin{itemize}
+		\item For homework, teachers often require a title, name, and date.
+		\item By adding some lines in the preamble, we can make \LaTeX insert these lines where we request.
+		\item Remember the preamble is from \texttt{$\backslash$documentclass\{\textit{class}\} to \texttt{$\backslash$begin\{document\}.
+	\end{itemize}
+\end{slide}
+%================================Slide 10
+\begin{slide}{Title, Author, and Date (con't)}
+	\begin{itemize} 
+		\item After we declare our document class and packages, we can create title and author fields.
+			\begin{tabular}{l}
+				\texttt{$\backslash$documentclass[\textit{options}]\{\textit{class}\}}
+				\texttt{$\backslash$usepackage[\textit{options}]\{\textit{package}\}}
+				\texttt{$\backslash$author\{\textit{Title of Paper}\}
+				\texttt{$\backslash$author\{\textit{Author's Name}\}
+			\end{tabular}
+		\item After \texttt{$\backslash$begin\{document\}, we can insert \texttt{$\backslash$maketitle} where we want the title, author, and date (date is automatically stamped to when we compile the document).
+	\end{itemize}
+\end{slide}
+%================================Slide 10
+\begin{slide}{Title, Author, and Date (con't)}
+	\begin{itemize} 
+		\item Here is what our document looks like if we want the title, author, and date at the top of our document.
+			\begin{tabular}{l}
+				\texttt{$\backslash$documentclass[\textit{options}]\{\textit{class}\}}
+				\texttt{$\backslash$usepackage[\textit{options}]\{\textit{package}\}}
+				\texttt{$\backslash$author\{\textit{Title of Paper}\}
+				\texttt{$\backslash$author\{\textit{Author's Name}\}
+				\texttt{$\backslash$begin\{document\}
+				\texttt{$\backslash$maketitle}
+			\end{tabular}
+	\end{itemize}
+\end{slide}				
+%================================Slide 11	
+\begin{slide}{Title, Author, and Date (con't)}
+	\begin{itemize}
+		\item Sometimes we might want to insert a specific date instead of the date the document was made.
+		\item To add a specific date, we add \texttt{$\backslash$date\{\textit{date}\} to the preamble:
+		\begin{tabular}{l}
+				\texttt{$\backslash$documentclass[\textit{options}]\{\textit{class}\}}
+				\texttt{$\backslash$usepackage[\textit{options}]\{\textit{package}\}}
+				\texttt{$\backslash$author\{\textit{Title of Paper}\}
+				\texttt{$\backslash$author\{\textit{Author's Name}\}
+				\texttt{$\backslash$date\{\textit{date}\}
+				\texttt{$\backslash$begin\{document\}
+				\texttt{$\backslash$maketitle}
+			\end{tabular}
+	\end{itemize}
+\end{slide}
+%================================Slide 11	
+\begin{slide}{Review}
+	\begin{itemize}
+		\item We can use returns or \texttt{$\backslash$$\backslash$} to create linebreaks and paragraphs.
+		\item \texttt{$\backslash$noindent} and \texttt{$\backslash$indent} can prevent or create indentations.
+		\item \texttt{$\backslash$chapter\{\textit{chapter name}\} creates chapters in the \texttt{book} and \texttt{report} classes.
+		\item \texttt{$\backslash$section\{\textit{section name}\} and \texttt{$\backslash$subsection\{\textit{subsection name}\} can create section and subsections in \texttt{article}, \texttt{book}, and \texttt{report} documents.
+		\item We can easily create title and author headings which we can simply call with the \texttt{$\backslash$maketitle} command.
+		\item NEXT: We will go over basic formatting typically used in papers.
+\end{document}

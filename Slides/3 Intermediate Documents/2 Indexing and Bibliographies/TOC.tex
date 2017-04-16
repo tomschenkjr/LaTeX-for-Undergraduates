@@ -1,0 +1,70 @@
+\documentclass[pdf]{prosper}
+%================================Packages
+\usepackage{hyperref}
+\usepackage{mflogo}
+\usepackage{fancybox}
+\usepackage{multicol}
+%================================Document Info./Slide 1
+\title{Indexing and Bibliographies}
+\subtitle{Bibliographies}
+\author{Tom Schenk Jr.}
+\institution{Drake University}
+\email{tls007@drake.edu}
+%================================Document Body
+\begin{document}
+\maketitle
+%================================Slide 2
+\begin{slide}{This Presentation}
+	\begin{itemize}
+		\item Different bibliography commands.
+		\item Necessary packages.
+		\item Preamble commands.
+		\item \textit{bibliography} command.
+		\item The \textit{.bib} file.
+		\item Bibliography styles.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Overview of Bibliographies}
+	\begin{itemize}
+		\item Similar to table of contents, \LaTeX\ is easily able to generate a bibliography at the end of our document.
+		\item There are a handful of ways a bibliography can be generated: one method is using \texttt{$\backslash$thebibliography} environment.
+		\item We will be using BibTeX to generate our bibliographies---this is more automatic and is generally more appropriate for undergraduate students.
+		\item \textit{Not So Short Introduction} covers \texttt{thebibliography} method.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Overview of BibTex}
+	\begin{itemize}
+		\item The BibTex is a program and file structure created by Leslie Lamport (the creator of \LaTeX\) and Oren Patashnik.
+		\item Using BibTeX typically involves a command in the preamble defining the bibliography style, a command in the body where we want the bibliography inserted, and another file with a .bib extension with our bibliography information.
+		\item A publications title, author(s), year of publication, publisher, etc., divided into fields in the .bib file.
+		\item Depending on our bibliography style, \LaTeX\ organizes the order of the fields into a recognizable biblography style and displays it in our document.
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Packages}
+	\texttt{$\backslash$begin\{document\}} \\
+	\texttt{$\backslash$tableofcontents} \\
+	\texttt{$\backslash$section\{Introduction\}} \\
+	\ldots
+\end{slide}
+%================================Slide 2
+\begin{slide}{Table of Contents Example (con't)}
+	\begin{itemize}
+		\item Look at the supplemental documents at examples of a table for contents.
+		\item The table of contents will contain the number, name, and page number of each chapter/section.
+		\item The \LaTeX\ document must be generated twice in order to correctly number all the sections.
+		
+	\end{itemize}
+\end{slide}
+%================================Slide 2
+\begin{slide}{Table of Contents Review}
+	\begin{itemize}
+		\item Our chapters, sections, and subsections commands can be made into a table of contents at the beginning of the documents.
+		\item \texttt{$\backslash$tableofcontents} will insert a table of contents where the command is placed.
+		\item The table of contents will contain the number, name, and page number of each chapter/section.
+	\end{itemize}
+\end{slide}
+
+\end{document}

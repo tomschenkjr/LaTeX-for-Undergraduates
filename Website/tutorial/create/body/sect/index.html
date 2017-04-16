@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>Linebreaks, Paragraphs, and Sections</title>
+
+	<meta name="Description" content="A LaTeX tutorial that is geared towards the use of LaTeX by undergraduates.">
+	<meta name="Keywords" content="LaTeX, Tutorial, Drake University, LaTeX 2e">
+	<meta http-equiv="Pragma" CONTENT="no-cache">
+	<meta http-equiv="Cache-Control" CONTENT="no-cache">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body margin="0px" background="/LaTeX/images/background.jpg">
+<div align="center" style="height:100%; width:100%">
+  <table width="778" border="0" cellspacing="0" cellpadding="0" height="100%">
+    <tr>
+      <td width="6" nowrap><img style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='/LaTeX/images/table_border_left.png', sizingMethod='scale'); width: 6px; height: 100%"  src="/LaTeX/images/spacer.jpg"></td>
+      <td width="770" background="/LaTeX/images/table_bg.gif" valign="top" nowrap>
+        <div align="center">
+          <table width="751" border="0" cellspacing="0" cellpadding="0">
+              <td colspan=2><a href="/LaTeX/"><img src="/LaTeX/images/banner.jpg" width="751" height="155" border="0"  alt="Home"></a></td> 
+	      <td background="/LaTeX/images/navi_bg.jpg">
+	     </tr>
+	</table>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000"
+</body>
+</html>
+          <table width="751" border="0" cellspacing="0" cellpadding="0" class="contact">
+	    <tr> 
+              <td colspan="5" height="20" nowrap><a href="http://www.drake.edu">Drake</a> > <a href="http://www.drake.edu/artsci/mathcs/">Dept. of Math and Computer Science</a> > <a href="/LaTeX/">Home</a> > <a href="/LaTeX/tutorial">Tutorial</a> > Creating Documents > Body > Linebreaks and Sections</td>
+            </tr>
+ 	     <tr>
+	      <td colspan="5" height="20" nowrap></td>
+            </tr>
+            <tr> 
+              <td width="15" nowrap></td>
+              <td valign="top" width="209"><a href="/LaTeX/tutorial/create/body/sect/sect.pdf"><img src="/LaTeX/images/slides.jpg" width="209" height="106" border="0" alt="Tutorial"></a><br>
+                <br>
+                <a href="/LaTeX/tutorial/create/body/sect/sectnote.pdf"><img src="/LaTeX/images/notes.jpg" width="209" height="106" border="0" alt="Quick Notes"></a><br>
+                <br>
+                <table border="0" cellspacing="0" cellpadding="0" width="209" background="/LaTeX/images/boxborders_bg.gif" class="contact">
+                  <tr> 
+                    <td colspan="3" height="15" nowrap><img src="/LaTeX/images/boxborders_top.gif" width="209" height="15" border="0" alt=""></td>
+                  </tr>
+                  <tr> 
+                    <td width="15" nowrap></td>
+                     <td valign="top" class="contact">Questions? Broken Link? Contact <a href="mailto:tls007@drake.edu">Tom Schenk</a> with questions about LaTeX or the website.<br>      
+                      </td>
+
+                    <td width="15" nowrap></td>
+                  </tr>
+                  <tr> 
+                    <td colspan="3" height="15" nowrap><img src="/LaTeX/images/boxborders_bottom.gif" width="209" height="15" border="0" alt=""></td>
+                  </tr>
+                </table>
+              </td>
+              <td width="15" nowrap></td>
+              <td valign="top" width="497"> 
+                <p><span class="header">2.2.1 Linebreaking, Paragraphs, and Sections</span><br>
+			<b>Slide Show:</b> <a href="/LaTeX/tutorial/create/body/sect/sect.pdf">PDF</a> <a href="/LaTeX/tutorial/create/body/sect/sect.ps">PostScript</a> <a href="/LaTeX/tutorial/create/body/sect/sect.tex">Source File (.tex)</a><br>
+			<b>Lecture Notes:</b> <a href="/LaTeX/tutorial/create/body/sect/sectnote.pdf">PDF</a> <a href="/LaTeX/tutorial/create/body/sect/sectnote.ps">PostScript</a> <a href="/LaTeX/tutorial/create/body/sect/sectnote.tex">Source File (.tex)</a>
+			<b>Supplemental Docs:</b>
+			<UL>
+			<LI> <a href="http://www.ctan.org">ctan.org</a> is the best central source for all package information.
+			<LI> <i>Not So Short Introduction to L<sup>A</sup>T<sub>E</sub>X</i> &#167 2.7: pp. 34-36 <a href="/LaTeX/tutorial/lshort.pdf">PDF</a> <a href="/LaTeX/tutorial/lshort.dvi">DVI</a> <a href="/LaTeX/tutorial/lshort.ps">PostScript</a>
+			<LI> <a href="http://www.tug.org.in/tutorial/chap03-scr.pdf">India T<sub>E</sub>X User Group: Introduction to L<sup>A</sup>T<sub>E</sub>X (PDF)</a> (a good review for material covered to this point).
+			</UL> 
+		  <br>
+		  Topics covered in this slide:
+		  <UL>
+		  <LI> Creating linebreaks.
+		  <LI> Creating paragraphs.
+		  <LI> Preventing or forcing indentation.
+		  <LI> Creating chapters, sections, and subsections.
+		  </UL>
+
+		  Creating spaces, new lines, and paragraphs seem like a trivial matter. There are a couple of ways to do each. LaTeX also ignores when there are multiple spaces, instead, it will insert a single space. For linebreaks, a simple return usually works; however, sometimes it is necessary to force a linebreak with a command (it will become obvious later when this is needed). Since LaTeX ignores multiple spacing, we cannot tab to create an indentation for a paragraph. Instead, after creating two linebreaks, LaTeX will assume it's a new paragraph and insert it's own indentation. We are able to control when LaTeX indents and when it does not through commands.<br>
+<br>
+		  Another important command in LaTeX is its <i>chapter</i> and <i>section</i> command. With this command we can break our document into named and numbered sections. These sections will be automatically formatted (slightly larger and bolder text) and included in a table of contents if we deceide to include one. Section commands are very helpful for large documents and for creating a table of contents.
+		  <br>
+		  This slide show should take 10 to 20 minutes.
+
+              </td>
+              <td width="15" nowrap></td>
+            </tr>
+            <tr> 
+              <td colspan="5" height="40" nowrap></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td width="6" nowrap><img style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/LaTeX/images/table_border_right.png', sizingMethod='scale'); width: 6px; height: 100%" src="/LaTeX/images/spacer.jpg"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
+
